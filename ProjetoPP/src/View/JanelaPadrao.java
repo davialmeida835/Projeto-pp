@@ -3,7 +3,7 @@ package View;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.ActionListener;
-
+import Util.Util;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFormattedTextField;
@@ -54,7 +54,7 @@ public class JanelaPadrao extends JFrame{
 	public void addTexto(int x, int y, int largura, int altura, String texto) {
         JLabel label = new JLabel(texto);
         label.setBounds(x, y, largura, altura);
-//        label.setFont(Util.FONTE_PADRAO);
+        label.setFont(Util.FONTE_PADRAO);
         label.setForeground(Color.WHITE);
         add(label);
     }
@@ -72,7 +72,7 @@ public class JanelaPadrao extends JFrame{
 	//adiciona um campo de texto comum
 	public JTextField addCampoDeTexto(int x, int y, int largura, int altura,LineBorder borda) {
 		JTextField campoDeTexto = new JTextField();
-//		campoDeTexto.setFont(Util.FONTE_PADRAO);
+		campoDeTexto.setFont(Util.FONTE_PADRAO);
 		campoDeTexto.setBorder(borda);
 		campoDeTexto.setBounds(x, y, largura, altura);
 		add(campoDeTexto);
@@ -84,7 +84,7 @@ public class JanelaPadrao extends JFrame{
 		try {
 			MaskFormatter formatador = new MaskFormatter(formato);
 			JTextField campoDeTexto = new JFormattedTextField(formatador);
-//			campoDeTexto.setFont(Util.FONTE_PADRAO);
+			campoDeTexto.setFont(Util.FONTE_PADRAO);
 			campoDeTexto.setBorder(borda);
 			campoDeTexto.setBounds(x, y, largura, altura);
 			add(campoDeTexto);
@@ -99,7 +99,7 @@ public class JanelaPadrao extends JFrame{
 	public JTextField addCampoDeTexto(int x, int y, int largura, int altura,LineBorder borda, String texto) {
 		JTextField campoDeTexto = new JTextField(texto);
 		
-//		campoDeTexto.setFont(Util.FONTE_PADRAO);
+		campoDeTexto.setFont(Util.FONTE_PADRAO);
 //		campoDeTexto.addFocusListener(new OuvinteTirarTextoDeTextField(campoDeTexto.getText()));
 		campoDeTexto.setBorder(borda);
 		campoDeTexto.setBounds(x, y, largura, altura);
