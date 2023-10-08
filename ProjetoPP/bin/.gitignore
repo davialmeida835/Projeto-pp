@@ -1,3 +1,7 @@
 /Model/
-/DAO/
 /View/
+/Controller/
+/DTO/
+/DAO/
+/Util/
+/Main/
