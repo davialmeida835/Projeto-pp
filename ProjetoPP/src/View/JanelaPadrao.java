@@ -17,7 +17,7 @@ public class JanelaPadrao extends JFrame{
 	
 	
 	public JanelaPadrao() {
-		Color corAzulEscuro = new Color(0, 0, 51);
+		Color corAzulEscuro = new Color(255, 204, 204);
 		getContentPane().setBackground(corAzulEscuro);
 		setResizable(false);
 		setTitle("Party Planner");
@@ -126,13 +126,13 @@ public class JanelaPadrao extends JFrame{
 		imagem.setBounds(243, 75, 65, 80);
 		add(imagem);
 		
-		ImageIcon bordaEsquerda = new ImageIcon(getClass().getResource("/resources/ladoEsquerdo.jpeg"));
+		ImageIcon bordaEsquerda = new ImageIcon(getClass().getResource("/resources/linha4.jpg"));
 		JLabel lado1 = new JLabel(bordaEsquerda);
 		lado1.setBounds(0, 0, 70, 500);
 		add(lado1);
 		
 		
-		ImageIcon bordaDireita = new ImageIcon(getClass().getResource("/resources/ladoDireito.jpeg"));
+		ImageIcon bordaDireita = new ImageIcon(getClass().getResource("/resources/linha4.jpg"));
 		
 		JLabel lado2 = new JLabel(bordaDireita);
 		lado2.setBounds(475, 0, 70, 500);
