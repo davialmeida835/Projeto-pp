@@ -3,7 +3,7 @@ package View;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.ActionListener;
-import Util.Util;
+
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFormattedTextField;
@@ -13,11 +13,14 @@ import javax.swing.JTextField;
 import javax.swing.border.LineBorder;
 import javax.swing.text.MaskFormatter;
 
+import Controller.OuvinteTirarTextoDeTextField;
+import Util.Util;
+
 public class JanelaPadrao extends JFrame{
 	
 	
 	public JanelaPadrao() {
-		Color corAzulEscuro = new Color(255, 204, 204);
+		Color corAzulEscuro = new Color(250,228,198);
 		getContentPane().setBackground(corAzulEscuro);
 		setResizable(false);
 		setTitle("Party Planner");
@@ -55,7 +58,7 @@ public class JanelaPadrao extends JFrame{
         JLabel label = new JLabel(texto);
         label.setBounds(x, y, largura, altura);
         label.setFont(Util.FONTE_PADRAO);
-        label.setForeground(Color.WHITE);
+        label.setForeground(Color.BLACK);
         add(label);
     }
 	
@@ -100,7 +103,7 @@ public class JanelaPadrao extends JFrame{
 		JTextField campoDeTexto = new JTextField(texto);
 		
 		campoDeTexto.setFont(Util.FONTE_PADRAO);
-//		campoDeTexto.addFocusListener(new OuvinteTirarTextoDeTextField(campoDeTexto.getText()));
+		campoDeTexto.addFocusListener(new OuvinteTirarTextoDeTextField(campoDeTexto.getText()));
 		campoDeTexto.setBorder(borda);
 		campoDeTexto.setBounds(x, y, largura, altura);
 		add(campoDeTexto);

@@ -3,13 +3,17 @@ package View;
 import java.awt.Color;
 import java.awt.Font;
 import java.text.ParseException;
-import Util.Util;
+
 import javax.swing.JFormattedTextField;
 import javax.swing.JLabel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 import javax.swing.border.LineBorder;
 import javax.swing.text.MaskFormatter;
+
+import Controller.OuvinteCadastrarUsuario;
+import Controller.OuvinteTirarTextoDeTextField;
+import Util.Util;
 
 public class JanelaDeCadastroUsuario extends JanelaPadrao {
 
@@ -30,7 +34,7 @@ public class JanelaDeCadastroUsuario extends JanelaPadrao {
 		addTexto(295, 325, 75, 20, "Natalício:");
 		campoDeEmail = addCampoDeTexto(125, 185, 300, 25, new LineBorder(Color.BLACK, 1), "Digite seu e-mail"); 
 		campoDoNome = addCampoDeTexto(125, 295, 300, 25, new LineBorder(Color.BLACK, 1), "Digite seu nome completo"); 
-		addBotao(220, 400, 110, 30, "Cadastrar", null);
+		addBotao(220, 400, 110, 30, "Cadastrar", new OuvinteCadastrarUsuario(this));
 		adicionarCampoDoTelefone();
 		adicionarCampoDeSenha();
 		adicionarCampoDaDataDeNascimento();
@@ -63,7 +67,7 @@ public class JanelaDeCadastroUsuario extends JanelaPadrao {
 		campoDaSenha.setEchoChar((char) 0);
 		campoDaSenha.setFont(Util.FONTE_PADRAO);
 		campoDaSenha.setText("Digite sua senha");
-//		campoDaSenha.addFocusListener(new OuvinteTirarTextoDeTextField("Digite sua senha"));
+		campoDaSenha.addFocusListener(new OuvinteTirarTextoDeTextField("Digite sua senha"));
 		campoDaSenha.setBorder(new LineBorder(Color.BLACK, 1));
 		campoDaSenha.setBounds(125, 240, 300, 25);
 		add(campoDaSenha);
