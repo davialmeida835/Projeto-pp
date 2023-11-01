@@ -20,7 +20,7 @@ public class JanelaPadrao extends JFrame{
 	
 	
 	public JanelaPadrao() {
-		Color corAzulEscuro = new Color(250,228,198);
+		Color corAzulEscuro = Color.decode("#DFB7B5");
 		getContentPane().setBackground(corAzulEscuro);
 		setResizable(false);
 		setTitle("Party Planner");
@@ -124,18 +124,18 @@ public class JanelaPadrao extends JFrame{
 	
 	//adiciona as imagens a tela de cadastro e login
 	public void addIconeTelaCadastroELogin() {
-		ImageIcon imagemDoUsuario = new ImageIcon(getClass().getResource("/resources/usuariomenu.png"));
+		ImageIcon imagemDoUsuario = new ImageIcon(getClass().getResource("/resources/marrom.png"));
 		JLabel imagem = new JLabel(imagemDoUsuario);
-		imagem.setBounds(243, 75, 65, 80);
+		imagem.setBounds(243, 75, 75, 80);
 		add(imagem);
 		
-		ImageIcon bordaEsquerda = new ImageIcon(getClass().getResource("/resources/linha4.jpg"));
+		ImageIcon bordaEsquerda = new ImageIcon(getClass().getResource("/resources/esquerdo3.jpg"));
 		JLabel lado1 = new JLabel(bordaEsquerda);
 		lado1.setBounds(0, 0, 70, 500);
 		add(lado1);
 		
 		
-		ImageIcon bordaDireita = new ImageIcon(getClass().getResource("/resources/linha4.jpg"));
+		ImageIcon bordaDireita = new ImageIcon(getClass().getResource("/resources/direito3.jpg"));
 		
 		JLabel lado2 = new JLabel(bordaDireita);
 		lado2.setBounds(475, 0, 70, 500);

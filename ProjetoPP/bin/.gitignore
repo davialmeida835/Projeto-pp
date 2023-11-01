@@ -1,6 +1,9 @@
-/Main/
 /Controller/
-/Util/
-/excecoes/
+/DAO/
+/DTO/
+/Main/
 /Model/
+/Util/
 /View/
+/excecoes/
+/Resources/

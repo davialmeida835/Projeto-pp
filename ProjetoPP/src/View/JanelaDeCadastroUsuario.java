@@ -24,8 +24,8 @@ public class JanelaDeCadastroUsuario extends JanelaPadrao {
 	private JFormattedTextField campoDoNatalicio;
 	
 	public JanelaDeCadastroUsuario() {
-		addTexto(0, 10, 550, 30, "Bem-Vindo(a) ao", new Font("Arial", Font.BOLD, 17), JLabel.CENTER, Color.WHITE);
-		addTexto(0, 30, 550, 30, "Cadastro do Usuário!", new Font("Arial", Font.BOLD, 17), JLabel.CENTER, Color.WHITE);
+		addTexto(0, 10, 550, 30, "Bem-Vindo(a) ao", new Font("Arial", Font.BOLD, 17), JLabel.CENTER, Color.black);
+		addTexto(0, 30, 550, 30, "Cadastro do Usuário!", new Font("Arial", Font.BOLD, 17), JLabel.CENTER, Color.black);
 
 		addTexto(125, 160, 65, 20, "E-mail:");
 		addTexto(125, 215, 65, 20, "Senha:");
