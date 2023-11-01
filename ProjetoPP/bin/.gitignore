@@ -1,9 +1,3 @@
-/Controller/
-/DAO/
-/DTO/
-/Main/
-/Model/
-/Util/
-/View/
 /excecoes/
-/Resources/
+/Main/
+/View/

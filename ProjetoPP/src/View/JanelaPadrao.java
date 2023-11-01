@@ -6,6 +6,7 @@ import java.awt.event.ActionListener;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
+import javax.swing.JComboBox;
 import javax.swing.JFormattedTextField;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -96,6 +97,11 @@ public class JanelaPadrao extends JFrame{
 		} catch (Exception e) {
 			return null;
 		}
+	}
+	public void addComboBox(int x, int y, int largura, int altura, String[] opcoes) {
+		JComboBox<String> comboBox = new JComboBox<>(opcoes);
+        comboBox.setBounds(x, y, largura, altura);
+        add(comboBox);
 	}
 	
 	//adiciona um campo de texto normal com o focus listener
