@@ -19,8 +19,8 @@ public class Main {
 			//JanelaDeLogin jdl = new JanelaDeLogin();
 		//}
 	
-		JanelaAgenda j = new JanelaAgenda();
-		//JanelaFinanceiro j1 = new JanelaFinanceiro();
+		
+	JanelaDeCadastraPedido j = new JanelaDeCadastraPedido();
 	
 	}
 

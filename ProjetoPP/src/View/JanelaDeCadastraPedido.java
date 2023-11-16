@@ -9,7 +9,11 @@ import javax.swing.JCheckBox;
 import javax.swing.JComboBox;
 import javax.swing.JFormattedTextField;
 import javax.swing.JLabel;
+import javax.swing.JScrollPane;
+import javax.swing.JSpinner;
+import javax.swing.JTable;
 import javax.swing.JTextField;
+import javax.swing.SpinnerNumberModel;
 import javax.swing.border.LineBorder;
 import javax.swing.text.MaskFormatter;
 
@@ -26,11 +30,15 @@ public class JanelaDeCadastraPedido extends JanelaPadrao{
 		addTexto(70,140,150,20,"Tipo de costura:");
 		addComboBox(70,170,100,30,opcoes );
 		addTexto(70,210,150,20,"Tipo de Tecido:");
+		addTexto(300,140,150,20,"Tamanho da Peça:");
+		addComboBox(300,170,100,30,opcoes );
 		addComboBox(70,240,100,30,opcoes );
+		adicionarComponentesQuantidade();
 		
+		criarTabelaClientes();
 		addB();
 		addTexto(300,70,150,20,"Data de Entrega:");
-		addCheckBox();
+		//addCheckBox();
 		
 		adicionarCampoDaDataDeNascimento();
 		setVisible(true);
@@ -71,5 +79,30 @@ public class JanelaDeCadastraPedido extends JanelaPadrao{
 		add(botao1);
 	
 	}
+	private void criarTabelaClientes() {
+        String[] colunas = {"Nome", "Telefone", "Endereço"};
+        Object[][] dados = {
+                {"Cliente 1", "123-456-7890", "Rua A, 123"},
+                {"Cliente 2", "987-654-3210", "Rua B, 456"},
+               
+        };
+
+        JTable tabelaClientes = new JTable(dados, colunas);
+        tabelaClientes.setBounds(70, 300, 400, 80);
+
+        JScrollPane scrollPane = new JScrollPane(tabelaClientes);
+        scrollPane.setBounds(70, 300, 400, 80);
+
+        add(scrollPane);
+    }
+
+    private void adicionarComponentesQuantidade() {
+        addTexto(300, 210, 150, 20, "Quantidade:");
+
+        SpinnerNumberModel spinnerModel = new SpinnerNumberModel(1, 1, 100, 1); 
+        JSpinner spinnerQuantidade = new JSpinner(spinnerModel);
+        spinnerQuantidade.setBounds(400, 210, 50, 25);
+        add(spinnerQuantidade);
+    }
 
 }
