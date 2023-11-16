@@ -2,9 +2,11 @@ package Main;
 
 import DAO.Persistencia;
 import Model.CentralDeInformacoes;
+import View.JanelaAgenda;
 import View.JanelaDeCadastraPedido;
 import View.JanelaDeCadastroUsuario;
 import View.JanelaDeLogin;
+import View.JanelaFinanceiro;
 
 public class Main {
 	public static void main(String[] args) {
@@ -16,7 +18,10 @@ public class Main {
 		//else {
 			//JanelaDeLogin jdl = new JanelaDeLogin();
 		//}
-		JanelaDeCadastraPedido j = new JanelaDeCadastraPedido();
+	
+		JanelaAgenda j = new JanelaAgenda();
+		//JanelaFinanceiro j1 = new JanelaFinanceiro();
+	
 	}
 
 
