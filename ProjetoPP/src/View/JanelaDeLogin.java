@@ -8,6 +8,8 @@ import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 import javax.swing.border.LineBorder;
 
+import Controller.OuvinteBotaoDeLogin;
+import Controller.OuvinteTirarTextoDeTextField;
 import DAO.Persistencia;
 import Model.CentralDeInformacoes;
 
@@ -38,7 +40,7 @@ public class JanelaDeLogin extends JanelaPadrao {
 
 		adicionarCampoDeSenha();
 		
-//		addBotao(220, 350, 110, 30, "Entrar", new OuvinteBotaoDeLogin(this));
+		addBotao(220, 350, 110, 30, "Entrar", new OuvinteBotaoDeLogin(this));
 		addIconeTelaCadastroELogin();
 		setVisible(true);
 	}
@@ -46,9 +48,9 @@ public class JanelaDeLogin extends JanelaPadrao {
 	private void adicionarCampoDeSenha() {
 		campoDaSenha = new JPasswordField();
 		campoDaSenha.setEchoChar((char) 0);
-//		campoDaSenha.setFont(Util.FONTE_PADRAO);
+		campoDaSenha.setFont(Util.Util.FONTE_PADRAO);
 		campoDaSenha.setText("Digite sua senha");
-//		campoDaSenha.addFocusListener(new OuvinteTirarTextoDeTextField("Digite sua senha"));
+		campoDaSenha.addFocusListener(new OuvinteTirarTextoDeTextField("Digite sua senha"));
 		campoDaSenha.setBorder(new LineBorder(Color.BLACK, 1));
 		campoDaSenha.setBounds(125, 260, 300, 25);
 		add(campoDaSenha);
