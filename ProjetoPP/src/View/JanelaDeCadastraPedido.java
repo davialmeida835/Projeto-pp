@@ -18,8 +18,8 @@ import Util.Util;
 public class JanelaDeCadastraPedido extends JanelaPadrao{
 
 	public JanelaDeCadastraPedido() {
-		addTexto(0, 10, 550, 30, "Fazer Pedido", new Font("Arial", Font.BOLD, 17), JLabel.CENTER, Color.WHITE);
-		addTexto(0, 30, 550, 30,  "Monte seu Pedido",new Font("Arial", Font.BOLD, 17), JLabel.CENTER, Color.WHITE);
+		addTexto(0, 10, 550, 30, "Fazer Pedido", new Font("Arial", Font.BOLD, 17), JLabel.CENTER, Color.BLACK);
+		addTexto(0, 30, 550, 30,  "Monte seu Pedido",new Font("Arial", Font.BOLD, 17), JLabel.CENTER, Color.BLACK);
 		String[] opcoes = {"Opção 1", "Opção 2", "Opção 3", "Opção 4"};
 		addComboBox(70,100,100,30,opcoes );
 		addTexto(70,70,200,20,"Tipo de Roupa:");
@@ -27,7 +27,7 @@ public class JanelaDeCadastraPedido extends JanelaPadrao{
 		addComboBox(70,170,100,30,opcoes );
 		addTexto(70,210,150,20,"Tipo de Tecido:");
 		addComboBox(70,240,100,30,opcoes );
-		addBotaoDeVoltar();
+		
 		addB();
 		addTexto(300,70,150,20,"Data de Entrega:");
 		addCheckBox();
