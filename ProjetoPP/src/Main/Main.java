@@ -7,6 +7,7 @@ import View.JanelaDeCadastraPedido;
 import View.JanelaDeCadastroUsuario;
 import View.JanelaDeLogin;
 import View.JanelaFinanceiro;
+import View.JanelaListaPedidos;
 
 public class Main {
 	public static void main(String[] args) {
@@ -20,7 +21,7 @@ public class Main {
 		//}
 	
 		
-	JanelaDeCadastraPedido j = new JanelaDeCadastraPedido();
+		JanelaListaPedidos j = new JanelaListaPedidos();
 	
 	}
 
