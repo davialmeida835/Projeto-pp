@@ -14,6 +14,7 @@ import javax.swing.JTextField;
 import javax.swing.border.LineBorder;
 import javax.swing.text.MaskFormatter;
 
+import Controller.OuvinteDoBotaoDeVoltarParaMenu;
 import Controller.OuvinteTirarTextoDeTextField;
 import Util.Util;
 
@@ -33,10 +34,10 @@ public class JanelaPadrao extends JFrame{
 	
 	//botão de voltar padrão para o menu
 	public void addBotaoDeVoltar() {
-//		OuvinteDoBotaoDeVoltarParaMenu o = new OuvinteDoBotaoDeVoltarParaMenu(this);
+		OuvinteDoBotaoDeVoltarParaMenu o = new OuvinteDoBotaoDeVoltarParaMenu(this);
 		ImageIcon ii = new ImageIcon(getClass().getResource("/resources/voltar.png"));
 		JButton bmenu = new JButton(ii);
-//		bmenu.addActionListener(o);
+		bmenu.addActionListener(o);
 		bmenu.setBackground(Color.BLACK);
 		bmenu.setOpaque(false);
 		bmenu.setBounds(40, 20, 33, 25);

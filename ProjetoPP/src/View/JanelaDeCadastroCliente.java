@@ -12,10 +12,10 @@ import javax.swing.JTextField;
 import javax.swing.border.LineBorder;
 import javax.swing.text.MaskFormatter;
 
+import Controller.OuvinteBotaoCadastrarCliente;
+import Controller.OuvinteDoCampoSomenteNumeros;
+import Controller.OuvinteTipoDePessoaCadastroCliente;
 import Controller.OuvinteTirarTextoDeTextField;
-import ouvintes.OuvinteBotaoCadastrarCliente;
-import ouvintes.OuvinteDoCampoSomenteNumeros;
-import ouvintes.OuvinteTipoDePessoaCadastroCliente;
 
 public class JanelaDeCadastroCliente extends JanelaPadrao {
 	
