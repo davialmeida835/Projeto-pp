@@ -27,6 +27,26 @@ public class JanelaDeCadastroCliente extends JanelaPadrao {
 	private JRadioButton caixaDePessoaJuridica;
 	private JLabel pessoaFisica; //vai mudar para juridica ou fisica, mudar nome dps
 
+	public static void main(String[] args) {
+		new JanelaDeCadastroCliente();
+	}
+	
+	public JanelaDeCadastroCliente() {
+		addTexto(0, 30, 550, 30, "Cadastro do Cliente", new Font("Arial", Font.BOLD, 17), JLabel.CENTER, Color.WHITE);
+		addTexto(125, 205, 65, 20, "E-mail:");
+		addTexto(125, 260, 65, 20, "Nome:");
+		addTexto(125, 315, 90, 20, "Telefone:");
+		campoDeEmail = addCampoDeTexto(125, 230, 300, 25, new LineBorder(Color.BLACK, 1), "Digite o e-mail do cliente");
+		campoDoNome = addCampoDeTexto(125, 285, 300, 25, new LineBorder(Color.BLACK, 1), "Digite o nome completo do cliente");
+		addBotao(220, 400, 110, 30, "Cadastrar", new OuvinteBotaoCadastrarCliente(this));
+		adicionarCampoDoTipoDePessoa();
+		adicionarCampoDoTelefone();
+		addBotoesDeTipoDePesso();
+		addBotaoDeVoltar();
+		
+		setVisible(true);
+	}
+	
 	public JRadioButton getCaixaDePessoaJuridica() {
 		return caixaDePessoaJuridica;
 	}
@@ -56,21 +76,6 @@ public class JanelaDeCadastroCliente extends JanelaPadrao {
 		return caixaDePessoaFisica;
 	}
 
-	public JanelaDeCadastroCliente() {
-		addTexto(0, 30, 550, 30, "Cadastro do Cliente", new Font("Arial", Font.BOLD, 17), JLabel.CENTER, Color.WHITE);
-		addTexto(125, 205, 65, 20, "E-mail:");
-		addTexto(125, 260, 65, 20, "Nome:");
-		addTexto(125, 315, 90, 20, "Telefone:");
-		campoDeEmail = addCampoDeTexto(125, 230, 300, 25, new LineBorder(Color.BLACK, 1), "Digite o e-mail do cliente");
-		campoDoNome = addCampoDeTexto(125, 285, 300, 25, new LineBorder(Color.BLACK, 1), "Digite o nome completo do cliente");
-		addBotao(220, 400, 110, 30, "Cadastrar", new OuvinteBotaoCadastrarCliente(this));
-		adicionarCampoDoTipoDePessoa();
-		adicionarCampoDoTelefone();
-		addBotoesDeTipoDePesso();
-		addBotaoDeVoltar();
-		
-		setVisible(true);
-	}
 
 	private void addBotoesDeTipoDePesso() {
 		pessoaFisica = new JLabel("Escolha uma opção:");
