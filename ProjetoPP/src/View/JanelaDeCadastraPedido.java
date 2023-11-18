@@ -3,7 +3,10 @@ package View;
 import java.awt.Color;
 import java.awt.Font;
 import java.text.ParseException;
+import java.util.ArrayList;
+import java.util.List;
 
+import javax.swing.DefaultComboBoxModel;
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
 import javax.swing.JComboBox;
@@ -17,6 +20,8 @@ import javax.swing.SpinnerNumberModel;
 import javax.swing.border.LineBorder;
 import javax.swing.text.MaskFormatter;
 
+import Controller.TipoRoupaFactory;
+import Model.TipoRoupa;
 import Util.Util;
 
 public class JanelaDeCadastraPedido extends JanelaPadrao{
@@ -25,7 +30,7 @@ public class JanelaDeCadastraPedido extends JanelaPadrao{
 		addTexto(0, 10, 550, 30, "Fazer Pedido", new Font("Arial", Font.BOLD, 17), JLabel.CENTER, Color.BLACK);
 		addTexto(0, 30, 550, 30,  "Monte seu Pedido",new Font("Arial", Font.BOLD, 17), JLabel.CENTER, Color.BLACK);
 		String[] opcoes = {"Opção 1", "Opção 2", "Opção 3", "Opção 4"};
-		addComboBox(70,100,100,30,opcoes );
+		
 		addTexto(70,70,200,20,"Tipo de Roupa:");
 		addTexto(70,140,150,20,"Tipo de costura:");
 		addComboBox(70,170,100,30,opcoes );
@@ -34,16 +39,50 @@ public class JanelaDeCadastraPedido extends JanelaPadrao{
 		addComboBox(300,170,100,30,opcoes );
 		addComboBox(70,240,100,30,opcoes );
 		adicionarComponentesQuantidade();
-		
+		 List<String> tiposRoupaStrings = new ArrayList<>();
+	        JComboBox<String> comboBoxTipoRoupa = new JComboBox<>(tiposRoupaStrings.toArray(new String[0]));
+	        comboBoxTipoRoupa.setBounds(70, 100, 150, 30);
+	        add(comboBoxTipoRoupa);
+	        
+	        comboBoxTipoRoupa.addActionListener(e -> {
+	            
+	            String tipoSelecionado = (String) comboBoxTipoRoupa.getSelectedItem();
+
+	           
+	            int preco = (int) obterPrecoDoTipoRoupa(tipoSelecionado);
+
+	            
+	            TipoRoupa tipoRoupa = TipoRoupaFactory.criarTipoRoupa(tipoSelecionado,preco);
+
+	         
+	            System.out.println("Tipo de Roupa Selecionado: " + tipoRoupa.getDescricao());
+	            System.out.println("Preço: " + tipoRoupa.getPreco());
+	        });
+
+	       
+	        tiposRoupaStrings.add("Vestido");
+	        tiposRoupaStrings.add("Camiseta");
+	        tiposRoupaStrings.add("Terno");
+	        tiposRoupaStrings.add("Shorts");
+
+	    
+	        
+	        comboBoxTipoRoupa.setModel(new DefaultComboBoxModel<>(tiposRoupaStrings.toArray(new String[0])));
 		criarTabelaClientes();
 		addB();
 		addTexto(300,70,150,20,"Data de Entrega:");
-		//addCheckBox();
+		
 		
 		adicionarCampoDaDataDeNascimento();
 		setVisible(true);
 		
 		}
+	private int obterPrecoDoTipoRoupa(String tipoRoupa) {
+		if("Vestido"==tipoRoupa) {
+			return 20;
+		}
+        return 10;
+	}
 	
 	private void adicionarCampoDaDataDeNascimento() {
 		
@@ -59,12 +98,7 @@ public class JanelaDeCadastraPedido extends JanelaPadrao{
 		} catch (ParseException e) {}
 
 	}
-	private void addCheckBox() {
-			JCheckBox checkBox = new JCheckBox("Reajustes");
-			checkBox.setBounds(300, 240, 100, 30);
-			add(checkBox);
- 	
-	}
+	
 	private void addB() {
 		JButton botao = new JButton("Salvar");
 		botao.setBounds(150, 400, 100, 30);
@@ -104,5 +138,10 @@ public class JanelaDeCadastraPedido extends JanelaPadrao{
         spinnerQuantidade.setBounds(400, 210, 50, 25);
         add(spinnerQuantidade);
     }
-
+    public static void main(String[]args) {
+    	TipoRoupaFactory t = new TipoRoupaFactory();
+    	
+    	JanelaDeCadastraPedido j = new JanelaDeCadastraPedido();
+	
+    }
 }
