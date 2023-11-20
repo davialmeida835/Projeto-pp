@@ -15,17 +15,21 @@ import Controller.OuvinteBotoesDoMenu;
 
 public class JanelaDeMenu extends JanelaPadrao {
 	
+	public static void main(String[] args) {
+		new JanelaDeMenu();
+	}
+	
 	public JanelaDeMenu() {
 		addTexto(0, 20, 550, 30, "Menu", new Font("Arial", Font.BOLD, 18), JLabel.CENTER, Color.WHITE);
 		addBotoesMenu(125, 55, 300, 40, "Cadastrar Clientes", (getClass().getResource("/resources/Cliente.png")));
 		addBotoesMenu(125, 100, 300, 40, "Cadastrar Fornecedores", getClass().getResource("/resources/Fornecedor.png"));
-		addBotoesMenu(125, 235, 300, 40, "Cadastrar Pacotes de Fornecedores", getClass().getResource("/resources/Pacote.png"));
-		addBotoesMenu(125, 145, 300, 40, "Cadastrar Serviços", getClass().getResource("/resources/Servicos.png"));
-		addBotoesMenu(125, 190, 300, 40, "Editar Serviços", getClass().getResource("/resources/Servicos.png"));
-		addBotoesMenu(125, 280, 300, 40, "Cadastrar Orçamentos", getClass().getResource("/resources/Orcamento.png"));
-		addBotoesMenu(125, 325, 300, 40, "Lista de Fornecedores", getClass().getResource("/resources/Lista.png"));
-		addBotoesMenu(125, 370, 300, 40, "Lista de Pacotes de Fornecedores", getClass().getResource("/resources/Lista.png"));
-		addBotoesMenu(125, 415, 300, 40, "Lista de Orçamentos", getClass().getResource("/resources/Lista.png"));
+		addBotoesMenu(125, 235, 300, 40, "", getClass().getResource("/resources/Pacote.png"));
+		addBotoesMenu(125, 145, 300, 40, "", getClass().getResource("/resources/Servicos.png"));
+		addBotoesMenu(125, 190, 300, 40, "", getClass().getResource("/resources/Servicos.png"));
+		addBotoesMenu(125, 280, 300, 40, "", getClass().getResource("/resources/Orcamento.png"));
+		addBotoesMenu(125, 325, 300, 40, "", getClass().getResource("/resources/Lista.png"));
+		addBotoesMenu(125, 370, 300, 40, "", getClass().getResource("/resources/Lista.png"));
+		addBotoesMenu(125, 415, 300, 40, "", getClass().getResource("/resources/Lista.png"));
 		addBotaoDeVoltar(new ActionListener() {
 			
 			public void actionPerformed(ActionEvent e) {
@@ -36,7 +40,7 @@ public class JanelaDeMenu extends JanelaPadrao {
 			}
 		});
 		
-		
+		addWallpaper();
 		setVisible(true);
 	}
 	

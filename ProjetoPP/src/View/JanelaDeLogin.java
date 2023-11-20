@@ -33,7 +33,7 @@ public class JanelaDeLogin extends JanelaPadrao {
 		String primeiroNome = central.getUsuario().getNome().split(" ")[0];
 		
 		addTexto(0, 10, 550, 30, "Bem-Vindo(a) de volta " + primeiroNome + "!", new Font("Arial", Font.BOLD, 17), JLabel.CENTER,
-				Color.WHITE);
+				Color.BLACK);
 		
 		
 		campoDoEmail = addCampoDeTexto(125, 205, 300, 25, new LineBorder(Color.BLACK, 1), "Digite seu e-mail"); 
@@ -42,6 +42,7 @@ public class JanelaDeLogin extends JanelaPadrao {
 		
 		addBotao(220, 350, 110, 30, "Entrar", new OuvinteBotaoDeLogin(this));
 		addIconeTelaCadastroELogin();
+		addWallpaper();
 		setVisible(true);
 	}
 

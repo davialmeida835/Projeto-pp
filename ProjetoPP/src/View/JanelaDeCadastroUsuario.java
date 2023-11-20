@@ -39,6 +39,7 @@ public class JanelaDeCadastroUsuario extends JanelaPadrao {
 		adicionarCampoDeSenha();
 		adicionarCampoDaDataDeNascimento();
 		addIconeTelaCadastroELogin();
+		addWallpaper();
 		setVisible(true);
 	}
 	
