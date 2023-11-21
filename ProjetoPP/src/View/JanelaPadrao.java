@@ -33,7 +33,7 @@ public class JanelaPadrao extends JFrame{
 	}
 	
 	public void addWallpaper() {
-		ImageIcon ii = new ImageIcon(getClass().getResource("/resources/wallpaper.png"));
+		ImageIcon ii = new ImageIcon(getClass().getResource("/resources/wallpaper3.png"));
 		JLabel label = new JLabel(ii);
 		
 		label.setBounds(0,0, 550,500);
