@@ -20,9 +20,9 @@ public class JanelaDeMenu extends JanelaPadrao {
 	}
 	
 	public JanelaDeMenu() {
-		addTexto(0, 20, 550, 30, "Menu", new Font("Arial", Font.BOLD, 18), JLabel.CENTER, Color.WHITE);
-		addBotoesMenu(125, 55, 300, 40, "Cadastrar Clientes", (getClass().getResource("/resources/Cliente.png")));
-		addBotoesMenu(125, 100, 300, 40, "Cadastrar Fornecedores", getClass().getResource("/resources/Fornecedor.png"));
+		addTexto(0, 20, 550, 30, "Menu", new Font("Arial", Font.BOLD, 18), JLabel.CENTER, Color.BLACK);
+		addBotoesMenu(125, 55, 300, 40, "CADASTRAR CLIENTES", (getClass().getResource("/resources/Cliente.png")));
+		addBotoesMenu(125, 100, 300, 40, "CADASTRAR FORNECEDORES", getClass().getResource("/resources/Fornecedor.png"));
 		addBotoesMenu(125, 235, 300, 40, "", getClass().getResource("/resources/Pacote.png"));
 		addBotoesMenu(125, 145, 300, 40, "", getClass().getResource("/resources/Servicos.png"));
 		addBotoesMenu(125, 190, 300, 40, "", getClass().getResource("/resources/Servicos.png"));
@@ -49,7 +49,8 @@ public class JanelaDeMenu extends JanelaPadrao {
 		JButton botao = new JButton(texto);
 		botao.addActionListener(ouvinte);
 		botao.setBackground(Color.BLACK);
-		botao.setForeground(Color.WHITE);
+		botao.setOpaque(false);
+		botao.setForeground(Color.BLACK);
 		botao.setBounds(x, y, largura, altura);
 		botao.setIcon(new ImageIcon(url));
 		add(botao);

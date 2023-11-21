@@ -17,7 +17,7 @@ public class OuvinteBotoesDoMenu implements ActionListener {
 	//entra na janela do nome do botão
 	public void actionPerformed(ActionEvent e) {
 		String selecionado = e.getActionCommand();
-		if (selecionado.equals("Cadastrar Clientes")) {
+		if (selecionado.equals("CADASTRAR CLIENTES")) {
 			new JanelaDeCadastroCliente();
 		} else if (selecionado.equals("Cadastrar Fornecedores")) {
 			//new JanelaCadastroFornecedor();
