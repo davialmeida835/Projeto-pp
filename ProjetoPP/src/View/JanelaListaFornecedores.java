@@ -58,20 +58,20 @@ public class JanelaListaFornecedores extends JanelaPadrao{
 	    private void filtrarFornecedores() {
 	        String nomeFiltro = campoFiltro.getText().trim().toLowerCase();
 
-	        // Cria uma nova lista para armazenar os dados filtrados
+	        
 	        List<Object[]> dadosFiltrados = new ArrayList<>();
 
-	        // Itera sobre os dados existentes
+	   
 	        for (Object[] fornecedor : tableModel.getData()) {
 	            String nomeAtual = ((String) fornecedor[0]).toLowerCase();
 
-	            // Verifica se o nome atual contém o filtro
+	            
 	            if (nomeAtual.contains(nomeFiltro)) {
 	                dadosFiltrados.add(fornecedor);
 	            }
 	        }
 
-	        // Atualiza o modelo da tabela com os dados filtrados
+	        
 	        tableModel.setNewData(dadosFiltrados);
 	    }
 
