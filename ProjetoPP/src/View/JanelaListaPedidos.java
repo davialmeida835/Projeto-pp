@@ -26,17 +26,18 @@ public class JanelaListaPedidos extends JanelaPadrao{
 	public JanelaListaPedidos() {
 		addTexto(0, 10, 550, 30, "Lista de Pedidos", new Font("Arial", Font.BOLD, 17), JLabel.CENTER, Color.WHITE);
 		
-		setVisible(true);
 		
+		addTexto(50,65,350,30,"Filtrar pedido por data e por itens:");
 		listaDePedidos = new ArrayList<>();
         listaDePedidos.add(new Pedido(1, "Pedido 1 - Descrição", "2023-12-01", "Item 1, Item 2"));
         listaDePedidos.add(new Pedido(2, "Pedido 2 - Descrição", "2023-12-05", "Item 3, Item 4"));
         listaDePedidos.add(new Pedido(3, "Pedido 3 - Descrição", "2023-12-10", "Item 5, Item 6"));
-
+        addBotaoDeVoltar();
         adicionarBotoesAtualizarExcluir();
         configurarTabela();
         adicionarDadosATabela();
         repaint();
+        setVisible(true);
 	}
 	private void configurarTabela() {
 		modeloTabela = new DefaultTableModel();
@@ -47,17 +48,17 @@ public class JanelaListaPedidos extends JanelaPadrao{
 
         tabelaPedidos = new JTable(modeloTabela); 
         JScrollPane scrollPane = new JScrollPane(tabelaPedidos); 
-        scrollPane.setBounds(50, 90, 450, 200);
+        scrollPane.setBounds(50, 150, 450, 200);
         add(scrollPane);
         
         campoFiltro = new JTextField();
-        campoFiltro.setBounds(50, 370, 200, 25);
+        campoFiltro.setBounds(50, 95, 325, 30);
         add(campoFiltro);
 
 
        
         JButton botaoFiltrar = new JButton("Filtrar");
-        botaoFiltrar.setBounds(270, 370, 100, 25);
+        botaoFiltrar.setBounds(400, 95, 100, 30);
         botaoFiltrar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -77,7 +78,7 @@ public class JanelaListaPedidos extends JanelaPadrao{
 	    }
 	}
 	  private void adicionarBotoesAtualizarExcluir() {
-		  JButton botaoAtualizar = addBotao(50, 310, 100, 30, "Atualizar", new ActionListener() {
+		  JButton botaoAtualizar = addBotao(150, 400, 100, 30, "Atualizar", new ActionListener() {
 			    @Override
 			    public void actionPerformed(ActionEvent e) {
 			        
@@ -104,7 +105,7 @@ public class JanelaListaPedidos extends JanelaPadrao{
 			    }
 			});
 
-			JButton botaoExcluir = addBotao(200, 310, 100, 30, "Excluir", new ActionListener() {
+			JButton botaoExcluir = addBotao(300, 400, 100, 30, "Excluir", new ActionListener() {
 			    @Override
 			    public void actionPerformed(ActionEvent e) {
 			        

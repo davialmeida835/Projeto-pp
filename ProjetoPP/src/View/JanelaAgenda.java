@@ -13,4 +13,7 @@ public class JanelaAgenda extends JanelaPadrao{
 	 
 		setVisible(true);
 	}
+	public static void main(String[] args) {
+		JanelaAgenda j =  new JanelaAgenda();
+	}
 }

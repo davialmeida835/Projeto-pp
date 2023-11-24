@@ -13,35 +13,71 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
+import javax.swing.JTextField;
 import javax.swing.table.AbstractTableModel;
 import javax.swing.table.DefaultTableModel;
 
 public class JanelaListaFornecedores extends JanelaPadrao{
 	
-	 private JTable tabelaFornecedores;
+	 	private JTable tabelaFornecedores;
 	    private FornecedorTableModel tableModel;
-
+	    private JTextField campoFiltro;
 	    public JanelaListaFornecedores() {
 	        addTexto(0, 10, 550, 30, "Lista de Fornecedores", new Font("Arial", Font.BOLD, 17), JLabel.CENTER, Color.BLACK);
-
+	        addTexto(50,65,250,30,"Filtrar fornecedor por nome:");
 	       
 	        tableModel = new FornecedorTableModel();
 	        tabelaFornecedores = new JTable(tableModel);
 	        JScrollPane scrollPane = new JScrollPane(tabelaFornecedores);
-	        scrollPane.setBounds(50, 50, 450, 200);
+	        scrollPane.setBounds(50, 150, 450, 200);
 	        add(scrollPane);
 
 	        adicionarBotaoAtualizar();
 	        adicionarBotaoDeletar();
 	        addBotaoDeVoltar();
-
+	        
+	        campoFiltro = new JTextField();
+	        campoFiltro.setBounds(50, 95, 325, 30);
+	        add(campoFiltro);
+	        adicionarBotaoFiltrar();
 	        setVisible(true);
 	        
+	    }
+	    private void adicionarBotaoFiltrar() {
+	        JButton botaoFiltrar = new JButton("Filtrar");
+	        botaoFiltrar.setBounds(400, 95, 100, 30);
+	        botaoFiltrar.addActionListener(new ActionListener() {
+	            @Override
+	            public void actionPerformed(ActionEvent e) {
+	                filtrarFornecedores();
+	            }
+	        });
+	        add(botaoFiltrar);
+	    }
+
+	    private void filtrarFornecedores() {
+	        String nomeFiltro = campoFiltro.getText().trim().toLowerCase();
+
+	        // Cria uma nova lista para armazenar os dados filtrados
+	        List<Object[]> dadosFiltrados = new ArrayList<>();
+
+	        // Itera sobre os dados existentes
+	        for (Object[] fornecedor : tableModel.getData()) {
+	            String nomeAtual = ((String) fornecedor[0]).toLowerCase();
+
+	            // Verifica se o nome atual contém o filtro
+	            if (nomeAtual.contains(nomeFiltro)) {
+	                dadosFiltrados.add(fornecedor);
+	            }
+	        }
+
+	        // Atualiza o modelo da tabela com os dados filtrados
+	        tableModel.setNewData(dadosFiltrados);
 	    }
 
 	    private void adicionarBotaoAtualizar() {
 	        JButton botaoAtualizar = new JButton("Atualizar");
-	        botaoAtualizar.setBounds(50, 270, 100, 30);
+	        botaoAtualizar.setBounds(150, 400, 100, 30);
 	        botaoAtualizar.addActionListener(new ActionListener() {
 	            @Override
 	            public void actionPerformed(ActionEvent e) {
@@ -53,7 +89,7 @@ public class JanelaListaFornecedores extends JanelaPadrao{
 
 	    private void adicionarBotaoDeletar() {
 	        JButton botaoDeletar = new JButton("Deletar");
-	        botaoDeletar.setBounds(200, 270, 100, 30);
+	        botaoDeletar.setBounds(300, 400, 100, 30);
 	        botaoDeletar.addActionListener(new ActionListener() {
 	            @Override
 	            public void actionPerformed(ActionEvent e) {
@@ -111,6 +147,7 @@ public class JanelaListaFornecedores extends JanelaPadrao{
 	            JOptionPane.showMessageDialog(this, "Selecione um fornecedor para deletar.", "Aviso", JOptionPane.WARNING_MESSAGE);
 	        }
 	    }
+	    
 
 	    
 	    private class FornecedorTableModel extends AbstractTableModel {
@@ -120,6 +157,15 @@ public class JanelaListaFornecedores extends JanelaPadrao{
 	                {"Fornecedor 2", "987-654-3210", "Material C, Material D"}
 	              
 	        };
+	        
+	        public Object[][] getData() {
+	            return data;
+	        }
+
+	        public void setNewData(List<Object[]> newData) {
+	            data = newData.toArray(new Object[0][]);
+	            fireTableDataChanged();
+	        }
 
 	        @Override
 	        public int getRowCount() {
