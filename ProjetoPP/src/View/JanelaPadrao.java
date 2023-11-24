@@ -22,7 +22,7 @@ public class JanelaPadrao extends JFrame{
 	
 	
 	public JanelaPadrao() {
-		Color corAzulEscuro = Color.decode("#DFB7B5");
+		Color corAzulEscuro = Color.decode("#FAD4A5");
 		getContentPane().setBackground(corAzulEscuro);
 		setResizable(false);
 		setTitle("Cantinho da Costura");
