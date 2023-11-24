@@ -1,13 +1,9 @@
-/View/
-/Main/
 /Controller/
 /DAO/
-/Model/
-/Util/
-/excecoes/
-<<<<<<< HEAD
-/Ouvintes/
-=======
 /DTO/
->>>>>>> 78cfeddec54a1a1d71279054a792e4ea98299567
+/Main/
+/Model/
 /Resources/
+/Util/
+/View/
+/excecoes/
