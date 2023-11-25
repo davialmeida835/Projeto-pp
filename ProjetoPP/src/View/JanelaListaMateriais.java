@@ -12,10 +12,10 @@ import DAO.Persistencia;
 import Model.CentralDeInformacoes;
 import Model.Material;
 
-public class JanelaListarMateriais extends JanelaPadrao{
+public class JanelaListaMateriais extends JanelaPadrao{
 
 	public static void main(String[] args) {
-		new JanelaListarMateriais();
+		new JanelaListaMateriais();
 	}
 	
 	private JTable tabela;
@@ -24,7 +24,7 @@ public class JanelaListarMateriais extends JanelaPadrao{
 		return tabela;
 	}
 	
-	public JanelaListarMateriais() {
+	public JanelaListaMateriais() {
 		addTexto(0, 30, 550, 30, "Lista de Materiais", new Font("Arial", Font.BOLD, 17), JLabel.CENTER, Color.BLACK);		
 
 		adicionarTabela();

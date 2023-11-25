@@ -2,6 +2,7 @@ package Controller;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Arrays;
 
 import javax.mail.internet.AddressException;
 import javax.mail.internet.InternetAddress;
@@ -69,6 +70,10 @@ public class OuvinteBotaoCadastrarCliente implements ActionListener {
 			Persistencia.salvarCentral(central, "central");
 			cadastrarCliente.dispose();
 			new JanelaDeCadastroCliente();
+			
+			for (Cliente c : Persistencia.recuperarCentral("central").getClientes()) {
+				System.out.println(c.getNome());
+			}
 		}
 	}
 

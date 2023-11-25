@@ -6,14 +6,22 @@ public class Material {
 	private double tamanho;
 	private boolean disponivel;
 	private TipoDeMaterial tipoDeMaterial;
+	private double preco;
 	
-	
-	
-	public Material(String nome, double tamanho, boolean disponivel, TipoDeMaterial tipoDeMaterial) {
+	public Material(String nome, double tamanho, boolean disponivel, TipoDeMaterial tipoDeMaterial, double preco) {
 		this.nome = nome;
 		this.tamanho = tamanho;
 		this.disponivel = disponivel;
 		this.tipoDeMaterial = tipoDeMaterial;
+		this.preco = preco;
+	}
+	
+	public double getPreco() {
+		return preco;
+	}
+
+	public void setPreco(double preco) {
+		this.preco = preco;
 	}
 
 	public boolean isDisponivel() {
@@ -31,9 +39,6 @@ public class Material {
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-	
-	
-	
 	
 	public double getTamanho() {
 		return tamanho;

@@ -31,7 +31,7 @@ public class OuvinteCadastrarUsuario implements ActionListener{
 		String data = janelaDeCadastro.getCampoDoNatalicio().getText();
 		try {
 			Validar.validarDados(email, senha, nome, telefone, data);
-			CentralDeInformacoes central = new CentralDeInformacoes();
+			CentralDeInformacoes central = CentralDeInformacoes.getInstance();
 			Usuario usuario = new Usuario(email, senha, nome, telefone, data);
 			central.setUsuario(usuario);
 			Persistencia.salvarCentral(central, "central");

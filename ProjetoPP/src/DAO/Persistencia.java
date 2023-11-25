@@ -41,7 +41,7 @@ public class Persistencia {
 			CentralDeInformacoes central = (CentralDeInformacoes) xStream.fromXML(leitor);
 			return central;
 		} catch (FileNotFoundException e) {
-			return new CentralDeInformacoes();
+			return CentralDeInformacoes.getInstance();
 		}
 
 	}
