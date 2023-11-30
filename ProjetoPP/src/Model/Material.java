@@ -55,6 +55,9 @@ public class Material {
 	public void setTipoDeMaterial(TipoDeMaterial tipoDeMaterial) {
 		this.tipoDeMaterial = tipoDeMaterial;
 	}
+	public String toString() {
+        return nome;
+    }
 	
 	
 }

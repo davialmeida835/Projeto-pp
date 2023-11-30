@@ -14,7 +14,8 @@ public class CentralDeInformacoes {
 	private List<Cliente> clientes = new ArrayList<>();
 	private List<TipoDeMaterial> tipoDeMateriais = new ArrayList<>();
 	private List<Material> materiais = new ArrayList<>();
-
+	private List<Fornecedor> fornecedores = new ArrayList<>();
+	
 	public static CentralDeInformacoes getInstance() {
 		if (instance == null) {
 			synchronized (CentralDeInformacoes.class) {
@@ -57,4 +58,11 @@ public class CentralDeInformacoes {
 	public List<Material> getMateriais() {
 		return materiais;
 	}
+	public void addFornecedor(Fornecedor fornecedor) {
+        fornecedores.add(fornecedor);
+    }
+
+    public List<Fornecedor> getFornecedores() {
+        return fornecedores;
+    }
 }
