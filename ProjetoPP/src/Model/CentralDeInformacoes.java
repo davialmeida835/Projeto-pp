@@ -3,6 +3,8 @@ package Model;
 import java.util.ArrayList;
 import java.util.List;
 
+import DTO.FornecedorDTO;
+
 public class CentralDeInformacoes {
 
 	private volatile static CentralDeInformacoes instance;
@@ -14,7 +16,7 @@ public class CentralDeInformacoes {
 	private List<Cliente> clientes = new ArrayList<>();
 	private List<TipoDeMaterial> tipoDeMateriais = new ArrayList<>();
 	private List<Material> materiais = new ArrayList<>();
-	private List<Fornecedor> fornecedores = new ArrayList<>();
+	private List<FornecedorDTO> fornecedores = new ArrayList<>();
 	
 	public static CentralDeInformacoes getInstance() {
 		if (instance == null) {
@@ -58,11 +60,11 @@ public class CentralDeInformacoes {
 	public List<Material> getMateriais() {
 		return materiais;
 	}
-	public void addFornecedor(Fornecedor fornecedor) {
+	public void addFornecedor(FornecedorDTO fornecedor) {
         fornecedores.add(fornecedor);
     }
 
-    public List<Fornecedor> getFornecedores() {
+    public List<FornecedorDTO> getFornecedores() {
         return fornecedores;
     }
 }

@@ -1,7 +1,9 @@
 package Controller;
 
+import DAO.FornecedorDAO;
+import DTO.FornecedorDTO;
 import Model.CentralDeInformacoes;
-import Model.Fornecedor;
+
 
 public class FornecedorController {
 	  private CentralDeInformacoes central;
@@ -10,24 +12,22 @@ public class FornecedorController {
 	        this.central = central;
 	    }
 
-	    public boolean cadastrarFornecedor(String nome, String telefone, String materiaisFornecidos) {
-	        if (!fornecedorJaCadastrado(nome, telefone)) {
-	            Fornecedor fornecedor = new Fornecedor(nome, telefone, materiaisFornecidos);
-	            central.addFornecedor(fornecedor);
-	            Persistencia.salvarCentral(central, "central");
-	            return true; 
+	
+
+	  
+
+	    public boolean cadastrarFornecedor(FornecedorDTO fornecedorDTO) {
+	        FornecedorDAO fornecedorDAO = new FornecedorDAO(central);
+
+	        if (!fornecedorDAO.JaCadastradoFornecedor(fornecedorDTO)) {
+	            fornecedorDAO.cadastrarFornecedor(fornecedorDTO);
+	            return true;
 	        }
-	        return false; 
+
+	        return false;
 	    }
 
-	    public boolean fornecedorJaCadastrado(String nome, String telefone) {
-	        for (Fornecedor fornecedor : central.getFornecedores()) {
-	            if (fornecedor.getNome().equalsIgnoreCase(nome) && fornecedor.getTelefone().equals(telefone)) {
-	                return true; 
-	            }
-	        }
-	        return false; 
-	    }
+	  
 	
 	
 

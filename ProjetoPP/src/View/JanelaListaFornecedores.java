@@ -19,7 +19,7 @@ import javax.swing.table.AbstractTableModel;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableRowSorter;
 
-
+import DTO.FornecedorDTO;
 import Model.CentralDeInformacoes;
 import Model.Fornecedor;
 
@@ -34,11 +34,11 @@ public class JanelaListaFornecedores extends JanelaPadrao{
 	        addTexto(0, 10, 550, 30, "Lista de Fornecedores", new Font("Arial", Font.BOLD, 17), JLabel.CENTER, Color.BLACK);
 	        addTexto(50,65,250,30,"Filtrar fornecedor por nome:");
 	        repaint();
-	        List<Fornecedor> fornecedores = central.getFornecedores();
+	        List<FornecedorDTO> fornecedores = central.getFornecedores();
 
 	       
 	        List<Object[]> dadosFornecedores = new ArrayList<>();
-	        for (Fornecedor fornecedor : fornecedores) {
+	        for (FornecedorDTO fornecedor : fornecedores) {
 	            dadosFornecedores.add(new Object[]{fornecedor.getNome(), fornecedor.getTelefone(), fornecedor.getMateriaisFornecidos()});
 	        }
 
@@ -130,8 +130,8 @@ public class JanelaListaFornecedores extends JanelaPadrao{
 	                tableModel.setValueAt(novosMateriais, linhaSelecionada, 2);
 
 	                // Atualiza na lista de fornecedores
-	                List<Fornecedor> fornecedores = central.getFornecedores();
-	                for (Fornecedor fornecedor : fornecedores) {
+	                List<FornecedorDTO> fornecedores = central.getFornecedores();
+	                for (FornecedorDTO fornecedor : fornecedores) {
 	                    if (fornecedor.getNome().equals(nomeAtual) && fornecedor.getTelefone().equals(telefoneAtual)) {
 	                        fornecedor.setNome(novoNome);
 	                        fornecedor.setTelefone(novoTelefone);
@@ -163,7 +163,7 @@ public class JanelaListaFornecedores extends JanelaPadrao{
 	                tableModel.removeRow(linhaSelecionada);
 
 	               
-	                List<Fornecedor> fornecedores = central.getFornecedores();
+	                List<FornecedorDTO> fornecedores = central.getFornecedores();
 	                fornecedores.removeIf(f -> f.getNome().equals(nome) && f.getTelefone().equals(telefone));
 	                Controller.Persistencia.salvarCentral(central, "central");
 

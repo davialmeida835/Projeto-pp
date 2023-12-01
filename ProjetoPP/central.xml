@@ -3,15 +3,15 @@
   <tipoDeMateriais/>
   <materiais/>
   <fornecedores>
-    <Model.Fornecedor>
+    <DTO.FornecedorDTO>
       <nome>davi</nome>
-      <telefone>(31) 23123-1231</telefone>
-      <materiaisFornecidos>sdasdasd</materiaisFornecidos>
-    </Model.Fornecedor>
-    <Model.Fornecedor>
-      <nome>sadasd</nome>
+      <telefone>(23) 42342-3423</telefone>
+      <materiaisFornecidos>davi2312142</materiaisFornecidos>
+    </DTO.FornecedorDTO>
+    <DTO.FornecedorDTO>
+      <nome>sdasd</nome>
       <telefone>(42) 34234-2342</telefone>
       <materiaisFornecidos>sdasdasd</materiaisFornecidos>
-    </Model.Fornecedor>
+    </DTO.FornecedorDTO>
   </fornecedores>
 </Model.CentralDeInformacoes>

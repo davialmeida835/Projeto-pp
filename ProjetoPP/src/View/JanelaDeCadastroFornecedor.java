@@ -64,38 +64,33 @@ public class JanelaDeCadastroFornecedor extends JanelaPadrao{
         setVisible(true);
     }
     private void cadastrarFornecedor() {
-        String nome = campoNome.getText();
-        String telefone = campoTelefone.getText();
-        String materiais = areaMateriais.getText();
-        
         FornecedorDTO fornecedorDTO = obterDadosFornecedor();
-        FornecedorController fornecedorController =  new FornecedorController(central);
-        
-        if (!nome.isEmpty() && !telefone.isEmpty() && !materiais.isEmpty()) {
-        	if(!fornecedorController.fornecedorJaCadastrado(nome, telefone)) {
-        		if (fornecedorController.cadastrarFornecedor(
-                         fornecedorDTO.getNome(),
-                         fornecedorDTO.getTelefone(),
-                         fornecedorDTO.getMateriaisFornecidos())) {
-                     JOptionPane.showMessageDialog(this, "Fornecedor Cadastrado Com Sucesso");
-                     campoNome.setText("");
-                     campoTelefone.setText("");
-                     areaMateriais.setText("");
-                 } 
-        	
-        	} else {
-                 JOptionPane.showMessageDialog(this, "Fornecedor já cadastrado.",
-                         "Erro no Cadastro", JOptionPane.ERROR_MESSAGE);}   
-        }else {
-             JOptionPane.showMessageDialog(this, "Preencha todos os campos antes de cadastrar.",
-                     "Erro no Cadastro", JOptionPane.ERROR_MESSAGE);
-         	}
+        FornecedorController fornecedorController = new FornecedorController(central);
+
+        if (camposPreenchidos()) {
+            if (!fornecedorController.cadastrarFornecedor(fornecedorDTO)) {
+                JOptionPane.showMessageDialog(this, "Fornecedor já cadastrado.",
+                        "Erro no Cadastro", JOptionPane.ERROR_MESSAGE);
+            } else {
+                JOptionPane.showMessageDialog(this, "Fornecedor Cadastrado Com Sucesso");
+                limparCampos();
+            }
+        } else {
+            JOptionPane.showMessageDialog(this, "Preencha todos os campos antes de cadastrar.",
+                    "Erro no Cadastro", JOptionPane.ERROR_MESSAGE);
+        }
     }
-    
-         
-            
-    
-    
+
+    private boolean camposPreenchidos() {
+        return !campoNome.getText().isEmpty() && !campoTelefone.getText().isEmpty() && !areaMateriais.getText().isEmpty();
+    }
+
+    private void limparCampos() {
+        campoNome.setText("");
+        campoTelefone.setText("");
+        areaMateriais.setText("");
+    }
+
     private FornecedorDTO obterDadosFornecedor() {
         String nome = campoNome.getText();
         String telefone = campoTelefone.getText();
@@ -103,9 +98,6 @@ public class JanelaDeCadastroFornecedor extends JanelaPadrao{
 
         return new FornecedorDTO(nome, telefone, materiais);
     }
-        
-    
-
     
     private void adicionarCampoDoTelefone() {
 		try {
