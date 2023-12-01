@@ -8,7 +8,7 @@ import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 import javax.swing.border.LineBorder;
 
-import Controller.OuvinteBotaoDeLogin;
+import Controller.LoginController;
 import Controller.OuvinteTirarTextoDeTextField;
 import Controller.Persistencia;
 import Model.CentralDeInformacoes;
@@ -40,7 +40,7 @@ public class JanelaDeLogin extends JanelaPadrao {
 
 		adicionarCampoDeSenha();
 		
-		addBotao(220, 350, 110, 30, "Entrar", new OuvinteBotaoDeLogin(this));
+		addBotao(220, 350, 110, 30, "Entrar", new LoginController(this));
 		addIconeTelaCadastroELogin();
 		addWallpaper();
 		setVisible(true);

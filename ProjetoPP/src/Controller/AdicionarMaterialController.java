@@ -13,11 +13,11 @@ import Model.Material;
 import Model.TipoDeMaterial;
 import View.JanelaAdicionarMateriais;
 
-public class OuvinteAdicionarMaterial implements ActionListener{
+public class AdicionarMaterialController implements ActionListener{
 
 	private JanelaAdicionarMateriais janela;
 	
-	public OuvinteAdicionarMaterial(JanelaAdicionarMateriais janela) {
+	public AdicionarMaterialController(JanelaAdicionarMateriais janela) {
 		this.janela = janela;
 	}
 	

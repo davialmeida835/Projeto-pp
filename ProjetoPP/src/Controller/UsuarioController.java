@@ -12,11 +12,11 @@ import Model.Validar;
 import View.JanelaDeCadastroUsuario;
 import View.JanelaDeLogin;
 
-public class OuvinteCadastrarUsuario implements ActionListener{
+public class UsuarioController implements ActionListener{
 
 	private JanelaDeCadastroUsuario janelaDeCadastro;
 
-	public OuvinteCadastrarUsuario(JanelaDeCadastroUsuario janelaDeCadastro) {
+	public UsuarioController(JanelaDeCadastroUsuario janelaDeCadastro) {
 		this.janelaDeCadastro = janelaDeCadastro;
 	}
 

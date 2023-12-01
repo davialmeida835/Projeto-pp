@@ -11,7 +11,7 @@ import javax.swing.JTextField;
 import javax.swing.border.LineBorder;
 import javax.swing.text.MaskFormatter;
 
-import Controller.OuvinteCadastrarUsuario;
+import Controller.UsuarioController;
 import Controller.OuvinteTirarTextoDeTextField;
 import Model.Util;
 
@@ -34,7 +34,7 @@ public class JanelaDeCadastroUsuario extends JanelaPadrao {
 		addTexto(295, 325, 75, 20, "Natalício:");
 		campoDeEmail = addCampoDeTexto(125, 185, 300, 25, new LineBorder(Color.BLACK, 1), "Digite seu e-mail"); 
 		campoDoNome = addCampoDeTexto(125, 295, 300, 25, new LineBorder(Color.BLACK, 1), "Digite seu nome completo"); 
-		addBotao(220, 400, 110, 30, "Cadastrar", new OuvinteCadastrarUsuario(this));
+		addBotao(220, 400, 110, 30, "Cadastrar", new UsuarioController(this));
 		adicionarCampoDoTelefone();
 		adicionarCampoDeSenha();
 		adicionarCampoDaDataDeNascimento();

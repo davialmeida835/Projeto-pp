@@ -1,11 +1,13 @@
 package DAO;
 
+import java.util.Iterator;
+
 import javax.swing.JOptionPane;
 
 import Controller.Persistencia;
-import DTO.ClienteDTO;
 import DTO.MaterialDTO;
 import Model.CentralDeInformacoes;
+import Model.MaterialIterator;
 
 public class MaterialDAO implements MaterialDAOIf{
 
@@ -54,5 +56,7 @@ public class MaterialDAO implements MaterialDAOIf{
 		
 	}
 
-	
+//	public Iterator<MaterialDTO> iterator(){
+//		return new MaterialIterator(CentralDeInformacoes.getInstance().getMateriais().toArray());
+//	}
 }

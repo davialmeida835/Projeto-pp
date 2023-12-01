@@ -9,11 +9,11 @@ import Model.CentralDeInformacoes;
 import View.JanelaDeLogin;
 import View.JanelaDeMenu;
 
-public class OuvinteBotaoDeLogin implements ActionListener {
+public class LoginController implements ActionListener {
 
 	private JanelaDeLogin janelaDeLogin;
 
-	public OuvinteBotaoDeLogin(JanelaDeLogin janelaDeLogin) {
+	public LoginController(JanelaDeLogin janelaDeLogin) {
 		this.janelaDeLogin = janelaDeLogin;
 	}
 

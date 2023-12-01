@@ -10,7 +10,7 @@ import javax.swing.JScrollPane;
 import javax.swing.JTextField;
 import javax.swing.border.LineBorder;
 
-import Controller.OuvinteAdicionarMaterial;
+import Controller.AdicionarMaterialController;
 import Model.TipoDeMaterial;
 
 public class JanelaAdicionarMateriais extends JanelaPadrao{
@@ -78,7 +78,7 @@ public class JanelaAdicionarMateriais extends JanelaPadrao{
 
 //		quantidade = addCampoDeTexto(125, 340, 145, 25, new LineBorder(Color.BLACK, 1), "Digite a quantidade");
 		tamanho = addCampoDeTexto(125, 290, 300, 25, new LineBorder(Color.BLACK, 1), "Digite o tamanho do material(m)");
-		addBotao(220, 400, 110, 30, "Confirmar", new OuvinteAdicionarMaterial(this));
+		addBotao(220, 400, 110, 30, "Confirmar", new AdicionarMaterialController(this));
 		addBotaoDeVoltar();
 		addWallpaper();
 		setVisible(true);
