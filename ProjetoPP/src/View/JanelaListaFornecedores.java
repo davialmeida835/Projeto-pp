@@ -5,6 +5,7 @@ import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import javax.swing.JButton;
@@ -14,10 +15,11 @@ import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.JTextField;
 import javax.swing.RowFilter;
+import javax.swing.table.AbstractTableModel;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableRowSorter;
 
-import Controller.Persistencia;
+
 import Model.CentralDeInformacoes;
 import Model.Fornecedor;
 
@@ -25,7 +27,7 @@ public class JanelaListaFornecedores extends JanelaPadrao{
 	
 		private JTable tabelaFornecedores;
 		private DefaultTableModel tableModel;
-		private CentralDeInformacoes central= Persistencia.recuperarCentral("central");
+		private CentralDeInformacoes central= Controller.Persistencia.recuperarCentral("central");
 
 	    private JTextField campoFiltro;
 	    public JanelaListaFornecedores() {
@@ -138,7 +140,7 @@ public class JanelaListaFornecedores extends JanelaPadrao{
 	                        break;
 	                    }
 	                }
-	                Persistencia.salvarCentral(central, "central");
+	                Controller.Persistencia.salvarCentral(central, "central");
 	                JOptionPane.showMessageDialog(this, "Fornecedor atualizado com sucesso.", "Atualização Concluída", JOptionPane.INFORMATION_MESSAGE);
 	            }
 	        } else {
@@ -163,7 +165,7 @@ public class JanelaListaFornecedores extends JanelaPadrao{
 	               
 	                List<Fornecedor> fornecedores = central.getFornecedores();
 	                fornecedores.removeIf(f -> f.getNome().equals(nome) && f.getTelefone().equals(telefone));
-	                Persistencia.salvarCentral(central, "central");
+	                Controller.Persistencia.salvarCentral(central, "central");
 
 	                JOptionPane.showMessageDialog(this, "Fornecedor deletado com sucesso.", "Deleção Concluída", JOptionPane.INFORMATION_MESSAGE);
 	            }

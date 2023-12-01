@@ -43,7 +43,7 @@ public class JanelaDeCadastraPedido extends JanelaPadrao{
 		addTexto(70,140,100,30,"Materiais:");
 		addTexto(70,70,200,20,"Tipo de Roupa:");
 		addTexto(300,140,150,30,"Tamanho:");
-		List<Material> materiais = obterMateriais();
+//		List<Material> materiais = obterMateriais();
 		JComboBox<TamanhoRoupa> comboBoxTamanhoRoupa = new JComboBox<>(TamanhoRoupa.values());
         comboBoxTamanhoRoupa.setBounds(380, 140, 90, 25);
         add(comboBoxTamanhoRoupa);
@@ -54,20 +54,20 @@ public class JanelaDeCadastraPedido extends JanelaPadrao{
 	    jListMateriais = new JList<>(listModel);
 	    jListMateriais.setSelectionMode(ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
 
-	    CentralDeInformacoes centralDeInfo = CentralDeInformacoes.getInstance();
-	       materiais = centralDeInfo.getMateriais();
-	       for (Material material : materiais) {
-	           listModel.addElement(material);
-	        }
+//	    CentralDeInformacoes centralDeInfo = CentralDeInformacoes.getInstance();
+//	       materiais = centralDeInfo.getMateriais();
+//	       for (Material material : materiais) {
+//	           listModel.addElement(material);
+//	        }
 
-	     TipoDeMaterial tipo1 = new TipoDeMaterial("Tipo1");
-	     TipoDeMaterial tipo2 = new TipoDeMaterial("Tipo2");
-	     TipoDeMaterial tipo3 = new TipoDeMaterial("Tipo3");
-
-	
-	     listModel.addElement(new Material("Material1", 30.0, true, tipo1, 25.0));
-	     listModel.addElement(new Material("Material2", 20.0, false, tipo2, 15.0));
-	     listModel.addElement(new Material("Material3", 25.0, true, tipo3, 20.0));
+//	     TipoDeMaterial tipo1 = new TipoDeMaterial("Tipo1");
+//	     TipoDeMaterial tipo2 = new TipoDeMaterial("Tipo2");
+//	     TipoDeMaterial tipo3 = new TipoDeMaterial("Tipo3");
+//
+//	
+//	     listModel.addElement(new Material("Material1", 30.0, true, tipo1, 25.0));
+//	     listModel.addElement(new Material("Material2", 20.0, false, tipo2, 15.0));
+//	     listModel.addElement(new Material("Material3", 25.0, true, tipo3, 20.0));
 
 	     JScrollPane scrollPaneMateriais = new JScrollPane(jListMateriais);
 	     scrollPaneMateriais.setBounds(70, 170, 120, 100);
@@ -190,13 +190,13 @@ public class JanelaDeCadastraPedido extends JanelaPadrao{
         return dados;
     
     }
-	  private List<Material> obterMateriais() {
-		  List<Material> materiais = new ArrayList<>();
-	        materiais.add(new Material("Material1", 30.0, true, new TipoDeMaterial("Tipo1"), 25.0));
-	        materiais.add(new Material("Material2", 20.0, false, new TipoDeMaterial("Tipo2"), 15.0));
-	        materiais.add(new Material("Material3", 25.0, true, new TipoDeMaterial("Tipo3"), 20.0));
-	        return materiais;
-	    }
+//	  private List<Material> obterMateriais() {
+////		  List<Material> materiais = new ArrayList<>();
+////	        materiais.add(new Material("Material1", 30.0, true, new TipoDeMaterial("Tipo1"), 25.0));
+////	        materiais.add(new Material("Material2", 20.0, false, new TipoDeMaterial("Tipo2"), 15.0));
+////	        materiais.add(new Material("Material3", 25.0, true, new TipoDeMaterial("Tipo3"), 20.0));
+////	        return materiais;
+//	    }
 
     private void adicionarComponentesQuantidade() {
         addTexto(300, 210, 150, 20, "Quantidade:");

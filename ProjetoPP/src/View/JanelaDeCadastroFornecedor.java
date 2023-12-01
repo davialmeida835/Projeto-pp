@@ -6,6 +6,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.text.ParseException;
 
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFormattedTextField;
 import javax.swing.JLabel;
@@ -15,7 +16,10 @@ import javax.swing.JTextField;
 import javax.swing.border.LineBorder;
 import javax.swing.text.MaskFormatter;
 
+import Controller.FornecedorController;
+import Controller.OuvinteDoBotaoDeVoltarParaMenu;
 import Controller.Persistencia;
+import DTO.FornecedorDTO;
 import Model.CentralDeInformacoes;
 import Model.Fornecedor;
 
@@ -24,7 +28,7 @@ public class JanelaDeCadastroFornecedor extends JanelaPadrao{
 	private JTextField campoNome;
     private JTextField campoTelefone;
     private JTextArea areaMateriais;
-    private  CentralDeInformacoes central=Persistencia.recuperarCentral("central");
+    private  CentralDeInformacoes central=Controller.Persistencia.recuperarCentral("central");
     public JanelaDeCadastroFornecedor() {
         addTexto(0, 10, 550, 30, "Cadastro do Fornecedor", new Font("Arial", Font.BOLD, 17), JLabel.CENTER, Color.BLACK);
 
@@ -63,44 +67,41 @@ public class JanelaDeCadastroFornecedor extends JanelaPadrao{
         String nome = campoNome.getText();
         String telefone = campoTelefone.getText();
         String materiais = areaMateriais.getText();
-
-     
+        
+        FornecedorDTO fornecedorDTO = obterDadosFornecedor();
+        FornecedorController fornecedorController =  new FornecedorController(central);
+        
         if (!nome.isEmpty() && !telefone.isEmpty() && !materiais.isEmpty()) {
-         
-            if (!fornecedorJaExiste(nome, telefone)) {
-              
-                Fornecedor fornecedor = new Fornecedor(nome, telefone, materiais);
-
-                central.addFornecedor(fornecedor);
-               
-                Persistencia.salvarCentral(central, "central");
-                JOptionPane.showMessageDialog(this, "Fornecedor Cadastrado Com Sucesso");
-                campoNome.setText("");
-                campoTelefone.setText("");
-                areaMateriais.setText("");
-                
-              
-
-            } else {
-               JOptionPane.showMessageDialog(this, "Fornecedor já cadastrado.",
-                        "Erro no Cadastro", JOptionPane.ERROR_MESSAGE);
-            }
-        } else {
-           
-            JOptionPane.showMessageDialog(this, "Preencha todos os campos antes de cadastrar.",
-                    "Erro no Cadastro", JOptionPane.ERROR_MESSAGE);
-        }
+        	if(!fornecedorController.fornecedorJaCadastrado(nome, telefone)) {
+        		if (fornecedorController.cadastrarFornecedor(
+                         fornecedorDTO.getNome(),
+                         fornecedorDTO.getTelefone(),
+                         fornecedorDTO.getMateriaisFornecidos())) {
+                     JOptionPane.showMessageDialog(this, "Fornecedor Cadastrado Com Sucesso");
+                     campoNome.setText("");
+                     campoTelefone.setText("");
+                     areaMateriais.setText("");
+                 } 
+        	
+        	} else {
+                 JOptionPane.showMessageDialog(this, "Fornecedor já cadastrado.",
+                         "Erro no Cadastro", JOptionPane.ERROR_MESSAGE);}   
+        }else {
+             JOptionPane.showMessageDialog(this, "Preencha todos os campos antes de cadastrar.",
+                     "Erro no Cadastro", JOptionPane.ERROR_MESSAGE);
+         	}
     }
-    private boolean fornecedorJaExiste(String nome, String telefone) {
-      
-       central = CentralDeInformacoes.getInstance();
-        for (Fornecedor fornecedor : central.getFornecedores()) {
+    
+         
             
-            if (fornecedor.getNome().equalsIgnoreCase(nome) && fornecedor.getTelefone().equals(telefone)) {
-                return true; 
-            }
-        }
-        return false; 
+    
+    
+    private FornecedorDTO obterDadosFornecedor() {
+        String nome = campoNome.getText();
+        String telefone = campoTelefone.getText();
+        String materiais = areaMateriais.getText();
+
+        return new FornecedorDTO(nome, telefone, materiais);
     }
         
     

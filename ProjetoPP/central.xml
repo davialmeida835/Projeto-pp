@@ -1,0 +1,17 @@
+<Model.CentralDeInformacoes>
+  <clientes/>
+  <tipoDeMateriais/>
+  <materiais/>
+  <fornecedores>
+    <Model.Fornecedor>
+      <nome>davi</nome>
+      <telefone>(31) 23123-1231</telefone>
+      <materiaisFornecidos>sdasdasd</materiaisFornecidos>
+    </Model.Fornecedor>
+    <Model.Fornecedor>
+      <nome>sadasd</nome>
+      <telefone>(42) 34234-2342</telefone>
+      <materiaisFornecidos>sdasdasd</materiaisFornecidos>
+    </Model.Fornecedor>
+  </fornecedores>
+</Model.CentralDeInformacoes>
