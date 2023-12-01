@@ -5,13 +5,12 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JOptionPane;
 
-import DAO.Persistencia;
 import Model.CentralDeInformacoes;
+import Model.DadosInvalidosException;
 import Model.Usuario;
-import Util.Validar;
+import Model.Validar;
 import View.JanelaDeCadastroUsuario;
 import View.JanelaDeLogin;
-import excecoes.DadosInvalidosException;
 
 public class OuvinteCadastrarUsuario implements ActionListener{
 

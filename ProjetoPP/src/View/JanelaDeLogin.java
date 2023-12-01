@@ -10,7 +10,7 @@ import javax.swing.border.LineBorder;
 
 import Controller.OuvinteBotaoDeLogin;
 import Controller.OuvinteTirarTextoDeTextField;
-import DAO.Persistencia;
+import Controller.Persistencia;
 import Model.CentralDeInformacoes;
 
 public class JanelaDeLogin extends JanelaPadrao {
@@ -49,7 +49,7 @@ public class JanelaDeLogin extends JanelaPadrao {
 	private void adicionarCampoDeSenha() {
 		campoDaSenha = new JPasswordField();
 		campoDaSenha.setEchoChar((char) 0);
-		campoDaSenha.setFont(Util.Util.FONTE_PADRAO);
+		campoDaSenha.setFont(Model.Util.FONTE_PADRAO);
 		campoDaSenha.setText("Digite sua senha");
 		campoDaSenha.addFocusListener(new OuvinteTirarTextoDeTextField("Digite sua senha"));
 		campoDaSenha.setBorder(new LineBorder(Color.BLACK, 1));

@@ -16,7 +16,7 @@ import javax.swing.text.MaskFormatter;
 
 import Controller.OuvinteDoBotaoDeVoltarParaMenu;
 import Controller.OuvinteTirarTextoDeTextField;
-import Util.Util;
+import Model.Util;
 
 public class JanelaPadrao extends JFrame{
 	
@@ -25,7 +25,7 @@ public class JanelaPadrao extends JFrame{
 		Color corAzulEscuro = Color.decode("#FAD4A5");
 		getContentPane().setBackground(corAzulEscuro);
 		setResizable(false);
-		setTitle("Cantinho da Costura");
+		setTitle("Gerenciador de Confecções");
 		setSize(550, 500);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setLocationRelativeTo(null);

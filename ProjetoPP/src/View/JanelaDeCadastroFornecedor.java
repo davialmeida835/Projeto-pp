@@ -77,7 +77,7 @@ public class JanelaDeCadastroFornecedor extends JanelaPadrao{
 			MaskFormatter mf = new MaskFormatter("(##) #####-####");
 			campoTelefone = new JFormattedTextField(mf);
 			campoTelefone.setBorder(new LineBorder(Color.BLACK, 1));
-			campoTelefone.setFont(Util.Util.FONTE_PADRAO);
+			campoTelefone.setFont(Model.Util.FONTE_PADRAO);
 			campoTelefone.setHorizontalAlignment(JTextField.CENTER);
 			campoTelefone.setBounds(125, 200, 150, 20);
 			add(campoTelefone);

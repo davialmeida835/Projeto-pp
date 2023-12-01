@@ -80,7 +80,7 @@ public class JanelaDeCadastroCliente extends JanelaPadrao {
 	private void addBotoesDeTipoDePesso() {
 		pessoaFisica = new JLabel("Escolha uma opção:");
 		pessoaFisica.setBounds(125, 150, 190, 20);
-		pessoaFisica.setFont(Util.Util.FONTE_PADRAO);
+		pessoaFisica.setFont(Model.Util.FONTE_PADRAO);
 		pessoaFisica.setForeground(Color.WHITE);
 
 		add(pessoaFisica);
@@ -89,14 +89,14 @@ public class JanelaDeCadastroCliente extends JanelaPadrao {
 		caixaDePessoaFisica = new JRadioButton("Pessoa Física");
 		caixaDePessoaFisica.setOpaque(false);
 		caixaDePessoaFisica.setForeground(Color.WHITE);
-		caixaDePessoaFisica.setFont(Util.Util.FONTE_PADRAO);
+		caixaDePessoaFisica.setFont(Model.Util.FONTE_PADRAO);
 		
 		caixaDePessoaFisica.setBounds(120, 125, 160, 20);
 		caixaDePessoaFisica.addActionListener(o);
 		add(caixaDePessoaFisica);
 		caixaDePessoaJuridica = new JRadioButton("Pessoa Jurídica");
 		caixaDePessoaJuridica.setForeground(Color.WHITE);
-		caixaDePessoaJuridica.setFont(Util.Util.FONTE_PADRAO);
+		caixaDePessoaJuridica.setFont(Model.Util.FONTE_PADRAO);
 		caixaDePessoaJuridica.setOpaque(false);
 		caixaDePessoaJuridica.setBounds(280, 125, 165, 20);
 		caixaDePessoaJuridica.addActionListener(o);
@@ -114,7 +114,7 @@ public class JanelaDeCadastroCliente extends JanelaPadrao {
 		tipoDePessoa.addFocusListener(new OuvinteTirarTextoDeTextField("Digite o identificador do cliente"));
 		tipoDePessoa.addKeyListener(o);
 		tipoDePessoa.setBorder(new LineBorder(Color.BLACK, 1));
-		tipoDePessoa.setFont(Util.Util.FONTE_PADRAO);
+		tipoDePessoa.setFont(Model.Util.FONTE_PADRAO);
 		tipoDePessoa.setEnabled(false);
 		tipoDePessoa.setBounds(125, 175, 300, 25);
 		add(tipoDePessoa);
@@ -125,7 +125,7 @@ public class JanelaDeCadastroCliente extends JanelaPadrao {
 			MaskFormatter mf = new MaskFormatter("(##) #####-####");
 			campoDoTelefone = new JFormattedTextField(mf);
 			campoDoTelefone.setBorder(new LineBorder(Color.BLACK, 1));
-			campoDoTelefone.setFont(Util.Util.FONTE_PADRAO);
+			campoDoTelefone.setFont(Model.Util.FONTE_PADRAO);
 			campoDoTelefone.setHorizontalAlignment(JTextField.CENTER);
 			campoDoTelefone.setBounds(125, 340, 150, 25);
 			add(campoDoTelefone);

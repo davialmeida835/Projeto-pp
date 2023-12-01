@@ -8,7 +8,7 @@ import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
-import DAO.Persistencia;
+import Controller.Persistencia;
 import Model.CentralDeInformacoes;
 import Model.Material;
 
@@ -43,15 +43,15 @@ public class JanelaListaMateriais extends JanelaPadrao{
 		model.addColumn("Tamanho do material");
 		model.addColumn("Disponibilidade");
 		
-		for(Material m : central.getMateriais()) {
-			Object[] itens = new Object[4];
-			itens[0] = m.getNome();
-			itens[1] = m.getTipoDeMaterial();
-			itens[2] = m.getTamanho(); 
-			itens[3] = (m.isDisponivel()) ? "Disponível" : "Não está Disponível";
-			
-			model.addRow(itens);
-		}
+//		for(Material m : central.getMateriais()) {
+//			Object[] itens = new Object[4];
+//			itens[0] = m.getNome();
+//			itens[1] = m.getTipoDeMaterial();
+//			itens[2] = m.getTamanho(); 
+//			itens[3] = (m.isDisponivel()) ? "Disponível" : "Não está Disponível";
+//			
+//			model.addRow(itens);
+//		}
 		
 		tabela = new JTable(model);
 

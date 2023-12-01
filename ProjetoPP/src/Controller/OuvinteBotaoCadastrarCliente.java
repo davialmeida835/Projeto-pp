@@ -8,12 +8,11 @@ import javax.mail.internet.AddressException;
 import javax.mail.internet.InternetAddress;
 import javax.swing.JOptionPane;
 
-import DAO.Persistencia;
 import Model.CentralDeInformacoes;
 import Model.Cliente;
 import Model.ClientePessoaFisica;
 import Model.ClientePessoaJuridica;
-import Util.Validar;
+import Model.Validar;
 import View.JanelaDeCadastroCliente;
 
 public class OuvinteBotaoCadastrarCliente implements ActionListener {

@@ -5,15 +5,13 @@ import java.util.List;
 
 public class CentralDeInformacoes {
 
-	private volatile static CentralDeInformacoes instance;
-
-	private CentralDeInformacoes() {
-	};
-
 	private Usuario usuario;
 	private List<Cliente> clientes = new ArrayList<>();
-	private List<TipoDeMaterial> tipoDeMateriais = new ArrayList<>();
 	private List<Material> materiais = new ArrayList<>();
+	
+	private volatile static CentralDeInformacoes instance;
+
+	private CentralDeInformacoes() {};
 
 	public static CentralDeInformacoes getInstance() {
 		if (instance == null) {
@@ -46,15 +44,8 @@ public class CentralDeInformacoes {
 		materiais.add(material);
 	}
 
-	public void addTipoDeMaterial(TipoDeMaterial tipoDeMaterial) {
-		tipoDeMateriais.add(tipoDeMaterial);
-	}
-
-	public List<TipoDeMaterial> getTipoDeMateriais() {
-		return tipoDeMateriais;
-	}
-
 	public List<Material> getMateriais() {
 		return materiais;
 	}
+	
 }

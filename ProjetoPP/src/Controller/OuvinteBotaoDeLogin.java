@@ -5,7 +5,6 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JOptionPane;
 
-import DAO.Persistencia;
 import Model.CentralDeInformacoes;
 import View.JanelaDeLogin;
 import View.JanelaDeMenu;

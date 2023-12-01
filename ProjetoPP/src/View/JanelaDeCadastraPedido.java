@@ -22,7 +22,7 @@ import javax.swing.text.MaskFormatter;
 
 import Controller.TipoRoupaFactory;
 import Model.TipoRoupa;
-import Util.Util;
+import Model.Util;
 
 public class JanelaDeCadastraPedido extends JanelaPadrao{
 

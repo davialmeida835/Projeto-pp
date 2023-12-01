@@ -13,7 +13,7 @@ import javax.swing.text.MaskFormatter;
 
 import Controller.OuvinteCadastrarUsuario;
 import Controller.OuvinteTirarTextoDeTextField;
-import Util.Util;
+import Model.Util;
 
 public class JanelaDeCadastroUsuario extends JanelaPadrao {
 

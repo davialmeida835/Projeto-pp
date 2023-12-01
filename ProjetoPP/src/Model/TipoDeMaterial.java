@@ -1,14 +1,6 @@
 package Model;
 
-public class TipoDeMaterial {
+public enum TipoDeMaterial {
 
-	public String tipo;
-	
-	public TipoDeMaterial(String tipo) {
-		this.tipo = tipo;
-	}
-	
-	public String toString() {
-		return tipo;
-	}
+	TECIDO, LINHA, FERRAMENTA, OUTROS
 }

@@ -38,8 +38,7 @@ public class JanelaDeMenu extends JanelaPadrao {
 					dispose();
 				}	
 			}
-		});
-		
+		});	
 		addWallpaper();
 		setVisible(true);
 	}
@@ -65,8 +64,6 @@ public class JanelaDeMenu extends JanelaPadrao {
 		JLabel lado2 = new JLabel(bordaDireita);
 		lado2.setBounds(475, 0, 70, 500);
 		add(lado2);
-		
-		
 	}
 
 }
