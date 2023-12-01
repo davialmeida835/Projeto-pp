@@ -1,17 +1,22 @@
 <Model.CentralDeInformacoes>
   <clientes/>
   <tipoDeMateriais/>
-  <materiais/>
-  <fornecedores>
-    <Model.Fornecedor>
-      <nome>davi</nome>
-      <telefone>(31) 23123-1231</telefone>
-      <materiaisFornecidos>sdasdasd</materiaisFornecidos>
-    </Model.Fornecedor>
-    <Model.Fornecedor>
-      <nome>sadasd</nome>
-      <telefone>(42) 34234-2342</telefone>
-      <materiaisFornecidos>sdasdasd</materiaisFornecidos>
-    </Model.Fornecedor>
-  </fornecedores>
+  <materiais>
+    <Model.Material>
+      <nome>nome1</nome>
+      <tamanho>2.0</tamanho>
+      <tipoDeMaterial>TECIDO</tipoDeMaterial>
+    </Model.Material>
+    <Model.Material>
+      <nome>nome2</nome>
+      <tamanho>5.0</tamanho>
+      <tipoDeMaterial>FERRAMENTA</tipoDeMaterial>
+    </Model.Material>
+    <Model.Material>
+      <nome>nome3</nome>
+      <tamanho>5.0</tamanho>
+      <tipoDeMaterial>FERRAMENTA</tipoDeMaterial>
+    </Model.Material>
+  </materiais>
+  <fornecedores/>
 </Model.CentralDeInformacoes>

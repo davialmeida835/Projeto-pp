@@ -3,10 +3,12 @@ package Controller;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import View.JanelaAdicionarMateriais;
 import View.JanelaDeCadastroCliente;
 import View.JanelaDeCadastroFornecedor;
 import View.JanelaDeMenu;
 import View.JanelaListaFornecedores;
+import View.JanelaListaMateriais;
 
 public class OuvinteBotoesDoMenu implements ActionListener {
 
@@ -23,8 +25,8 @@ public class OuvinteBotoesDoMenu implements ActionListener {
 			new JanelaDeCadastroCliente();
 		} else if (selecionado.equals("CADASTRAR FORNECEDORES")) {
 			new JanelaDeCadastroFornecedor();
-		} else if (selecionado.equals("Cadastrar Pacotes de Fornecedores")) {
-			//new JanelaCadastrarPacoteDeFornecedores();
+		} else if (selecionado.equals("CADASTRAR MATERIAIS")) {
+			new JanelaAdicionarMateriais();
 		} else if (selecionado.equals("Cadastrar Serviços")) {
 			//new JanelaCadastrarServico();
 		} else if (selecionado.equals("Editar Serviços")) {
@@ -33,8 +35,8 @@ public class OuvinteBotoesDoMenu implements ActionListener {
 			//new JanelaCadastrarOrcamento();
 		} else if (selecionado.equals("LISTA DE FORNECEDORES")) {
 			new JanelaListaFornecedores();
-		} else if (selecionado.equals("Lista de Pacotes de Fornecedores")) {
-			//new JanelaListaDePacotesDeFornecedores();
+		} else if (selecionado.equals("LISTA DE MATERIAIS")) {
+			new JanelaListaMateriais();
 		} else if (selecionado.equals("Lista de Orçamentos")) {
 			//new JanelaListaDeOrcamentos();
 		}

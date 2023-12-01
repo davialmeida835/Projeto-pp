@@ -20,19 +20,23 @@ public class OuvinteAdicionarMaterial implements ActionListener{
 	}
 	
 	public void actionPerformed(ActionEvent e) {
-		CentralDeInformacoes central = Persistencia.recuperarCentral("central");
+
 		
 		String nome = janela.getCampoDeNome().getText();
 		List<TipoDeMaterial> tipoDeMateriais = janela.getCampoDeMaterial().getSelectedValuesList();
-		double valor = Double.parseDouble(janela.getValor().getText());
+//		double valor = Double.parseDouble(janela.getValor().getText());
 		double tamanho = Double.parseDouble(janela.getTamanho().getText());
-		double quantidade = Double.parseDouble(janela.getQuantidade().getText());
+//		double quantidade = Double.parseDouble(janela.getQuantidade().getText());
 		
 		if(tipoDeMateriais.size() > 1) {
 			JOptionPane.showMessageDialog(janela, "Escolha apenas um tipo");
 		}
 		
-		 //Material material = new Material(nome, tamanho, tipoDeMateriais.get(0), valor, quantidade);
+		 Material material = new Material(nome, tamanho, tipoDeMateriais.get(0));
+		 
+		 CentralDeInformacoes.getInstance().addMaterial(material);
+		 JOptionPane.showMessageDialog(janela, "Adicionado");
+		 Persistencia.salvarCentral(CentralDeInformacoes.getInstance(), "central");
 	}
 
 	

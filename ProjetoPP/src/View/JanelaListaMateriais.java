@@ -30,28 +30,28 @@ public class JanelaListaMateriais extends JanelaPadrao{
 		adicionarTabela();
 		addBotaoDeVoltar();
 		addBotao(220, 90, 110, 30, "Excluir", null);
+		
+		
 		addWallpaper();
 		setVisible(true);
 	}
 	
 	private void adicionarTabela() {
-		CentralDeInformacoes central = Persistencia.recuperarCentral("central");
+		CentralDeInformacoes central = CentralDeInformacoes.getInstance();
 		
 		DefaultTableModel model = new DefaultTableModel();
 		model.addColumn("Nome do material");
 		model.addColumn("Tipo do material");
 		model.addColumn("Tamanho do material");
-		model.addColumn("Disponibilidade");
 		
-//		for(Material m : central.getMateriais()) {
-//			Object[] itens = new Object[4];
-//			itens[0] = m.getNome();
-//			itens[1] = m.getTipoDeMaterial();
-//			itens[2] = m.getTamanho(); 
-//			itens[3] = (m.isDisponivel()) ? "Disponível" : "Não está Disponível";
-//			
-//			model.addRow(itens);
-//		}
+		for(Material m : central.getMateriais()) {
+			Object[] itens = new Object[3];
+			itens[0] = m.getNome();
+			itens[1] = m.getTipoDeMaterial();
+			itens[2] = m.getTamanho(); 
+			
+			model.addRow(itens);
+		}
 		
 		tabela = new JTable(model);
 
