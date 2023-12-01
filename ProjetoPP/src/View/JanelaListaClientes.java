@@ -25,7 +25,6 @@ public class JanelaListaClientes extends JanelaPadrao{
 		adicionarTabela();
 		addBotaoDeVoltar();
 		addBotao(220, 90, 110, 30, "Excluir", null);
-		addWallpaper();
 		setVisible(true);
 	}
 	

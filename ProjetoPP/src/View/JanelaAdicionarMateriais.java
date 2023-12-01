@@ -2,15 +2,21 @@ package View;
 
 import java.awt.Color;
 import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.List;
 
 import javax.swing.DefaultListModel;
 import javax.swing.JLabel;
 import javax.swing.JList;
+import javax.swing.JOptionPane;
 import javax.swing.JScrollPane;
 import javax.swing.JTextField;
 import javax.swing.border.LineBorder;
 
 import Controller.AdicionarMaterialController;
+import DAO.MaterialDAO;
+import DTO.MaterialDTO;
 import Model.TipoDeMaterial;
 
 public class JanelaAdicionarMateriais extends JanelaPadrao{
@@ -80,7 +86,48 @@ public class JanelaAdicionarMateriais extends JanelaPadrao{
 		tamanho = addCampoDeTexto(125, 290, 300, 25, new LineBorder(Color.BLACK, 1), "Digite o tamanho do material(m)");
 		addBotao(220, 400, 110, 30, "Confirmar", new AdicionarMaterialController(this));
 		addBotaoDeVoltar();
-		addWallpaper();
+		
+		setVisible(true);
+	}
+	
+	public JanelaAdicionarMateriais(MaterialDTO material) {
+		addTexto(0, 30, 550, 30, "Editar Material", new Font("Arial", Font.BOLD, 17), JLabel.CENTER, Color.BLACK);		
+		addTexto(125, 110, 65, 20, "Nome:");
+		addTexto(125, 160, 140, 20, "Tipo:");
+		addTexto(125, 270, 80, 20, "Tamanho:");
+
+		campoDeNome = addCampoDeTexto(125, 135, 300, 25, new LineBorder(Color.BLACK, 1), material.getNome());
+		adicionarCampoDeMateriais();
+
+		tamanho = addCampoDeTexto(125, 290, 300, 25, new LineBorder(Color.BLACK, 1), String.valueOf(material.getTamanho()));
+//		addBotao(220, 400, 110, 30, "Editar", new ActionListener() {
+
+//			public void actionPerformed(ActionEvent e) {
+//				String nome = campoDeNome.getText();
+//				List<TipoDeMaterial> tipoDeMateriais = campoDeMaterial.getSelectedValuesList();
+////				double valor = Double.parseDouble(janela.getValor().getText());
+//				double tamanhoed = Double.parseDouble(tamanho.getText());
+////				double quantidade = Double.parseDouble(janela.getQuantidade().getText());
+//				
+//				if(tipoDeMateriais.size() > 1) {
+//					JOptionPane.showMessageDialog(null, "Escolha apenas um tipo");
+//				}
+//				
+//				 MaterialDTO material = new MaterialDTO(nome, tamanho, tipoDeMateriais.get(0));
+//				 
+//				 MaterialDAO gerenciador = new MaterialDAO();
+//				 
+//				 gerenciador.cadastrarMaterial(material);
+//				 
+//				 JOptionPane.showMessageDialog(janela, "Adicionado");
+//				 
+//				 new JanelaAdicionarMateriais();
+//				 janela.dispose();
+//			}
+			
+//		});
+		addBotaoDeVoltar();
+		
 		setVisible(true);
 	}
 	
