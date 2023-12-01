@@ -3,6 +3,8 @@ package Model;
 import java.util.ArrayList;
 import java.util.List;
 
+import Controller.Persistencia;
+import DTO.ClienteDTO;
 import DTO.FornecedorDTO;
 
 public class CentralDeInformacoes {
@@ -13,16 +15,20 @@ public class CentralDeInformacoes {
 	};
 
 	private Usuario usuario;
-	private List<Cliente> clientes = new ArrayList<>();
-	private List<TipoDeMaterial> tipoDeMateriais = new ArrayList<>();
+	private List<ClienteDTO> clientes = new ArrayList<>();
 	private List<Material> materiais = new ArrayList<>();
 	private List<FornecedorDTO> fornecedores = new ArrayList<>();
+	private List<Gasto> gastos = new ArrayList<>();
+	
 	
 	public static CentralDeInformacoes getInstance() {
 		if (instance == null) {
 			synchronized (CentralDeInformacoes.class) {
-				if (instance == null) {
+				if (instance == null && Persistencia.recuperarCentral("central") == null) {
 					instance = new CentralDeInformacoes();
+				}
+				else {
+					instance = Persistencia.recuperarCentral("central");
 				}
 			}
 		}
@@ -37,24 +43,16 @@ public class CentralDeInformacoes {
 		this.usuario = usuario;
 	}
 
-	public void addCliente(Cliente cliente) {
+	public void addCliente(ClienteDTO cliente) {
 		clientes.add(cliente);
 	}
 
-	public List<Cliente> getClientes() {
+	public List<ClienteDTO> getClientes() {
 		return clientes;
 	}
 
 	public void addMaterial(Material material) {
 		materiais.add(material);
-	}
-
-	public void addTipoDeMaterial(TipoDeMaterial tipoDeMaterial) {
-		tipoDeMateriais.add(tipoDeMaterial);
-	}
-
-	public List<TipoDeMaterial> getTipoDeMateriais() {
-		return tipoDeMateriais;
 	}
 
 	public List<Material> getMateriais() {
@@ -67,4 +65,6 @@ public class CentralDeInformacoes {
     public List<FornecedorDTO> getFornecedores() {
         return fornecedores;
     }
+    
+    
 }

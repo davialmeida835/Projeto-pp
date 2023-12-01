@@ -9,7 +9,6 @@ import java.util.List;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.DefaultListModel;
 import javax.swing.JButton;
-import javax.swing.JCheckBox;
 import javax.swing.JComboBox;
 import javax.swing.JFormattedTextField;
 import javax.swing.JLabel;
@@ -25,12 +24,11 @@ import javax.swing.table.DefaultTableModel;
 import javax.swing.text.MaskFormatter;
 
 import Controller.TipoRoupaFactory;
+import DTO.ClienteDTO;
 import Model.CentralDeInformacoes;
 import Model.Cliente;
 import Model.Material;
 import Model.TamanhoRoupa;
-import Model.TipoDeMaterial;
-import Model.TipoRoupa;
 import Model.Util;
 
 public class JanelaDeCadastraPedido extends JanelaPadrao{
@@ -175,13 +173,13 @@ public class JanelaDeCadastraPedido extends JanelaPadrao{
 
     private Object[][] obterDadosClientes() {
         
-        List<Cliente> clientes = CentralDeInformacoes.getInstance().getClientes();
+        List<ClienteDTO> clientes = CentralDeInformacoes.getInstance().getClientes();
 
         Object[][] dados = new Object[clientes.size()][3];
 
        
         for (int i = 0; i < clientes.size(); i++) {
-            Cliente cliente = clientes.get(i);
+            ClienteDTO cliente = clientes.get(i);
             dados[i][0] = cliente.getNome();
             dados[i][1] = cliente.getTelefone();
             dados[i][2] = cliente.getEmail();

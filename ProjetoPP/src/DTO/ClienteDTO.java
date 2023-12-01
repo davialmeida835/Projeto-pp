@@ -1,13 +1,13 @@
-package Model;
+package DTO;
 
-public abstract class Cliente {
+public class ClienteDTO {
 
 	private String nome;
 	private long telefone;
 	private String email;
 	private long cpfECnpj;
 	
-	public Cliente(String nome, long telefone, String email, long cpfECnpj) {
+	public ClienteDTO(String nome, long telefone, String email, long cpfECnpj) {
 		this.nome = nome;
 		this.telefone = telefone;
 		this.email = email;
@@ -45,5 +45,4 @@ public abstract class Cliente {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	
 }

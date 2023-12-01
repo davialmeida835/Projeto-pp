@@ -2,16 +2,14 @@ package Controller;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.Arrays;
 
 import javax.mail.internet.AddressException;
 import javax.mail.internet.InternetAddress;
 import javax.swing.JOptionPane;
 
+import DTO.ClienteDTO;
 import Model.CentralDeInformacoes;
 import Model.Cliente;
-import Model.ClientePessoaFisica;
-import Model.ClientePessoaJuridica;
 import Model.Validar;
 import View.JanelaDeCadastroCliente;
 
@@ -58,21 +56,13 @@ public class OuvinteBotaoCadastrarCliente implements ActionListener {
 			JOptionPane.showMessageDialog(cadastrarCliente, "Digite um cpf ou cnpj válido");
 		} 
 		else {
-			Cliente cliente = null;
-			if (cadastrarCliente.getCaixaDePessoaFisica().isSelected()) {
-				cliente = new ClientePessoaFisica(nome,Long.parseLong(telefone), email, Long.parseLong(cpfOuCnpj));
-			} else {
-				cliente = new ClientePessoaJuridica(nome, Long.parseLong(telefone), email, Long.parseLong(cpfOuCnpj));
-			}
+			ClienteDTO cliente = new ClienteDTO(nome,Long.parseLong(telefone), email, Long.parseLong(cpfOuCnpj));
+			
 			JOptionPane.showMessageDialog(cadastrarCliente, "Cadastro efetuado com sucesso!");
 			central.addCliente(cliente);
 			Persistencia.salvarCentral(central, "central");
 			cadastrarCliente.dispose();
 			new JanelaDeCadastroCliente();
-			
-			for (Cliente c : Persistencia.recuperarCentral("central").getClientes()) {
-				System.out.println(c.getNome());
-			}
 		}
 	}
 

@@ -8,7 +8,7 @@ import View.JanelaListaPedidos;
 public class Main {
 	public static void main(String[] args) {
 		
-		CentralDeInformacoes central = Persistencia.recuperarCentral("central");
+		CentralDeInformacoes central = CentralDeInformacoes.getInstance();
 		if (central.getUsuario() == null) {
 			JanelaDeCadastroUsuario jde = new JanelaDeCadastroUsuario();
 		}

@@ -10,6 +10,7 @@ import Model.CentralDeInformacoes;
 import Model.Material;
 import Model.TipoDeMaterial;
 import View.JanelaAdicionarMateriais;
+import View.JanelaDeCadastroCliente;
 
 public class OuvinteAdicionarMaterial implements ActionListener{
 
@@ -37,6 +38,8 @@ public class OuvinteAdicionarMaterial implements ActionListener{
 		 CentralDeInformacoes.getInstance().addMaterial(material);
 		 JOptionPane.showMessageDialog(janela, "Adicionado");
 		 Persistencia.salvarCentral(CentralDeInformacoes.getInstance(), "central");
+		 janela.dispose();
+		 new JanelaAdicionarMateriais();
 	}
 
 	
