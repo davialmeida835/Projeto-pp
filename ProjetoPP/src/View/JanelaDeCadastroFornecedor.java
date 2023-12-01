@@ -6,7 +6,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.text.ParseException;
 
-import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFormattedTextField;
 import javax.swing.JLabel;
@@ -16,8 +15,7 @@ import javax.swing.JTextField;
 import javax.swing.border.LineBorder;
 import javax.swing.text.MaskFormatter;
 
-import Controller.OuvinteDoBotaoDeVoltarParaMenu;
-import DAO.Persistencia;
+import Controller.Persistencia;
 import Model.CentralDeInformacoes;
 import Model.Fornecedor;
 
