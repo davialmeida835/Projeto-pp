@@ -19,7 +19,7 @@ import javax.swing.table.AbstractTableModel;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableRowSorter;
 
-import DAO.Persistencia;
+
 import Model.CentralDeInformacoes;
 import Model.Fornecedor;
 
@@ -27,7 +27,7 @@ public class JanelaListaFornecedores extends JanelaPadrao{
 	
 		private JTable tabelaFornecedores;
 		private DefaultTableModel tableModel;
-		private CentralDeInformacoes central= Persistencia.recuperarCentral("central");
+		private CentralDeInformacoes central= Controller.Persistencia.recuperarCentral("central");
 
 	    private JTextField campoFiltro;
 	    public JanelaListaFornecedores() {
@@ -140,7 +140,7 @@ public class JanelaListaFornecedores extends JanelaPadrao{
 	                        break;
 	                    }
 	                }
-	                Persistencia.salvarCentral(central, "central");
+	                Controller.Persistencia.salvarCentral(central, "central");
 	                JOptionPane.showMessageDialog(this, "Fornecedor atualizado com sucesso.", "Atualização Concluída", JOptionPane.INFORMATION_MESSAGE);
 	            }
 	        } else {
@@ -165,7 +165,7 @@ public class JanelaListaFornecedores extends JanelaPadrao{
 	               
 	                List<Fornecedor> fornecedores = central.getFornecedores();
 	                fornecedores.removeIf(f -> f.getNome().equals(nome) && f.getTelefone().equals(telefone));
-	                Persistencia.salvarCentral(central, "central");
+	                Controller.Persistencia.salvarCentral(central, "central");
 
 	                JOptionPane.showMessageDialog(this, "Fornecedor deletado com sucesso.", "Deleção Concluída", JOptionPane.INFORMATION_MESSAGE);
 	            }
