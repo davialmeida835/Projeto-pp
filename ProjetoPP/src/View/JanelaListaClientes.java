@@ -58,4 +58,7 @@ public class JanelaListaClientes extends JanelaPadrao{
 		add(barraRolagem);
 
 	}
+	public static void main(String []args) {
+		JanelaListaClientes j = new JanelaListaClientes();
+	}
 }

@@ -31,6 +31,7 @@ public class JanelaFinanceiro extends JanelaPadrao{
         add(scrollPane);
         adicionarBotaoAtualizar();
         addBotaoDeVoltar();
+        addWallpaper();
         setVisible(true);
     }
     private void adicionarBotaoAtualizar() {

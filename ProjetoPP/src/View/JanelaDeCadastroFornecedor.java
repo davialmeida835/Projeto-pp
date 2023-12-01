@@ -10,19 +10,23 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFormattedTextField;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.border.LineBorder;
 import javax.swing.text.MaskFormatter;
 
 import Controller.OuvinteDoBotaoDeVoltarParaMenu;
+import DAO.Persistencia;
+import Model.CentralDeInformacoes;
+import Model.Fornecedor;
 
 public class JanelaDeCadastroFornecedor extends JanelaPadrao{
 	
 	private JTextField campoNome;
     private JTextField campoTelefone;
     private JTextArea areaMateriais;
-
+    private  CentralDeInformacoes central=Persistencia.recuperarCentral("central");
     public JanelaDeCadastroFornecedor() {
         addTexto(0, 10, 550, 30, "Cadastro do Fornecedor", new Font("Arial", Font.BOLD, 17), JLabel.CENTER, Color.BLACK);
 
@@ -30,7 +34,7 @@ public class JanelaDeCadastroFornecedor extends JanelaPadrao{
         campoNome = new JTextField();
         campoNome.setBounds(125, 145, 300, 20);
         add(campoNome);
-
+       
         addTexto(125, 175, 150, 20, "Telefone:");
         adicionarCampoDoTelefone();
 
@@ -42,36 +46,68 @@ public class JanelaDeCadastroFornecedor extends JanelaPadrao{
         
         JButton botaoCadastrar = new JButton("Cadastrar");
         botaoCadastrar.setBounds(220, 400, 110, 30);
+
         botaoCadastrar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 cadastrarFornecedor();
             }
         });
+
         add(botaoCadastrar);
+     
        
         addBotaoDeVoltar();
-
+        addWallpaper();
         setVisible(true);
     }
-
     private void cadastrarFornecedor() {
-        
         String nome = campoNome.getText();
         String telefone = campoTelefone.getText();
         String materiais = areaMateriais.getText();
 
-        
-        System.out.println("Fornecedor cadastrado:");
-        System.out.println("Nome: " + nome);
-        System.out.println("Telefone: " + telefone);
-        System.out.println("Materiais Fornecidos: " + materiais);
+     
+        if (!nome.isEmpty() && !telefone.isEmpty() && !materiais.isEmpty()) {
+         
+            if (!fornecedorJaExiste(nome, telefone)) {
+              
+                Fornecedor fornecedor = new Fornecedor(nome, telefone, materiais);
 
-        
-        campoNome.setText("");
-        campoTelefone.setText("");
-        areaMateriais.setText("");
+                central.addFornecedor(fornecedor);
+               
+                Persistencia.salvarCentral(central, "central");
+                JOptionPane.showMessageDialog(this, "Fornecedor Cadastrado Com Sucesso");
+                campoNome.setText("");
+                campoTelefone.setText("");
+                areaMateriais.setText("");
+                
+              
+
+            } else {
+               JOptionPane.showMessageDialog(this, "Fornecedor já cadastrado.",
+                        "Erro no Cadastro", JOptionPane.ERROR_MESSAGE);
+            }
+        } else {
+           
+            JOptionPane.showMessageDialog(this, "Preencha todos os campos antes de cadastrar.",
+                    "Erro no Cadastro", JOptionPane.ERROR_MESSAGE);
+        }
     }
+    private boolean fornecedorJaExiste(String nome, String telefone) {
+      
+       central = CentralDeInformacoes.getInstance();
+        for (Fornecedor fornecedor : central.getFornecedores()) {
+            
+            if (fornecedor.getNome().equalsIgnoreCase(nome) && fornecedor.getTelefone().equals(telefone)) {
+                return true; 
+            }
+        }
+        return false; 
+    }
+        
+    
+
+    
     private void adicionarCampoDoTelefone() {
 		try {
 			MaskFormatter mf = new MaskFormatter("(##) #####-####");

@@ -1,0 +1,12 @@
+<Model.CentralDeInformacoes>
+  <clientes/>
+  <tipoDeMateriais/>
+  <materiais/>
+  <fornecedores>
+    <Model.Fornecedor>
+      <nome>fasfdasdasd</nome>
+      <telefone>(32) 42342-3423</telefone>
+      <materiaisFornecidos>sdasdasdasd</materiaisFornecidos>
+    </Model.Fornecedor>
+  </fornecedores>
+</Model.CentralDeInformacoes>
