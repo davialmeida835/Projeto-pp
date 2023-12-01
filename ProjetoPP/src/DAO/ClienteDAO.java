@@ -1,5 +1,6 @@
 package DAO;
 
+import Controller.Persistencia;
 import DTO.ClienteDTO;
 import Model.CentralDeInformacoes;
 
@@ -8,6 +9,7 @@ public class ClienteDAO implements ClienteDAOIf{
 	public void cadastrarCliente(ClienteDTO clienteDTO) {
 		if(!verificarSeTemCliente(clienteDTO)) {
 			CentralDeInformacoes.getInstance().getClientes().add(clienteDTO);
+			Persistencia.salvarCentral(CentralDeInformacoes.getInstance(), "central");
 		}
 	}
 
@@ -30,12 +32,14 @@ public class ClienteDAO implements ClienteDAOIf{
 				}
 			}
 		}
+		Persistencia.salvarCentral(central, "central");
 	}
 
 	public void deletarCliente(ClienteDTO clienteDTO) {
 		if(verificarSeTemCliente(clienteDTO)) {
 			CentralDeInformacoes.getInstance().getClientes().remove(clienteDTO);
 		}
+		Persistencia.salvarCentral(CentralDeInformacoes.getInstance(), "central");
 	}
 
 	

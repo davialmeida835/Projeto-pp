@@ -27,7 +27,7 @@ public class JanelaListaFornecedores extends JanelaPadrao{
 	
 		private JTable tabelaFornecedores;
 		private DefaultTableModel tableModel;
-		private CentralDeInformacoes central= Controller.Persistencia.recuperarCentral("central");
+		private CentralDeInformacoes central= CentralDeInformacoes.getInstance();
 
 	    private JTextField campoFiltro;
 	    public JanelaListaFornecedores() {

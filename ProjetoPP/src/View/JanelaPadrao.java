@@ -83,10 +83,10 @@ public class JanelaPadrao extends JFrame{
 	}
 		
 	//adiciona um campo de texto comum
-	public JTextField addCampoDeTexto(int x, int y, int largura, int altura,LineBorder borda) {
+	public JTextField addCampoDeTexto(int x, int y, int largura, int altura) {
 		JTextField campoDeTexto = new JTextField();
 		campoDeTexto.setFont(Util.FONTE_PADRAO);
-		campoDeTexto.setBorder(borda);
+		
 		campoDeTexto.setBounds(x, y, largura, altura);
 		add(campoDeTexto);
 		return campoDeTexto;

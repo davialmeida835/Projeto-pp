@@ -6,11 +6,12 @@ import java.util.List;
 
 import javax.swing.JOptionPane;
 
+import DAO.MaterialDAO;
+import DTO.MaterialDTO;
 import Model.CentralDeInformacoes;
 import Model.Material;
 import Model.TipoDeMaterial;
 import View.JanelaAdicionarMateriais;
-import View.JanelaDeCadastroCliente;
 
 public class OuvinteAdicionarMaterial implements ActionListener{
 
@@ -33,13 +34,16 @@ public class OuvinteAdicionarMaterial implements ActionListener{
 			JOptionPane.showMessageDialog(janela, "Escolha apenas um tipo");
 		}
 		
-		 Material material = new Material(nome, tamanho, tipoDeMateriais.get(0));
+		 MaterialDTO material = new MaterialDTO(nome, tamanho, tipoDeMateriais.get(0));
 		 
-		 CentralDeInformacoes.getInstance().addMaterial(material);
+		 MaterialDAO gerenciador = new MaterialDAO();
+		 
+		 gerenciador.cadastrarMaterial(material);
+		 
 		 JOptionPane.showMessageDialog(janela, "Adicionado");
-		 Persistencia.salvarCentral(CentralDeInformacoes.getInstance(), "central");
-		 janela.dispose();
+		 
 		 new JanelaAdicionarMateriais();
+		 janela.dispose();
 	}
 
 	

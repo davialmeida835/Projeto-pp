@@ -10,7 +10,6 @@ import javax.swing.table.DefaultTableModel;
 
 import Controller.Persistencia;
 import Model.CentralDeInformacoes;
-import Model.Material;
 
 public class JanelaListaClientes extends JanelaPadrao{
 

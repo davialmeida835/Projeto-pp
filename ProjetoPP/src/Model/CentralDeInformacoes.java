@@ -6,6 +6,7 @@ import java.util.List;
 import Controller.Persistencia;
 import DTO.ClienteDTO;
 import DTO.FornecedorDTO;
+import DTO.MaterialDTO;
 
 public class CentralDeInformacoes {
 
@@ -16,7 +17,7 @@ public class CentralDeInformacoes {
 
 	private Usuario usuario;
 	private List<ClienteDTO> clientes = new ArrayList<>();
-	private List<Material> materiais = new ArrayList<>();
+	private List<MaterialDTO> materiais = new ArrayList<>();
 	private List<FornecedorDTO> fornecedores = new ArrayList<>();
 	private List<Gasto> gastos = new ArrayList<>();
 	
@@ -51,11 +52,7 @@ public class CentralDeInformacoes {
 		return clientes;
 	}
 
-	public void addMaterial(Material material) {
-		materiais.add(material);
-	}
-
-	public List<Material> getMateriais() {
+	public List<MaterialDTO> getMateriais() {
 		return materiais;
 	}
 	public void addFornecedor(FornecedorDTO fornecedor) {
