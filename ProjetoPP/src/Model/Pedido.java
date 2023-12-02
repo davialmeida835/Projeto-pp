@@ -1,5 +1,6 @@
 package Model;
 
+import java.time.LocalDate;
 import java.util.List;
 
 public class Pedido {
@@ -7,15 +8,17 @@ public class Pedido {
 	
 	    private int numero;
 	    private String descricao;
-	    private String dataEntrega;
+	    private LocalDate dataEntrega;
 	    private int quantidade;
 	    private Cliente cliente;
 	    private TamanhoRoupa tamanho;
 	    private List<Material> materiais;
+	    private double preco;
+	   
 	
 
-	    public Pedido(int numero, String descricao, String dataEntrega, int quantidade, Cliente cliente,
-				TamanhoRoupa tamanho, List<Material> materiais) {
+	    public Pedido(int numero, String descricao, LocalDate dataEntrega, int quantidade, Cliente cliente,
+				TamanhoRoupa tamanho, List<Material> materiais,double preco) {
 		
 			this.numero = numero;
 			this.descricao = descricao;
@@ -24,6 +27,9 @@ public class Pedido {
 			this.cliente = cliente;
 			this.tamanho = tamanho;
 			this.materiais = materiais;
+			this.preco=preco;
+			
+			
 		}
 
 	
@@ -36,7 +42,7 @@ public class Pedido {
 	        return descricao;
 	    }
 
-	    public String getDataEntrega() {
+	    public LocalDate getDataEntrega() {
 	        return dataEntrega;
 	    }
 
@@ -89,6 +95,21 @@ public class Pedido {
 		public void setMateriais(List<Material> materiais) {
 			this.materiais = materiais;
 		}
+
+
+
+		public double getPreco() {
+			return preco;
+		}
+
+
+
+		public void setPreco(double preco) {
+			this.preco = preco;
+		}
+
+
+
 	
 
 }

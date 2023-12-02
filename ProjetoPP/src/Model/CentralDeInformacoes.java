@@ -6,6 +6,7 @@ import java.util.List;
 import Controller.Persistencia;
 import DTO.ClienteDTO;
 import DTO.FornecedorDTO;
+import DTO.HistoricoDeCompraDTO;
 import DTO.MaterialDTO;
 import DTO.PedidoDTO;
 
@@ -20,8 +21,12 @@ public class CentralDeInformacoes {
 	private List<ClienteDTO> clientes = new ArrayList<>();
 	private List<MaterialDTO> materiais = new ArrayList<>();
 	private List<FornecedorDTO> fornecedores = new ArrayList<>();
+
 	private List<Gasto> gastos = new ArrayList<>();
 	private List<PedidoDTO> pedidos = new ArrayList<>();
+
+	private List<HistoricoDeCompraDTO> historico = new ArrayList<>();
+
 	
 	
 	public static CentralDeInformacoes getInstance() {
@@ -49,6 +54,10 @@ public class CentralDeInformacoes {
 	public void addCliente(ClienteDTO cliente) {
 		clientes.add(cliente);
 	}
+	
+	public List<HistoricoDeCompraDTO> getHistorico() {
+		return historico;
+	}
 
 	public List<ClienteDTO> getClientes() {
 		return clientes;
@@ -71,6 +80,14 @@ public class CentralDeInformacoes {
 
 	public void addPedido(PedidoDTO pedido) {
 		pedidos.add(pedido);
+	}
+
+	public List<Gasto> getGastos() {
+		return gastos;
+	}
+
+	public void setGastos(List<Gasto> gastos) {
+		this.gastos = gastos;
 	}
     
     

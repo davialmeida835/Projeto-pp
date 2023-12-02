@@ -121,7 +121,7 @@ public class JanelaListaPedidos extends JanelaPadrao{
 
 		   
 		    for (Pedido pedido : listaDePedidos) {
-		        if (pedido.getDescricao().contains(criterio) || pedido.getDataEntrega().contains(criterio) ) {
+		        if (pedido.getDescricao().contains(criterio)  ) {
 		            modeloTabela.addRow(new Object[]{pedido.getNumero(), pedido.getDescricao(), pedido.getDataEntrega()});
 		        }
 		    }

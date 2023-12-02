@@ -34,12 +34,12 @@ public class MaterialDAO implements MaterialDAOIf{
 	}
 
 	@Override
-	public void atualizarMaterial(MaterialDTO materialDTO) {
+	public void atualizarMaterial(MaterialDTO materialDTO, double tamanho) {
 		CentralDeInformacoes central = CentralDeInformacoes.getInstance();
 		if(verificarSeTemMaterial(materialDTO)) {
 			for(MaterialDTO materiais : central.getMateriais()) {
 				if(materiais.getNome().equals(materialDTO.getNome())){
-					materiais = materialDTO;
+					materiais.setTamanho(tamanho + materialDTO.getTamanho());
 				}
 			}
 		}
@@ -53,6 +53,21 @@ public class MaterialDAO implements MaterialDAOIf{
 			CentralDeInformacoes.getInstance().getMateriais().remove(materialDTO);
 		}
 		Persistencia.salvarCentral(CentralDeInformacoes.getInstance(), "central");
+		
+	}
+
+	@Override
+	public void atualizarMaterial(MaterialDTO materialDTO) {
+		CentralDeInformacoes central = CentralDeInformacoes.getInstance();
+		if(verificarSeTemMaterial(materialDTO)) {
+			for(MaterialDTO materiais : central.getMateriais()) {
+				if(materiais.getId() == materialDTO.getId()){
+					materiais.setNome(materialDTO.getNome());
+					materiais.setTamanho(materialDTO.getTamanho());
+				}
+			}
+		}
+		Persistencia.salvarCentral(central, "central");
 		
 	}
 

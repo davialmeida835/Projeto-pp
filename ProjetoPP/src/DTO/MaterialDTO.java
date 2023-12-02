@@ -8,6 +8,7 @@ public class MaterialDTO {
 	private double tamanho;
 //	private boolean disponivel;
 	private TipoDeMaterial tipoDeMaterial;
+	private long id;
 	//private double preco;
 	
 	public MaterialDTO(String nome, double tamanho, TipoDeMaterial tipoDeMaterial) {
@@ -15,12 +16,13 @@ public class MaterialDTO {
 		this.tamanho = tamanho;
 //		this.disponivel = disponivel;
 		this.tipoDeMaterial = tipoDeMaterial;
+		id = System.currentTimeMillis();
 		//this.preco = preco;
 	}
 	
-//	public double getPreco() {
-//		return preco;
-//	}
+	public long getId() {
+		return id;
+	}
 //
 //	public void setPreco(double preco) {
 //		this.preco = preco;
