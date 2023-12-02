@@ -28,10 +28,7 @@ public class JanelaListaPedidos extends JanelaPadrao{
 		
 		
 		addTexto(50,65,350,30,"Filtrar pedido por data e por itens:");
-		listaDePedidos = new ArrayList<>();
-        listaDePedidos.add(new Pedido(1, "Pedido 1 - Descrição", "2023-12-01", "Item 1, Item 2"));
-        listaDePedidos.add(new Pedido(2, "Pedido 2 - Descrição", "2023-12-05", "Item 3, Item 4"));
-        listaDePedidos.add(new Pedido(3, "Pedido 3 - Descrição", "2023-12-10", "Item 5, Item 6"));
+		
         addBotaoDeVoltar();
         adicionarBotoesAtualizarExcluir();
         configurarTabela();
@@ -74,7 +71,7 @@ public class JanelaListaPedidos extends JanelaPadrao{
 	
 	private void adicionarDadosATabela() {
 	    for (Pedido pedido : listaDePedidos) {
-	        modeloTabela.addRow(new Object[]{pedido.getNumero(), pedido.getDescricao(), pedido.getDataEntrega(), pedido.getItens()});
+	        modeloTabela.addRow(new Object[]{pedido.getNumero(), pedido.getDescricao(), pedido.getDataEntrega()});
 	    }
 	}
 	  private void adicionarBotoesAtualizarExcluir() {
@@ -124,8 +121,8 @@ public class JanelaListaPedidos extends JanelaPadrao{
 
 		   
 		    for (Pedido pedido : listaDePedidos) {
-		        if (pedido.getDescricao().contains(criterio) || pedido.getDataEntrega().contains(criterio) || pedido.getItens().contains(criterio)) {
-		            modeloTabela.addRow(new Object[]{pedido.getNumero(), pedido.getDescricao(), pedido.getDataEntrega(), pedido.getItens()});
+		        if (pedido.getDescricao().contains(criterio) || pedido.getDataEntrega().contains(criterio) ) {
+		            modeloTabela.addRow(new Object[]{pedido.getNumero(), pedido.getDescricao(), pedido.getDataEntrega()});
 		        }
 		    }
 	  }

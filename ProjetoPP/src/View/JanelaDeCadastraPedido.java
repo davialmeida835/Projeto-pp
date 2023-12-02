@@ -41,7 +41,7 @@ public class JanelaDeCadastraPedido extends JanelaPadrao{
 		addTexto(70,140,100,30,"Materiais:");
 		addTexto(70,70,200,20,"Tipo de Roupa:");
 		addTexto(300,140,150,30,"Tamanho:");
-//		List<Material> materiais = obterMateriais();
+
 		JComboBox<TamanhoRoupa> comboBoxTamanhoRoupa = new JComboBox<>(TamanhoRoupa.values());
         comboBoxTamanhoRoupa.setBounds(380, 140, 90, 25);
         add(comboBoxTamanhoRoupa);
@@ -52,20 +52,7 @@ public class JanelaDeCadastraPedido extends JanelaPadrao{
 	    jListMateriais = new JList<>(listModel);
 	    jListMateriais.setSelectionMode(ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
 
-//	    CentralDeInformacoes centralDeInfo = CentralDeInformacoes.getInstance();
-//	       materiais = centralDeInfo.getMateriais();
-//	       for (Material material : materiais) {
-//	           listModel.addElement(material);
-//	        }
-
-//	     TipoDeMaterial tipo1 = new TipoDeMaterial("Tipo1");
-//	     TipoDeMaterial tipo2 = new TipoDeMaterial("Tipo2");
-//	     TipoDeMaterial tipo3 = new TipoDeMaterial("Tipo3");
-//
-//	
-//	     listModel.addElement(new Material("Material1", 30.0, true, tipo1, 25.0));
-//	     listModel.addElement(new Material("Material2", 20.0, false, tipo2, 15.0));
-//	     listModel.addElement(new Material("Material3", 25.0, true, tipo3, 20.0));
+	   
 
 	     JScrollPane scrollPaneMateriais = new JScrollPane(jListMateriais);
 	     scrollPaneMateriais.setBounds(70, 170, 120, 100);
@@ -81,33 +68,33 @@ public class JanelaDeCadastraPedido extends JanelaPadrao{
 
         
 		adicionarComponentesQuantidade();
-		 List<String> tiposRoupaStrings = new ArrayList<>();
-	        JComboBox<String> comboBoxTipoRoupa = new JComboBox<>(tiposRoupaStrings.toArray(new String[0]));
-	        comboBoxTipoRoupa.setBounds(70, 100, 120, 25);
-	        add(comboBoxTipoRoupa);
-	        
-	        comboBoxTipoRoupa.addActionListener(e -> {
-	            
-	            String tipoSelecionado = (String) comboBoxTipoRoupa.getSelectedItem();
-
-	           
-	            int preco = (int) obterPrecoDoTipoRoupa(tipoSelecionado);
-	            TipoRoupaFactory.criarTipoRoupa(tipoSelecionado,preco);
-
-	         
-	            
-	        });
-
-	       
-	        tiposRoupaStrings.add("Vestido");
-	        tiposRoupaStrings.add("Camiseta");
-	        tiposRoupaStrings.add("Terno");
-	        tiposRoupaStrings.add("Shorts");
-
-	    
-	        
-	    comboBoxTipoRoupa.setModel(new DefaultComboBoxModel<>(tiposRoupaStrings.toArray(new String[0])));
-		criarTabelaClientes();
+//		 List<String> tiposRoupaStrings = new ArrayList<>();
+//	        JComboBox<String> comboBoxTipoRoupa = new JComboBox<>(tiposRoupaStrings.toArray(new String[0]));
+//	        comboBoxTipoRoupa.setBounds(70, 100, 120, 25);
+//	        add(comboBoxTipoRoupa);
+//	        
+//	        comboBoxTipoRoupa.addActionListener(e -> {
+//	            
+//	            String tipoSelecionado = (String) comboBoxTipoRoupa.getSelectedItem();
+//
+//	           
+//	            int preco = (int) obterPrecoDoTipoRoupa(tipoSelecionado);
+//	            TipoRoupaFactory.criarTipoRoupa(tipoSelecionado,preco);
+//
+//	         
+//	            
+//	        });
+//
+//	       
+//	        tiposRoupaStrings.add("Vestido");
+//	        tiposRoupaStrings.add("Camiseta");
+//	        tiposRoupaStrings.add("Terno");
+//	        tiposRoupaStrings.add("Shorts");
+//
+//	    
+//	        
+//	    comboBoxTipoRoupa.setModel(new DefaultComboBoxModel<>(tiposRoupaStrings.toArray(new String[0])));
+//		criarTabelaClientes();
 		addB();
 		addTexto(300,70,150,20,"Data de Entrega:");
 		

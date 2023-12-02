@@ -1,7 +1,7 @@
 package Model;
 
 public interface TipoRoupa {
-	 String getDescricao();
+	 String getnome();
 	    int getPreco();
 
 }

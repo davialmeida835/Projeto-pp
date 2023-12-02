@@ -7,6 +7,7 @@ import Controller.Persistencia;
 import DTO.ClienteDTO;
 import DTO.FornecedorDTO;
 import DTO.MaterialDTO;
+import DTO.PedidoDTO;
 
 public class CentralDeInformacoes {
 
@@ -20,6 +21,7 @@ public class CentralDeInformacoes {
 	private List<MaterialDTO> materiais = new ArrayList<>();
 	private List<FornecedorDTO> fornecedores = new ArrayList<>();
 	private List<Gasto> gastos = new ArrayList<>();
+	private List<PedidoDTO> pedidos = new ArrayList<>();
 	
 	
 	public static CentralDeInformacoes getInstance() {
@@ -62,6 +64,14 @@ public class CentralDeInformacoes {
     public List<FornecedorDTO> getFornecedores() {
         return fornecedores;
     }
+
+	public List<PedidoDTO> getPedidos() {
+		return pedidos;
+	}
+
+	public void addPedido(PedidoDTO pedido) {
+		pedidos.add(pedido);
+	}
     
     
 }
