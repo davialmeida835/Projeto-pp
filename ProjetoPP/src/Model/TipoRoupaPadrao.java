@@ -9,10 +9,7 @@ public class TipoRoupaPadrao implements TipoRoupa{
         return "Vestido" ;
     }
 
-    @Override
-    public int getPreco() {
-        return 20;
-    }
+   
 
 
 }

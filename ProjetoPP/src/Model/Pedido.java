@@ -3,6 +3,9 @@ package Model;
 import java.time.LocalDate;
 import java.util.List;
 
+import DTO.ClienteDTO;
+import DTO.MaterialDTO;
+
 public class Pedido {
 
 	
@@ -10,15 +13,16 @@ public class Pedido {
 	    private String descricao;
 	    private LocalDate dataEntrega;
 	    private int quantidade;
-	    private Cliente cliente;
+	    private ClienteDTO cliente;
 	    private TamanhoRoupa tamanho;
-	    private List<Material> materiais;
+	    private List<MaterialDTO> materiais;
 	    private double preco;
+	    private Object tipoDeRoupa;
 	   
 	
 
-	    public Pedido(int numero, String descricao, LocalDate dataEntrega, int quantidade, Cliente cliente,
-				TamanhoRoupa tamanho, List<Material> materiais,double preco) {
+	    public Pedido(int numero, String descricao, LocalDate dataEntrega, int quantidade, ClienteDTO cliente,
+				TamanhoRoupa tamanho, List<MaterialDTO> materiais,double preco,Object tipoDeRoupa) {
 		
 			this.numero = numero;
 			this.descricao = descricao;
@@ -28,7 +32,7 @@ public class Pedido {
 			this.tamanho = tamanho;
 			this.materiais = materiais;
 			this.preco=preco;
-			
+			this.setTipoDeRoupa(tipoDeRoupa);
 			
 		}
 
@@ -50,13 +54,13 @@ public class Pedido {
 
 
 
-		public Cliente getCliente() {
+		public ClienteDTO getCliente() {
 			return cliente;
 		}
 
 
 
-		public void setCliente(Cliente cliente) {
+		public void setCliente(ClienteDTO cliente) {
 			this.cliente = cliente;
 		}
 
@@ -86,13 +90,13 @@ public class Pedido {
 
 
 
-		public List<Material> getMateriais() {
+		public List<MaterialDTO> getMateriais() {
 			return materiais;
 		}
 
 
 
-		public void setMateriais(List<Material> materiais) {
+		public void setMateriais(List<MaterialDTO> materiais) {
 			this.materiais = materiais;
 		}
 
@@ -106,6 +110,18 @@ public class Pedido {
 
 		public void setPreco(double preco) {
 			this.preco = preco;
+		}
+
+
+
+		public Object getTipoDeRoupa() {
+			return tipoDeRoupa;
+		}
+
+
+
+		public void setTipoDeRoupa(Object tipoDeRoupa) {
+			this.tipoDeRoupa = tipoDeRoupa;
 		}
 
 
