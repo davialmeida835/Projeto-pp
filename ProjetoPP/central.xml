@@ -24,6 +24,24 @@
       <email>Rua ABC</email>
       <cpfECnpj>123456789</cpfECnpj>
     </DTO.ClienteDTO>
+    <DTO.ClienteDTO>
+      <nome>João</nome>
+      <telefone>1</telefone>
+      <email>Rua ABC</email>
+      <cpfECnpj>123456789</cpfECnpj>
+    </DTO.ClienteDTO>
+    <DTO.ClienteDTO>
+      <nome>João</nome>
+      <telefone>1</telefone>
+      <email>Rua ABC</email>
+      <cpfECnpj>123456789</cpfECnpj>
+    </DTO.ClienteDTO>
+    <DTO.ClienteDTO>
+      <nome>João</nome>
+      <telefone>1</telefone>
+      <email>Rua ABC</email>
+      <cpfECnpj>123456789</cpfECnpj>
+    </DTO.ClienteDTO>
   </clientes>
   <materiais>
     <DTO.MaterialDTO>
@@ -38,19 +56,6 @@
   <pedidos>
     <DTO.PedidoDTO>
       <tipoderoupa class="string">Terno</tipoderoupa>
-      <numero>1</numero>
-      <descricao>Descricçao</descricao>
-      <dataEntrega>2121-09-22</dataEntrega>
-      <quantidade>1</quantidade>
-      <cliente reference="../../../clientes/DTO.ClienteDTO[2]"/>
-      <tamanho>PP</tamanho>
-      <materiais>
-        <DTO.MaterialDTO reference="../../../../materiais/DTO.MaterialDTO"/>
-      </materiais>
-      <preco>44.0</preco>
-    </DTO.PedidoDTO>
-    <DTO.PedidoDTO>
-      <tipoderoupa class="string">Terno</tipoderoupa>
       <numero>2</numero>
       <descricao>Descricçao</descricao>
       <dataEntrega>2121-09-22</dataEntrega>
@@ -61,32 +66,21 @@
         <DTO.MaterialDTO reference="../../../../materiais/DTO.MaterialDTO"/>
       </materiais>
       <preco>77.0</preco>
-    </DTO.PedidoDTO>
-    <DTO.PedidoDTO>
-      <tipoderoupa class="string">Blusa</tipoderoupa>
-      <numero>3</numero>
-      <descricao>Descricçao</descricao>
-      <dataEntrega>2201-01-01</dataEntrega>
-      <quantidade>1</quantidade>
-      <cliente reference="../../../clientes/DTO.ClienteDTO[2]"/>
-      <tamanho>PP</tamanho>
-      <materiais>
-        <DTO.MaterialDTO reference="../../../../materiais/DTO.MaterialDTO"/>
-      </materiais>
-      <preco>66.0</preco>
+      <pagamento>true</pagamento>
     </DTO.PedidoDTO>
     <DTO.PedidoDTO>
       <tipoderoupa class="string">Blusa</tipoderoupa>
       <numero>4</numero>
       <descricao>Descricçao</descricao>
-      <dataEntrega>2201-01-01</dataEntrega>
+      <dataEntrega>2204-01-01</dataEntrega>
       <quantidade>1</quantidade>
       <cliente reference="../../../clientes/DTO.ClienteDTO[3]"/>
       <tamanho>PP</tamanho>
       <materiais>
         <DTO.MaterialDTO reference="../../../../materiais/DTO.MaterialDTO"/>
       </materiais>
-      <preco>66.0</preco>
+      <preco>66.02</preco>
+      <pagamento>true</pagamento>
     </DTO.PedidoDTO>
     <DTO.PedidoDTO>
       <tipoderoupa class="string">Blusa</tipoderoupa>
@@ -100,6 +94,7 @@
         <DTO.MaterialDTO reference="../../../../materiais/DTO.MaterialDTO"/>
       </materiais>
       <preco>666.0</preco>
+      <pagamento>false</pagamento>
     </DTO.PedidoDTO>
     <DTO.PedidoDTO>
       <tipoderoupa class="string">Vestido</tipoderoupa>
@@ -113,6 +108,7 @@
         <DTO.MaterialDTO reference="../../../../materiais/DTO.MaterialDTO"/>
       </materiais>
       <preco>3123.0</preco>
+      <pagamento>false</pagamento>
     </DTO.PedidoDTO>
   </pedidos>
   <historico/>

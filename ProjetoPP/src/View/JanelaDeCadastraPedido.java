@@ -193,6 +193,7 @@ public class JanelaDeCadastraPedido extends JanelaPadrao{
         		preco,tipoRoupaSelecionado );
         
         PedidoController pedidos = new PedidoController(this, pedido);
+        pedidos.add();
         
         
     
