@@ -40,6 +40,7 @@ public class PedidoDAO implements PedidoIf{
 			for(PedidoDTO pedidos : central.getPedidos()) {
 				if(pedidos.getNumero() == pedidoDTO.getNumero()){
 					pedidos = pedidoDTO;
+					JOptionPane.showInternalMessageDialog(null, "FOI ATUALIZADO!");
 				}
 			}
 		}
@@ -52,6 +53,7 @@ public class PedidoDAO implements PedidoIf{
 	public void deletarPedido(PedidoDTO pedidoDTO) {
 		if(verificarSeTemPedido(pedidoDTO)) {
 			CentralDeInformacoes.getInstance().getPedidos().remove(pedidoDTO);
+			JOptionPane.showInternalMessageDialog(null, "FOI DELETADO!");
 		}
 		Persistencia.salvarCentral(CentralDeInformacoes.getInstance(), "central");
 		

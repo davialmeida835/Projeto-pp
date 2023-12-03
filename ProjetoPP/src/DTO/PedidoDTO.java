@@ -45,12 +45,16 @@ public class PedidoDTO {
 	private int numero;
     private String descricao;
     private LocalDate dataEntrega;
-    private int quantidade;
+    public void setDataEntrega(LocalDate dataEntrega) {
+		this.dataEntrega = dataEntrega;
+	}
+
+	private int quantidade;
     private ClienteDTO cliente;
     private TamanhoRoupa tamanho;
     private List<MaterialDTO> materiais;
     private double preco;
-
+    private boolean pagamento;
 
  
 
@@ -132,6 +136,17 @@ public class PedidoDTO {
 
 	public void setTipoderoupa(TipoRoupa tipoderoupa) {
 		this.tipoderoupa = tipoderoupa;
+	}
+
+	public String isPagamento() {
+		if(pagamento==true) {
+			return"Pago";
+		}
+		return "Pendente";
+	}
+
+	public void setPagamento(boolean pagamento) {
+		this.pagamento = pagamento;
 	}
 	
 

@@ -11,7 +11,7 @@ public class PedidoController {
 		
 		this.setJanela(janela);
 		this.pedido = pedido;
-		add();
+		
 		
 	}
 	public void add() {
@@ -23,6 +23,14 @@ public class PedidoController {
 		PedidoDAO p = new PedidoDAO();
 		
 		p.cadastrarPedido(pedido);
+	}
+	public void atualizarPedido() {
+	        PedidoDAO pedidoDAO = new PedidoDAO();
+	        pedidoDAO.atualizarPedido(pedido);
+	}
+	public void deletar() {
+		 PedidoDAO pedidoDAO = new PedidoDAO();
+	     pedidoDAO.deletarPedido(pedido);
 	}
 	public JanelaPadrao getJanela() {
 		return janela;
