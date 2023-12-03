@@ -4,7 +4,7 @@ public class Material {
 
 	private String nome;
 	private double tamanho;
-//	private boolean disponivel;
+	private boolean disponivel;
 	private TipoDeMaterial tipoDeMaterial;
 	//private double preco;
 	
@@ -58,6 +58,5 @@ public class Material {
 	public String toString() {
         return nome;
     }
-	
 	
 }

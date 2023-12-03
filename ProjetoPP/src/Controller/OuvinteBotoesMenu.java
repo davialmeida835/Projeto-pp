@@ -10,11 +10,11 @@ import View.JanelaDeMenu;
 import View.JanelaListaFornecedores;
 import View.JanelaListaMateriais;
 
-public class MenuController implements ActionListener {
+public class OuvinteBotoesMenu implements ActionListener {
 
 	private JanelaDeMenu janelaDeMenu;
 
-	public MenuController(JanelaDeMenu janelaDeMenu) {
+	public OuvinteBotoesMenu(JanelaDeMenu janelaDeMenu) {
 		this.janelaDeMenu = janelaDeMenu;
 	}
 

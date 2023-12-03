@@ -46,14 +46,8 @@ public class JanelaListaMateriais extends JanelaPadrao{
 				
 				if(i != -1) {
 					MaterialDAO gerenciar = new MaterialDAO();
-					gerenciar.deletarMaterial(CentralDeInformacoes.getInstance().getMateriais().get(i));
-					
-					
+					gerenciar.deletarMaterial(CentralDeInformacoes.getInstance().getMateriais().get(i));	
 				}
-				
-				
-				
-				
 			}
 		});
 		addBotao(80, 420, 110, 30, "Comprar", new ActionListener() {
@@ -65,15 +59,13 @@ public class JanelaListaMateriais extends JanelaPadrao{
 				double tamanho;
 				try{
 					preco = Double.parseDouble(JOptionPane.showInputDialog("Digite o preço: "));
-				
-					tamanho = Double.parseDouble(JOptionPane.showInputDialog("Digite o tamanho(m): "));
 					
-					HistoricoDeCompraDTO historico = new HistoricoDeCompraDTO(CentralDeInformacoes.getInstance().getMateriais().get(i), preco, tamanho);
+					HistoricoDeCompraDTO historico = new HistoricoDeCompraDTO(CentralDeInformacoes.getInstance().getMateriais().get(i), preco);
 					HistoricoDeCompraDAO dao = new HistoricoDeCompraDAO();
 					dao.cadastrarHistoricoDeCompra(historico);
 					
 					MaterialDAO material = new MaterialDAO();
-					material.atualizarMaterial(CentralDeInformacoes.getInstance().getMateriais().get(i), tamanho);
+					material.atualizarMaterial(CentralDeInformacoes.getInstance().getMateriais().get(i), true);
 					
 					JOptionPane.showMessageDialog(null, "Adicionado no histórico com sucesso");
 					new JanelaListaMateriais();
@@ -81,9 +73,6 @@ public class JanelaListaMateriais extends JanelaPadrao{
 				}catch(Exception exception) {
 					JOptionPane.showMessageDialog(null, "Digite valores válidos");
 				}
-				
-				
-				
 			}
 			
 		});
@@ -122,13 +111,13 @@ public class JanelaListaMateriais extends JanelaPadrao{
 		model = new DefaultTableModel();
 		model.addColumn("Nome do material");
 		model.addColumn("Tipo do material");
-		model.addColumn("Tamanho do material");
+		model.addColumn("Disponibilidade do material");
 		
 		for(MaterialDTO m : central.getMateriais()) {
 			Object[] itens = new Object[3];
 			itens[0] = m.getNome();
 			itens[1] = m.getTipoDeMaterial();
-			itens[2] = m.getTamanho(); 
+			itens[2] = (m.isDisponivel()) ? "Disponível" : "Indisponível"; 
 			
 			model.addRow(itens);
 		}

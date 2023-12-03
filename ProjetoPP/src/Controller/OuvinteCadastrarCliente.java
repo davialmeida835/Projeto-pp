@@ -13,11 +13,11 @@ import Model.Cliente;
 import Model.Validar;
 import View.JanelaDeCadastroCliente;
 
-public class CadastrarClienteController implements ActionListener {
+public class OuvinteCadastrarCliente implements ActionListener {
 
 	private JanelaDeCadastroCliente cadastrarCliente;
 
-	public CadastrarClienteController(JanelaDeCadastroCliente cadastrarCliente) {
+	public OuvinteCadastrarCliente(JanelaDeCadastroCliente cadastrarCliente) {
 		this.cadastrarCliente = cadastrarCliente;
 	}
 

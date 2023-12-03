@@ -12,7 +12,7 @@ import javax.swing.JTextField;
 import javax.swing.border.LineBorder;
 import javax.swing.text.MaskFormatter;
 
-import Controller.CadastrarClienteController;
+import Controller.OuvinteCadastrarCliente;
 import Controller.OuvinteDoCampoSomenteNumeros;
 import Controller.OuvinteTipoDePessoaCadastroCliente;
 import Controller.OuvinteTirarTextoDeTextField;
@@ -38,7 +38,7 @@ public class JanelaDeCadastroCliente extends JanelaPadrao {
 		addTexto(125, 315, 90, 20, "Telefone:");
 		campoDeEmail = addCampoDeTexto(125, 230, 300, 25, new LineBorder(Color.BLACK, 1), "Digite o e-mail do cliente");
 		campoDoNome = addCampoDeTexto(125, 285, 300, 25, new LineBorder(Color.BLACK, 1), "Digite o nome completo do cliente");
-		addBotao(220, 400, 110, 30, "Cadastrar", new CadastrarClienteController(this));
+		addBotao(220, 400, 110, 30, "Cadastrar", new OuvinteCadastrarCliente(this));
 		adicionarCampoDoTipoDePessoa();
 		adicionarCampoDoTelefone();
 		addBotoesDeTipoDePesso();

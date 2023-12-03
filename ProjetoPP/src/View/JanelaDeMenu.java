@@ -11,7 +11,7 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 
-import Controller.MenuController;
+import Controller.OuvinteBotoesMenu;
 
 public class JanelaDeMenu extends JanelaPadrao {
 	
@@ -45,7 +45,7 @@ public class JanelaDeMenu extends JanelaPadrao {
 	}
 	
 	public void addBotoesMenu(int x, int y, int largura, int altura, String texto, URL url) {
-		MenuController ouvinte = new MenuController(this);
+		OuvinteBotoesMenu ouvinte = new OuvinteBotoesMenu(this);
 		JButton botao = new JButton(texto);
 		botao.addActionListener(ouvinte);
 		botao.setBackground(Color.WHITE);

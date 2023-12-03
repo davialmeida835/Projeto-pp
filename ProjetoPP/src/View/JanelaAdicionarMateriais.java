@@ -10,11 +10,12 @@ import javax.swing.DefaultListModel;
 import javax.swing.JLabel;
 import javax.swing.JList;
 import javax.swing.JOptionPane;
+import javax.swing.JRadioButton;
 import javax.swing.JScrollPane;
 import javax.swing.JTextField;
 import javax.swing.border.LineBorder;
 
-import Controller.AdicionarMaterialController;
+import Controller.OuvinteAdicionarMaterial;
 import DAO.MaterialDAO;
 import DTO.MaterialDTO;
 import Model.TipoDeMaterial;
@@ -27,9 +28,17 @@ public class JanelaAdicionarMateriais extends JanelaPadrao{
 	
 	private JTextField campoDeNome;
 	private JList<TipoDeMaterial> campoDeMaterial;
-	private JTextField tamanho;
+	private JRadioButton radioButton;
 	private JTextField valor;
 	private JTextField quantidade;
+	
+	public JRadioButton getRadioButton() {
+		return radioButton;
+	}
+
+	public void setRadioButton(JRadioButton radioButton) {
+		this.radioButton = radioButton;
+	}
 
 	public JTextField getCampoDeNome() {
 		return campoDeNome;
@@ -45,14 +54,6 @@ public class JanelaAdicionarMateriais extends JanelaPadrao{
 
 	public void setCampoDeMaterial(JList<TipoDeMaterial> campoDeMaterial) {
 		this.campoDeMaterial = campoDeMaterial;
-	}
-
-	public JTextField getTamanho() {
-		return tamanho;
-	}
-
-	public void setTamanho(JTextField tamanho) {
-		this.tamanho = tamanho;
 	}
 
 	public JTextField getValor() {
@@ -75,16 +76,19 @@ public class JanelaAdicionarMateriais extends JanelaPadrao{
 		addTexto(0, 30, 550, 30, "Adicionar Material", new Font("Arial", Font.BOLD, 17), JLabel.CENTER, Color.BLACK);		
 		addTexto(125, 110, 65, 20, "Nome:");
 		addTexto(125, 160, 140, 20, "Tipo:");
-		addTexto(125, 270, 80, 20, "Tamanho:");
+		addTexto(125, 270, 130, 20, "Disponível:");
 //		addTexto(125, 320, 130, 20, "Quantidade:");
 //		addTexto(280, 320, 130, 20, "Preço por tam:");
 		campoDeNome = addCampoDeTexto(125, 135, 300, 25, new LineBorder(Color.BLACK, 1), "Digite o nome do material");
 		adicionarCampoDeMateriais();
 //		valor = addCampoDeTexto(280, 340, 145, 25, new LineBorder(Color.BLACK, 1), "Digite o preço");
-
+		radioButton = new JRadioButton();
+		radioButton.setBounds(220, 270, 20, 20);
+		radioButton.setOpaque(false);
+		radioButton.setForeground(Color.WHITE);
+		add(radioButton);
 //		quantidade = addCampoDeTexto(125, 340, 145, 25, new LineBorder(Color.BLACK, 1), "Digite a quantidade");
-		tamanho = addCampoDeTexto(125, 290, 300, 25, new LineBorder(Color.BLACK, 1), "Digite o tamanho do material(m)");
-		addBotao(220, 400, 110, 30, "Confirmar", new AdicionarMaterialController(this));
+		addBotao(220, 400, 110, 30, "Confirmar", new OuvinteAdicionarMaterial(this));
 		addBotaoDeVoltar();
 		
 		setVisible(true);
@@ -99,7 +103,6 @@ public class JanelaAdicionarMateriais extends JanelaPadrao{
 		campoDeNome = addCampoDeTexto(125, 135, 300, 25, new LineBorder(Color.BLACK, 1), material.getNome());
 		adicionarCampoDeMateriais();
 
-		tamanho = addCampoDeTexto(125, 290, 300, 25, new LineBorder(Color.BLACK, 1), String.valueOf(material.getTamanho()));
 //		addBotao(220, 400, 110, 30, "Editar", new ActionListener() {
 
 //			public void actionPerformed(ActionEvent e) {

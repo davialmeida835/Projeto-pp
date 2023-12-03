@@ -7,7 +7,7 @@ public class HistoricoDeCompraDTO {
 	private MaterialDTO material;
 	private LocalDate dataDaCompra;
 	private double preco;
-	private double tamanho;
+	
 	
 	public MaterialDTO getMaterial() {
 		return material;
@@ -30,11 +30,10 @@ public class HistoricoDeCompraDTO {
 		this.preco = preco;
 	}
 	
-	public HistoricoDeCompraDTO(MaterialDTO material, double preco, double tamanho) {
+	public HistoricoDeCompraDTO(MaterialDTO material, double preco) {
 		this.material = material;
 		this.dataDaCompra = LocalDate.now();
 		this.preco = preco;
-		this.tamanho = tamanho;
 	}
 	
 	

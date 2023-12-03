@@ -13,11 +13,11 @@ import Model.Material;
 import Model.TipoDeMaterial;
 import View.JanelaAdicionarMateriais;
 
-public class AdicionarMaterialController implements ActionListener{
+public class OuvinteAdicionarMaterial implements ActionListener{
 
 	private JanelaAdicionarMateriais janela;
 	
-	public AdicionarMaterialController(JanelaAdicionarMateriais janela) {
+	public OuvinteAdicionarMaterial(JanelaAdicionarMateriais janela) {
 		this.janela = janela;
 	}
 	
@@ -27,14 +27,14 @@ public class AdicionarMaterialController implements ActionListener{
 		String nome = janela.getCampoDeNome().getText();
 		List<TipoDeMaterial> tipoDeMateriais = janela.getCampoDeMaterial().getSelectedValuesList();
 //		double valor = Double.parseDouble(janela.getValor().getText());
-		double tamanho = Double.parseDouble(janela.getTamanho().getText());
+		boolean disponibilidade = (janela.getRadioButton().isSelected()) ? true : false;
 //		double quantidade = Double.parseDouble(janela.getQuantidade().getText());
 		
 		if(tipoDeMateriais.size() > 1) {
 			JOptionPane.showMessageDialog(janela, "Escolha apenas um tipo");
 		}
 		
-		 MaterialDTO material = new MaterialDTO(nome, tamanho, tipoDeMateriais.get(0));
+		 MaterialDTO material = new MaterialDTO(nome, disponibilidade, tipoDeMateriais.get(0));
 		 
 		 MaterialDAO gerenciador = new MaterialDAO();
 		 
