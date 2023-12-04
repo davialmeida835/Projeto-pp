@@ -65,7 +65,7 @@ public class JanelaDeCadastroFornecedor extends JanelaPadrao{
     }
     private void cadastrarFornecedor() {
         FornecedorDTO fornecedorDTO = obterDadosFornecedor();
-        FornecedorController fornecedorController = new FornecedorController(central);
+        FornecedorController fornecedorController = new FornecedorController(this);
 
         if (camposPreenchidos()) {
             if (!fornecedorController.cadastrarFornecedor(fornecedorDTO)) {

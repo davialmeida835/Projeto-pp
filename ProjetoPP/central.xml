@@ -18,98 +18,28 @@
       <email>Rua ABC</email>
       <cpfECnpj>123456789</cpfECnpj>
     </DTO.ClienteDTO>
-    <DTO.ClienteDTO>
-      <nome>João</nome>
-      <telefone>1</telefone>
-      <email>Rua ABC</email>
-      <cpfECnpj>123456789</cpfECnpj>
-    </DTO.ClienteDTO>
-    <DTO.ClienteDTO>
-      <nome>João</nome>
-      <telefone>1</telefone>
-      <email>Rua ABC</email>
-      <cpfECnpj>123456789</cpfECnpj>
-    </DTO.ClienteDTO>
-    <DTO.ClienteDTO>
-      <nome>João</nome>
-      <telefone>1</telefone>
-      <email>Rua ABC</email>
-      <cpfECnpj>123456789</cpfECnpj>
-    </DTO.ClienteDTO>
-    <DTO.ClienteDTO>
-      <nome>João</nome>
-      <telefone>1</telefone>
-      <email>Rua ABC</email>
-      <cpfECnpj>123456789</cpfECnpj>
-    </DTO.ClienteDTO>
   </clientes>
   <materiais>
     <DTO.MaterialDTO>
-      <nome>dasd</nome>
-      <tamanho>66.0</tamanho>
-      <tipoDeMaterial>OUTROS</tipoDeMaterial>
-      <id>1701493290011</id>
+      <nome>4234</nome>
+      <disponivel>true</disponivel>
+      <tipoDeMaterial>LINHA</tipoDeMaterial>
+      <id>1701647104624</id>
     </DTO.MaterialDTO>
   </materiais>
-  <fornecedores/>
+  <fornecedores>
+    <DTO.FornecedorDTO>
+      <nome>yoyoyoyoy</nome>
+      <telefone>(24) 23423-4234</telefone>
+      <materiaisFornecidos>fasfasf</materiaisFornecidos>
+    </DTO.FornecedorDTO>
+    <DTO.FornecedorDTO>
+      <nome>3s4ere</nome>
+      <telefone>(23) 42342-3423</telefone>
+      <materiaisFornecidos>sdad</materiaisFornecidos>
+    </DTO.FornecedorDTO>
+  </fornecedores>
   <gastos/>
-  <pedidos>
-    <DTO.PedidoDTO>
-      <tipoderoupa class="string">Terno</tipoderoupa>
-      <numero>2</numero>
-      <descricao>Descricçao</descricao>
-      <dataEntrega>2121-09-22</dataEntrega>
-      <quantidade>1</quantidade>
-      <cliente reference="../../../clientes/DTO.ClienteDTO"/>
-      <tamanho>PP</tamanho>
-      <materiais>
-        <DTO.MaterialDTO reference="../../../../materiais/DTO.MaterialDTO"/>
-      </materiais>
-      <preco>77.0</preco>
-      <pagamento>true</pagamento>
-    </DTO.PedidoDTO>
-    <DTO.PedidoDTO>
-      <tipoderoupa class="string">Blusa</tipoderoupa>
-      <numero>4</numero>
-      <descricao>Descricçao</descricao>
-      <dataEntrega>2204-01-01</dataEntrega>
-      <quantidade>1</quantidade>
-      <cliente reference="../../../clientes/DTO.ClienteDTO[3]"/>
-      <tamanho>PP</tamanho>
-      <materiais>
-        <DTO.MaterialDTO reference="../../../../materiais/DTO.MaterialDTO"/>
-      </materiais>
-      <preco>66.02</preco>
-      <pagamento>true</pagamento>
-    </DTO.PedidoDTO>
-    <DTO.PedidoDTO>
-      <tipoderoupa class="string">Blusa</tipoderoupa>
-      <numero>5</numero>
-      <descricao>Descricçao</descricao>
-      <dataEntrega>2201-01-01</dataEntrega>
-      <quantidade>1</quantidade>
-      <cliente reference="../../../clientes/DTO.ClienteDTO"/>
-      <tamanho>PP</tamanho>
-      <materiais>
-        <DTO.MaterialDTO reference="../../../../materiais/DTO.MaterialDTO"/>
-      </materiais>
-      <preco>666.0</preco>
-      <pagamento>false</pagamento>
-    </DTO.PedidoDTO>
-    <DTO.PedidoDTO>
-      <tipoderoupa class="string">Vestido</tipoderoupa>
-      <numero>6</numero>
-      <descricao>Descricçao</descricao>
-      <dataEntrega>3423-11-23</dataEntrega>
-      <quantidade>2</quantidade>
-      <cliente reference="../../../clientes/DTO.ClienteDTO[2]"/>
-      <tamanho>M</tamanho>
-      <materiais>
-        <DTO.MaterialDTO reference="../../../../materiais/DTO.MaterialDTO"/>
-      </materiais>
-      <preco>3123.0</preco>
-      <pagamento>false</pagamento>
-    </DTO.PedidoDTO>
-  </pedidos>
+  <pedidos/>
   <historico/>
 </Model.CentralDeInformacoes>
