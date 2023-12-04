@@ -29,11 +29,6 @@
   </materiais>
   <fornecedores>
     <DTO.FornecedorDTO>
-      <nome>yoyoyoyoy</nome>
-      <telefone>(24) 23423-4234</telefone>
-      <materiaisFornecidos>fasfasf</materiaisFornecidos>
-    </DTO.FornecedorDTO>
-    <DTO.FornecedorDTO>
       <nome>3s4ere</nome>
       <telefone>(23) 42342-3423</telefone>
       <materiaisFornecidos>sdad</materiaisFornecidos>
