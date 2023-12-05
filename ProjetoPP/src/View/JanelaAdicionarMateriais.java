@@ -20,18 +20,18 @@ import DAO.MaterialDAO;
 import DTO.MaterialDTO;
 import Model.TipoDeMaterial;
 
-public class JanelaAdicionarMateriais extends JanelaPadrao{
+public class JanelaAdicionarMateriais extends JanelaPadrao {
 
 	public static void main(String[] args) {
 		new JanelaAdicionarMateriais();
 	}
-	
+
 	private JTextField campoDeNome;
 	private JList<TipoDeMaterial> campoDeMaterial;
 	private JRadioButton radioButton;
 	private JTextField valor;
 	private JTextField quantidade;
-	
+
 	public JRadioButton getRadioButton() {
 		return radioButton;
 	}
@@ -73,7 +73,7 @@ public class JanelaAdicionarMateriais extends JanelaPadrao{
 	}
 
 	public JanelaAdicionarMateriais() {
-		addTexto(0, 30, 550, 30, "Adicionar Material", new Font("Arial", Font.BOLD, 17), JLabel.CENTER, Color.BLACK);		
+		addTexto(0, 30, 550, 30, "Adicionar Material", new Font("Arial", Font.BOLD, 17), JLabel.CENTER, Color.BLACK);
 		addTexto(125, 110, 65, 20, "Nome:");
 		addTexto(125, 160, 140, 20, "Tipo:");
 		addTexto(125, 270, 130, 20, "Disponível:");
@@ -90,58 +90,72 @@ public class JanelaAdicionarMateriais extends JanelaPadrao{
 //		quantidade = addCampoDeTexto(125, 340, 145, 25, new LineBorder(Color.BLACK, 1), "Digite a quantidade");
 		addBotao(220, 400, 110, 30, "Confirmar", new OuvinteAdicionarMaterial(this));
 		addBotaoDeVoltar();
-		
+
 		setVisible(true);
 	}
-	
+
 	public JanelaAdicionarMateriais(MaterialDTO material) {
-		addTexto(0, 30, 550, 30, "Editar Material", new Font("Arial", Font.BOLD, 17), JLabel.CENTER, Color.BLACK);		
+		addTexto(0, 30, 550, 30, "Editar Material", new Font("Arial", Font.BOLD, 17), JLabel.CENTER, Color.BLACK);
 		addTexto(125, 110, 65, 20, "Nome:");
 		addTexto(125, 160, 140, 20, "Tipo:");
-		addTexto(125, 270, 80, 20, "Tamanho:");
+		addTexto(125, 270, 130, 20, "Disponível:");
+		radioButton = new JRadioButton();
+		radioButton.setBounds(220, 270, 20, 20);
+		radioButton.setOpaque(false);
+		radioButton.setForeground(Color.WHITE);
+		radioButton.setSelected(material.isDisponivel());
+		;
+		add(radioButton);
 
 		campoDeNome = addCampoDeTexto(125, 135, 300, 25, new LineBorder(Color.BLACK, 1), material.getNome());
 		adicionarCampoDeMateriais();
 
-//		addBotao(220, 400, 110, 30, "Editar", new ActionListener() {
+		addBotao(220, 400, 110, 30, "Editar", new ActionListener() {
 
-//			public void actionPerformed(ActionEvent e) {
-//				String nome = campoDeNome.getText();
-//				List<TipoDeMaterial> tipoDeMateriais = campoDeMaterial.getSelectedValuesList();
-////				double valor = Double.parseDouble(janela.getValor().getText());
-//				double tamanhoed = Double.parseDouble(tamanho.getText());
-////				double quantidade = Double.parseDouble(janela.getQuantidade().getText());
-//				
-//				if(tipoDeMateriais.size() > 1) {
-//					JOptionPane.showMessageDialog(null, "Escolha apenas um tipo");
-//				}
-//				
-//				 MaterialDTO material = new MaterialDTO(nome, tamanho, tipoDeMateriais.get(0));
-//				 
-//				 MaterialDAO gerenciador = new MaterialDAO();
-//				 
-//				 gerenciador.cadastrarMaterial(material);
-//				 
-//				 JOptionPane.showMessageDialog(janela, "Adicionado");
-//				 
-//				 new JanelaAdicionarMateriais();
-//				 janela.dispose();
-//			}
-			
-//		});
-		addBotaoDeVoltar();
-		
+			public void actionPerformed(ActionEvent e) {
+				String nome = campoDeNome.getText();
+				List<TipoDeMaterial> tipoDeMateriais = campoDeMaterial.getSelectedValuesList();
+				boolean disponibilidade = ((radioButton.isSelected()) ? true : false);
+
+				if (tipoDeMateriais.size() > 1 || tipoDeMateriais.size() < 1) {
+					JOptionPane.showMessageDialog(null, "Escolha apenas um tipo de material");
+				} else {
+					material.setDisponivel(disponibilidade);
+					material.setNome(nome);
+					material.setTipoDeMaterial(tipoDeMateriais.get(0));
+					
+					MaterialDAO gerenciador = new MaterialDAO();
+
+					gerenciador.atualizarMaterial(material);
+
+					JOptionPane.showMessageDialog(null, "Editado");
+
+					new JanelaAdicionarMateriais();
+					dispose();
+				}
+			}
+
+		});
+		addBotaoDeVoltar(new ActionListener() {
+
+			public void actionPerformed(ActionEvent e) {
+				dispose();
+				new JanelaListaMateriais();
+			}
+
+		});
+
 		setVisible(true);
 	}
-	
+
 	private void adicionarCampoDeMateriais() {
 		DefaultListModel<TipoDeMaterial> dlm = new DefaultListModel<>();
-		
+
 		dlm.addElement(TipoDeMaterial.TECIDO);
 		dlm.addElement(TipoDeMaterial.LINHA);
 		dlm.addElement(TipoDeMaterial.FERRAMENTA);
 		dlm.addElement(TipoDeMaterial.OUTROS);
-		
+
 		campoDeMaterial = new JList<>(dlm);
 		JScrollPane jsp = new JScrollPane(campoDeMaterial);
 		jsp.setBorder(new LineBorder(Color.BLACK, 1));

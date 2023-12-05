@@ -52,7 +52,7 @@ public class OuvinteCadastrarCliente implements ActionListener {
 
 		} else if (telefone.length() != 11) {
 			JOptionPane.showMessageDialog(cadastrarCliente, "Digite um número de telefone válido");
-		} else if ((cadastrarCliente.getCaixaDePessoaFisica().isSelected() && !Validar.validarCpf(cpfOuCnpj)) || (cadastrarCliente.getCaixaDePessoaJuridica().isSelected() && !Validar.validarCnpj(cpfOuCnpj))) {
+		} else if ((cadastrarCliente.getCaixaDePessoaFisica().isSelected() && (cpfOuCnpj.length() != 11) || (cadastrarCliente.getCaixaDePessoaJuridica().isSelected() && (cpfOuCnpj.length() != 14)))) {
 			JOptionPane.showMessageDialog(cadastrarCliente, "Digite um cpf ou cnpj válido");
 		} 
 		else {

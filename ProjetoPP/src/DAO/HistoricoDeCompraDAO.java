@@ -8,7 +8,7 @@ public class HistoricoDeCompraDAO implements HistoricoDeCompraDAOIf{
 
 	
 	public void cadastrarHistoricoDeCompra(HistoricoDeCompraDTO historicoDeCompra) {
-		CentralDeInformacoes.getInstance().getHistorico().add(historicoDeCompra);
+		CentralDeInformacoes.getInstance().getHistorico().add(0, historicoDeCompra);
 		
 		Persistencia.salvarCentral(CentralDeInformacoes.getInstance(), "central");
 	}

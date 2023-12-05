@@ -79,21 +79,30 @@ public class JanelaListaMateriais extends JanelaPadrao{
 		addBotao(360, 420, 110, 30, "Editar", new ActionListener() {
 
 			public void actionPerformed(ActionEvent e) {
-				
+				int i = tabela.getSelectedRow();
+				new JanelaAdicionarMateriais(CentralDeInformacoes.getInstance().getMateriais().get(i));
+				dispose();
 			}
 			
 		});
 		addBotao(400, 95, 100, 30, "Filtrar", new ActionListener() {
 			
 			public void actionPerformed(ActionEvent e) {
-				filtrarFornecedores();
+				filtrarMateriais();
+			}
+		});
+		addBotao(400, 45, 100, 30, "Histórico", new ActionListener() {
+			
+			public void actionPerformed(ActionEvent e) {
+				dispose();
+				new JanelaListaCompraDeMateriais();
 			}
 		});
 		campoFiltro = addCampoDeTexto(50, 95, 325, 30);
 		setVisible(true);
 	}
 	
-	private void filtrarFornecedores() {
+	private void filtrarMateriais() {
    	 	String nomeFiltro = campoFiltro.getText().trim().toLowerCase();
 
    	    TableRowSorter<DefaultTableModel> sorter = new TableRowSorter<>((DefaultTableModel) tabela.getModel());

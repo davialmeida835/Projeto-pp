@@ -12,10 +12,6 @@ public class FornecedorController {
 	        this.central = central;
 	    }
 
-	
-
-	  
-
 	    public boolean cadastrarFornecedor(FornecedorDTO fornecedorDTO) {
 	        FornecedorDAO fornecedorDAO = new FornecedorDAO(central);
 
@@ -26,9 +22,5 @@ public class FornecedorController {
 
 	        return false;
 	    }
-
-	  
-	
-	
 
 }

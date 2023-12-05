@@ -21,16 +21,21 @@ public class JanelaDeMenu extends JanelaPadrao {
 	
 	public JanelaDeMenu() {
 		addTexto(0, 20, 550, 30, "Menu", new Font("Arial", Font.BOLD, 18), JLabel.CENTER, Color.BLACK);
-		addBotoesMenu(125, 55, 300, 40, "CADASTRAR CLIENTES", (getClass().getResource("/resources/Cliente.png")));
-		addBotoesMenu(125, 100, 300, 40, "CADASTRAR MATERIAIS", getClass().getResource("/resources/Fornecedor.png"));
-		addBotoesMenu(125, 235, 300, 40, "LISTA DE PEDIDOS", getClass().getResource("/resources/Pacote.png"));
-		addBotoesMenu(125, 145, 300, 40, "CADASTRAR FORNECEDORES", getClass().getResource("/resources/Servicos.png"));
-		addBotoesMenu(125, 190, 300, 40, "CADASTRAR PEDIDOS", getClass().getResource("/resources/Servicos.png"));
-		addBotoesMenu(125, 280, 300, 40, "LISTA DE FORNECEDORES", getClass().getResource("/resources/Orcamento.png"));
-		addBotoesMenu(125, 325, 300, 40, "LISTA DE MATERIAIS", getClass().getResource("/resources/Lista.png"));
-		addBotoesMenu(125, 370, 300, 40, "GERENCIAR TIPOS DE MATERIAIS", getClass().getResource("/resources/Lista.png"));
-		addBotoesMenu(125, 415, 300, 40, "", getClass().getResource("/resources/Lista.png"));
-		
+		addBotoesMenu(65, 55, 200, 40, "CADASTRAR CLIENTES", (getClass().getResource("/resources/Cliente.png")));
+		addBotoesMenu(275, 55, 200, 40, "CADASTRAR MATERIAIS", getClass().getResource("/resources/Fornecedor.png"));
+		addBotoesMenu(65, 110, 200, 40, "CADASTRAR FORNECEDORES", getClass().getResource("/resources/Servicos.png"));
+		addBotoesMenu(275, 110, 200, 40, "CADASTRAR PEDIDOS", getClass().getResource("/resources/Servicos.png"));
+		addBotoesMenu(65, 165, 200, 40, "LISTA DE PEDIDOS", getClass().getResource("/resources/Pacote.png"));
+		addBotoesMenu(275, 165, 200, 40, "LISTA DE FORNECEDORES", getClass().getResource("/resources/Orcamento.png"));
+		addBotoesMenu(65, 220, 200, 40, "LISTA DE MATERIAIS", getClass().getResource("/resources/Lista.png"));
+		addBotoesMenu(275, 220, 200, 40, "", getClass().getResource("/resources/Lista.png"));
+		addBotoesMenu(65, 275, 200, 40, "", getClass().getResource("/resources/Lista.png"));
+		addBotoesMenu(275, 275, 200, 40, "", getClass().getResource("/resources/Lista.png"));
+		addBotoesMenu(65, 330, 200, 40, "", getClass().getResource("/resources/Lista.png"));
+		addBotoesMenu(275, 330, 200, 40, "", getClass().getResource("/resources/Lista.png"));
+		addBotoesMenu(65, 385, 200, 40, "", getClass().getResource("/resources/Lista.png"));
+		addBotoesMenu(275, 385, 200, 40, "", getClass().getResource("/resources/Lista.png"));
+
 		addBotaoDeVoltar(new ActionListener() {
 			
 			public void actionPerformed(ActionEvent e) {
