@@ -19,6 +19,7 @@ import javax.swing.table.AbstractTableModel;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableRowSorter;
 
+import Controller.FornecedorController;
 import DTO.FornecedorDTO;
 import Model.CentralDeInformacoes;
 import Model.Fornecedor;
@@ -27,14 +28,14 @@ public class JanelaListaFornecedores extends JanelaPadrao{
 	
 		private JTable tabelaFornecedores;
 		private DefaultTableModel tableModel;
-		private CentralDeInformacoes central= CentralDeInformacoes.getInstance();
+		
 
 	    private JTextField campoFiltro;
 	    public JanelaListaFornecedores() {
 	        addTexto(0, 10, 550, 30, "Lista de Fornecedores", new Font("Arial", Font.BOLD, 17), JLabel.CENTER, Color.BLACK);
 	        addTexto(50,65,250,30,"Filtrar fornecedor por nome:");
 	        repaint();
-	        List<FornecedorDTO> fornecedores = central.getFornecedores();
+	        List<FornecedorDTO> fornecedores = CentralDeInformacoes.getInstance().getFornecedores();
 
 	       
 	        List<Object[]> dadosFornecedores = new ArrayList<>();
@@ -130,17 +131,19 @@ public class JanelaListaFornecedores extends JanelaPadrao{
 	                tableModel.setValueAt(novosMateriais, linhaSelecionada, 2);
 
 	                // Atualiza na lista de fornecedores
-	                List<FornecedorDTO> fornecedores = central.getFornecedores();
+	                FornecedorDTO fornecedor1=null;
+	                List<FornecedorDTO> fornecedores = CentralDeInformacoes.getInstance().getFornecedores();
 	                for (FornecedorDTO fornecedor : fornecedores) {
 	                    if (fornecedor.getNome().equals(nomeAtual) && fornecedor.getTelefone().equals(telefoneAtual)) {
-	                        fornecedor.setNome(novoNome);
-	                        fornecedor.setTelefone(novoTelefone);
-	                        fornecedor.setMateriaisFornecidos(novosMateriais);
-	                        
+	                       fornecedor1=fornecedor;
+	                       fornecedor1.setNome(novoNome);
+	                       fornecedor1.setTelefone(novoTelefone);
+	                       fornecedor1.setMateriaisFornecidos(novosMateriais);
 	                        break;
 	                    }
 	                }
-	                Controller.Persistencia.salvarCentral(central, "central");
+	               FornecedorController f = new FornecedorController(this);
+	               f.atualizarFornecedor(fornecedor1);
 	                JOptionPane.showMessageDialog(this, "Fornecedor atualizado com sucesso.", "Atualização Concluída", JOptionPane.INFORMATION_MESSAGE);
 	            }
 	        } else {
@@ -159,14 +162,12 @@ public class JanelaListaFornecedores extends JanelaPadrao{
 	                    "Confirmar Deleção", JOptionPane.YES_NO_OPTION);
 
 	            if (opcao == JOptionPane.YES_OPTION) {
-	               
+	               FornecedorDTO forne = new FornecedorDTO(nome, telefone, materiais);
 	                tableModel.removeRow(linhaSelecionada);
 
-	               
-	                List<FornecedorDTO> fornecedores = central.getFornecedores();
-	                fornecedores.removeIf(f -> f.getNome().equals(nome) && f.getTelefone().equals(telefone));
-	                Controller.Persistencia.salvarCentral(central, "central");
-
+	                FornecedorController f = new FornecedorController(this);
+		            f.deletarFornecedor(forne);
+	                
 	                JOptionPane.showMessageDialog(this, "Fornecedor deletado com sucesso.", "Deleção Concluída", JOptionPane.INFORMATION_MESSAGE);
 	            }
 	        } else {
