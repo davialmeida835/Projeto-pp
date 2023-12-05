@@ -11,14 +11,10 @@ import javax.swing.JOptionPane;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.JTextField;
-import javax.swing.RowFilter;
 import javax.swing.table.DefaultTableModel;
-import javax.swing.table.TableRowSorter;
 
 import DAO.HistoricoDeCompraDAO;
-import DAO.MaterialDAO;
 import DTO.HistoricoDeCompraDTO;
-import DTO.MaterialDTO;
 import Model.CentralDeInformacoes;
 
 public class JanelaListaCompraDeMateriais extends JanelaPadrao {
@@ -35,7 +31,14 @@ public class JanelaListaCompraDeMateriais extends JanelaPadrao {
 		addTexto(0, 30, 550, 30, "Histórico de compras de Materiais", new Font("Arial", Font.BOLD, 17), JLabel.CENTER, Color.BLACK);		
 
 		adicionarTabela();
-		addBotaoDeVoltar();
+		addBotaoDeVoltar(new ActionListener() {
+
+			public void actionPerformed(ActionEvent e) {
+				new JanelaListaMateriais();
+				dispose();
+			}
+			
+		});
 		addBotao(220, 420, 110, 30, "Excluir", new ActionListener() {
 			
 			public void actionPerformed(ActionEvent e) {

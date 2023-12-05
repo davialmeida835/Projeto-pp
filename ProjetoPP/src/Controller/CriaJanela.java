@@ -6,6 +6,7 @@ import View.JanelaAdicionarMateriais;
 import View.JanelaDeCadastraPedido;
 import View.JanelaDeCadastroCliente;
 import View.JanelaDeCadastroFornecedor;
+import View.JanelaListaClientes;
 import View.JanelaListaFornecedores;
 import View.JanelaListaMateriais;
 import View.JanelaListaPedidos;
@@ -24,8 +25,8 @@ public class CriaJanela {
                 return new JanelaDeCadastraPedido();
             case "LISTA DE PEDIDOS":
                 return new JanelaListaPedidos();
-            case "Cadastrar Orçamentos":
-                //return new JanelaCadastrarOrcamento();
+            case "LISTA DE CLIENTES":
+                return new JanelaListaClientes();
             case "LISTA DE FORNECEDORES":
                 return new JanelaListaFornecedores();
             case "LISTA DE MATERIAIS":

@@ -28,13 +28,14 @@ public class JanelaDeMenu extends JanelaPadrao {
 		addBotoesMenu(65, 165, 200, 40, "LISTA DE PEDIDOS", getClass().getResource("/resources/Pacote.png"));
 		addBotoesMenu(275, 165, 200, 40, "LISTA DE FORNECEDORES", getClass().getResource("/resources/Orcamento.png"));
 		addBotoesMenu(65, 220, 200, 40, "LISTA DE MATERIAIS", getClass().getResource("/resources/Lista.png"));
-		addBotoesMenu(275, 220, 200, 40, "", getClass().getResource("/resources/Lista.png"));
+		addBotoesMenu(275, 220, 200, 40, "LISTA DE CLIENTES", getClass().getResource("/resources/Lista.png"));
 		addBotoesMenu(65, 275, 200, 40, "", getClass().getResource("/resources/Lista.png"));
 		addBotoesMenu(275, 275, 200, 40, "", getClass().getResource("/resources/Lista.png"));
 		addBotoesMenu(65, 330, 200, 40, "", getClass().getResource("/resources/Lista.png"));
 		addBotoesMenu(275, 330, 200, 40, "", getClass().getResource("/resources/Lista.png"));
 		addBotoesMenu(65, 385, 200, 40, "", getClass().getResource("/resources/Lista.png"));
 		addBotoesMenu(275, 385, 200, 40, "", getClass().getResource("/resources/Lista.png"));
+
 
 		addBotaoDeVoltar(new ActionListener() {
 			
@@ -58,6 +59,7 @@ public class JanelaDeMenu extends JanelaPadrao {
 		botao.setForeground(Color.BLACK);
 		botao.setBounds(x, y, largura, altura);
 		botao.setIcon(new ImageIcon(url));
+		
 		add(botao);
 	}
 	

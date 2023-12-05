@@ -94,8 +94,8 @@ public class JanelaListaMateriais extends JanelaPadrao{
 		addBotao(400, 45, 100, 30, "Histórico", new ActionListener() {
 			
 			public void actionPerformed(ActionEvent e) {
-				dispose();
 				new JanelaListaCompraDeMateriais();
+				dispose();
 			}
 		});
 		campoFiltro = addCampoDeTexto(50, 95, 325, 30);

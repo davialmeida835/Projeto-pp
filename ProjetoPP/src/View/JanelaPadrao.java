@@ -125,6 +125,16 @@ public class JanelaPadrao extends JFrame{
 		return campoDeTexto;
 	}
 	
+	public JTextField addCampoDeTextoSemOuvinte(int x, int y, int largura, int altura, String texto) {
+		JTextField campoDeTexto = new JTextField(texto);
+		
+		campoDeTexto.setFont(Util.FONTE_PADRAO);
+		
+		campoDeTexto.setBounds(x, y, largura, altura);
+		add(campoDeTexto);
+		return campoDeTexto;
+	}
+	
 	//adiciona botão já com action listener
 	public JButton addBotao(int x, int y, int largura, int altura, String titulo, ActionListener ouvinte) {
 		JButton botao = new JButton(titulo);

@@ -23,13 +23,6 @@ public class OuvinteCadastrarCliente implements ActionListener {
 
 	//cadastra os clientes se todas as informações estiverem corretas
 	public void actionPerformed(ActionEvent e) {
-		cadastrarCliente.getTipoDePessoa().setEnabled(true);
-		if (cadastrarCliente.getCaixaDePessoaFisica().isSelected()) {
-			cadastrarCliente.getPessoaFisica().setText("Digite seu cpf:");
-		} else {
-			cadastrarCliente.getPessoaFisica().setText("Digite seu cnpj:");
-		}
-
 		CentralDeInformacoes central = Persistencia.recuperarCentral("central");
 		String nome = cadastrarCliente.getCampoDoNome().getText();
 		String telefone = cadastrarCliente.getCampoDoTelefone().getText().replace("(", "").replace(")", "").replace("-", "").replace(" ", "");

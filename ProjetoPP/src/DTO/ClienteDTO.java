@@ -6,14 +6,20 @@ public class ClienteDTO {
 	private long telefone;
 	private String email;
 	private long cpfECnpj;
+	private long id;
 	
 	public ClienteDTO(String nome, long telefone, String email, long cpfECnpj) {
 		this.nome = nome;
 		this.telefone = telefone;
 		this.email = email;
 		this.cpfECnpj = cpfECnpj;
+		id = System.currentTimeMillis();
 	}
 
+	public long getId() {
+		return id;
+	}
+	
 	public long getCpfECnpj() {
 		return cpfECnpj;
 	}

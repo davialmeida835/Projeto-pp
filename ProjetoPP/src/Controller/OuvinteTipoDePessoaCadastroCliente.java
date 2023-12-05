@@ -14,7 +14,7 @@ public class OuvinteTipoDePessoaCadastroCliente implements ActionListener {
 	}
 
 	public void actionPerformed(ActionEvent e) {
-		janelaDeCadastro.getTipoDePessoa().setEnabled(true);;
+		janelaDeCadastro.getTipoDePessoa().setEnabled(true);
 		if(janelaDeCadastro.getCaixaDePessoaFisica().isSelected()) {
 			janelaDeCadastro.getPessoaFisica().setText("Digite seu cpf:");
 		}

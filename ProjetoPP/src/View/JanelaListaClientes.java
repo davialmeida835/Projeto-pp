@@ -42,8 +42,8 @@ public class JanelaListaClientes extends JanelaPadrao{
 					gerenciar.deletarCliente(CentralDeInformacoes.getInstance().getClientes().get(i));
 					
 				}
-				dispose();
 				new JanelaListaClientes();
+				dispose();
 			}
 		});
 		
@@ -51,7 +51,7 @@ public class JanelaListaClientes extends JanelaPadrao{
 
 			public void actionPerformed(ActionEvent e) {
 				int i = tabela.getSelectedRow();
-				new JanelaAdicionarMateriais(CentralDeInformacoes.getInstance().getMateriais().get(i));
+				new JanelaDeCadastroCliente(CentralDeInformacoes.getInstance().getClientes().get(i));
 				dispose();
 			}
 			
@@ -81,7 +81,7 @@ public class JanelaListaClientes extends JanelaPadrao{
 			itens[0] = m.getNome();
 			itens[1] = m.getTelefone();
 			itens[2] = m.getEmail();
-			itens[2] = m.getCpfECnpj();
+			itens[3] = m.getCpfECnpj();
 			model.addRow(itens);
 		}
 		

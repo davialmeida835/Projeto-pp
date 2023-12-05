@@ -2,11 +2,16 @@ package View;
 
 import java.awt.Color;
 import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.text.ParseException;
 
+import javax.mail.internet.AddressException;
+import javax.mail.internet.InternetAddress;
 import javax.swing.ButtonGroup;
 import javax.swing.JFormattedTextField;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JRadioButton;
 import javax.swing.JTextField;
 import javax.swing.border.LineBorder;
@@ -16,6 +21,9 @@ import Controller.OuvinteCadastrarCliente;
 import Controller.OuvinteDoCampoSomenteNumeros;
 import Controller.OuvinteTipoDePessoaCadastroCliente;
 import Controller.OuvinteTirarTextoDeTextField;
+import DAO.ClienteDAO;
+import DTO.ClienteDTO;
+import Model.CentralDeInformacoes;
 
 public class JanelaDeCadastroCliente extends JanelaPadrao {
 	
@@ -28,7 +36,7 @@ public class JanelaDeCadastroCliente extends JanelaPadrao {
 	private JLabel pessoaFisica; //vai mudar para juridica ou fisica, mudar nome dps
 
 	public static void main(String[] args) {
-		new JanelaDeCadastroCliente();
+		new JanelaDeCadastroCliente(CentralDeInformacoes.getInstance().getClientes().get(0));
 	}
 	
 	public JanelaDeCadastroCliente() {
@@ -43,6 +51,73 @@ public class JanelaDeCadastroCliente extends JanelaPadrao {
 		adicionarCampoDoTelefone();
 		addBotoesDeTipoDePesso();
 		addBotaoDeVoltar();
+		
+		setVisible(true);
+	}
+	
+	public JanelaDeCadastroCliente(ClienteDTO cliente) {
+		addTexto(0, 30, 550, 30, "Cadastro do Cliente", new Font("Arial", Font.BOLD, 17), JLabel.CENTER, Color.WHITE);
+		addTexto(125, 205, 65, 20, "E-mail:");
+		addTexto(125, 260, 65, 20, "Nome:");
+		addTexto(125, 315, 90, 20, "Telefone:");
+		campoDeEmail = addCampoDeTextoSemOuvinte(125, 230, 300, 25, cliente.getEmail());
+		campoDoNome = addCampoDeTextoSemOuvinte(125, 285, 300, 25, cliente.getNome());
+		addBotao(220, 400, 110, 30, "Editar", new ActionListener() {
+
+			public void actionPerformed(ActionEvent e) {
+				String nome = campoDoNome.getText();
+				String telefone = campoDoTelefone.getText().replace("(", "").replace(")", "").replace("-", "").replace(" ", "");
+				String email = campoDeEmail.getText();
+
+				String cpfOuCnpj = tipoDePessoa.getText();
+
+				boolean flag = true;
+				try {
+					InternetAddress eValido = new InternetAddress(email);
+					eValido.validate();
+				} catch (AddressException a) {
+					flag = false;
+				}
+
+				if (flag == false) {
+					JOptionPane.showMessageDialog(null, "Digite um E-mail válido");
+				} else if (nome.length() == 0) {
+					JOptionPane.showMessageDialog(null, "Preencha o campo do nome");
+
+				} else if (telefone.length() != 11) {
+					JOptionPane.showMessageDialog(null, "Digite um número de telefone válido");
+				} else if ((caixaDePessoaFisica.isSelected() && (cpfOuCnpj.length() != 11) || (caixaDePessoaJuridica.isSelected() && (cpfOuCnpj.length() != 14)))) {
+					JOptionPane.showMessageDialog(null, "Digite um cpf ou cnpj válido");
+				} 
+				else {
+					cliente.setCpfECnpj(Long.parseLong(cpfOuCnpj));
+					cliente.setEmail(email);
+					cliente.setNome(nome);
+					cliente.setTelefone(Long.parseLong(telefone));
+					
+					JOptionPane.showMessageDialog(null, "Editado com sucesso");
+					
+					ClienteDAO gerenciar = new ClienteDAO();
+					gerenciar.atualizarCliente(cliente);
+					dispose();
+					new JanelaDeCadastroCliente();
+				}
+			}
+			
+		});
+		adicionarCampoDoTipoDePessoa();
+		adicionarCampoDoTelefone();
+		campoDoTelefone.setText(String.valueOf(cliente.getTelefone()));
+		addBotoesDeTipoDePesso();
+		tipoDePessoa.setEnabled(true);
+		if(String.valueOf(cliente.getCpfECnpj()).length() == 11) {
+			caixaDePessoaFisica.setSelected(true);
+		}else {
+			caixaDePessoaJuridica.setSelected(true);
+		}
+		addBotaoDeVoltar();
+		tipoDePessoa.setText(String.valueOf(cliente.getCpfECnpj()));
+		
 		
 		setVisible(true);
 	}
