@@ -108,7 +108,7 @@
       <telefone>11111111111</telefone>
       <email>teste@gmail.com</email>
       <cpfECnpj>12345678910</cpfECnpj>
-      <desejaReceberEmail>false</desejaReceberEmail>
+      <desejaReceberEmail>true</desejaReceberEmail>
       <id>1701885442652</id>
     </DTO.ClienteDTO>
     <DTO.ClienteDTO>
@@ -118,6 +118,14 @@
       <cpfECnpj>11111111111</cpfECnpj>
       <desejaReceberEmail>false</desejaReceberEmail>
       <id>1701891204914</id>
+    </DTO.ClienteDTO>
+    <DTO.ClienteDTO>
+      <nome>João</nome>
+      <telefone>1</telefone>
+      <email>Rua ABC</email>
+      <cpfECnpj>123456789</cpfECnpj>
+      <desejaReceberEmail>true</desejaReceberEmail>
+      <id>1701892697347</id>
     </DTO.ClienteDTO>
   </clientes>
   <materiais>

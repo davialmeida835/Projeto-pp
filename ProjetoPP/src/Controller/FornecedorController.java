@@ -25,7 +25,7 @@ public class FornecedorController {
 
 
 	    public boolean cadastrarFornecedor(FornecedorDTO fornecedorDTO) {
-	        Fornecedor fornecedor = new Fornecedor(fornecedorDTO.getNome(), fornecedorDTO.getTelefone(), fornecedorDTO.getMateriaisFornecidos());
+	       
 	    	
 	    	
 	    	FornecedorDAO fornecedorDAO = new FornecedorDAO();

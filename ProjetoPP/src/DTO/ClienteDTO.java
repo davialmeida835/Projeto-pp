@@ -1,5 +1,10 @@
 package DTO;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import Model.ClienteObserver;
+
 public class ClienteDTO {
 
 	private String nome;
@@ -8,6 +13,8 @@ public class ClienteDTO {
 	private long cpfECnpj;
 	private boolean desejaReceberEmail;
 	private long id;
+	private List<ClienteObserver> observers = new ArrayList<>();
+	
 	
 	public ClienteDTO(String nome, long telefone, String email, long cpfECnpj, boolean receberEmail) {
 		this.nome = nome;
@@ -16,6 +23,9 @@ public class ClienteDTO {
 		this.cpfECnpj = cpfECnpj;
 		this.desejaReceberEmail = receberEmail;
 		id = System.currentTimeMillis();
+		if(desejaReceberEmail) {
+			notifyObservers();
+		}
 	}
 
 	public long getId() {
@@ -61,5 +71,17 @@ public class ClienteDTO {
 	public void setDesejaReceberEmail(boolean desejaReceberEmail) {
 		this.desejaReceberEmail = desejaReceberEmail;
 	}
+	public void addObserver(ClienteObserver observer) {
+        observers.add(observer);
+    }
+	public void removerObserver(ClienteObserver observer) {
+		observers.remove(observer);
+	}
+
+    private void notifyObservers() {
+        for (ClienteObserver observer : observers) {
+            observer.clienteOptInParaEmail(this);
+        }
+    }
 	
 }
