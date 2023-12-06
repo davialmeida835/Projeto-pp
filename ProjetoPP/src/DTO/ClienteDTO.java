@@ -6,13 +6,15 @@ public class ClienteDTO {
 	private long telefone;
 	private String email;
 	private long cpfECnpj;
+	private boolean desejaReceberEmail;
 	private long id;
 	
-	public ClienteDTO(String nome, long telefone, String email, long cpfECnpj) {
+	public ClienteDTO(String nome, long telefone, String email, long cpfECnpj, boolean receberEmail) {
 		this.nome = nome;
 		this.telefone = telefone;
 		this.email = email;
 		this.cpfECnpj = cpfECnpj;
+		this.desejaReceberEmail = receberEmail;
 		id = System.currentTimeMillis();
 	}
 
@@ -51,4 +53,13 @@ public class ClienteDTO {
 	public void setEmail(String email) {
 		this.email = email;
 	}
+
+	public boolean getDesejaReceberEmail() {
+		return desejaReceberEmail;
+	}
+
+	public void setDesejaReceberEmail(boolean desejaReceberEmail) {
+		this.desejaReceberEmail = desejaReceberEmail;
+	}
+	
 }

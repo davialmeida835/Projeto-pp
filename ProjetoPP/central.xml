@@ -1,17 +1,18 @@
 <Model.CentralDeInformacoes>
+  <usuario>
+    <email>teste@gmail.com</email>
+    <senha>29092003</senha>
+    <nome>Josias</nome>
+    <telefone>11111111111</telefone>
+    <dataDeNascimento>29/09/2003</dataDeNascimento>
+  </usuario>
   <clientes>
     <DTO.ClienteDTO>
       <nome>João</nome>
       <telefone>1</telefone>
       <email>Rua ABC</email>
       <cpfECnpj>123456789</cpfECnpj>
-      <id>1701827653363</id>
-    </DTO.ClienteDTO>
-    <DTO.ClienteDTO>
-      <nome>João</nome>
-      <telefone>1</telefone>
-      <email>Rua ABC</email>
-      <cpfECnpj>123456789</cpfECnpj>
+      <desejaReceberEmail>false</desejaReceberEmail>
       <id>1701828108221</id>
     </DTO.ClienteDTO>
     <DTO.ClienteDTO>
@@ -19,6 +20,7 @@
       <telefone>1</telefone>
       <email>Rua ABC</email>
       <cpfECnpj>123456789</cpfECnpj>
+      <desejaReceberEmail>false</desejaReceberEmail>
       <id>1701828299716</id>
     </DTO.ClienteDTO>
     <DTO.ClienteDTO>
@@ -26,6 +28,7 @@
       <telefone>1</telefone>
       <email>Rua ABC</email>
       <cpfECnpj>123456789</cpfECnpj>
+      <desejaReceberEmail>false</desejaReceberEmail>
       <id>1701829387735</id>
     </DTO.ClienteDTO>
     <DTO.ClienteDTO>
@@ -33,6 +36,7 @@
       <telefone>1</telefone>
       <email>Rua ABC</email>
       <cpfECnpj>123456789</cpfECnpj>
+      <desejaReceberEmail>false</desejaReceberEmail>
       <id>1701829391800</id>
     </DTO.ClienteDTO>
     <DTO.ClienteDTO>
@@ -40,13 +44,7 @@
       <telefone>1</telefone>
       <email>Rua ABC</email>
       <cpfECnpj>123456789</cpfECnpj>
-      <id>1701835548569</id>
-    </DTO.ClienteDTO>
-    <DTO.ClienteDTO>
-      <nome>João</nome>
-      <telefone>1</telefone>
-      <email>Rua ABC</email>
-      <cpfECnpj>123456789</cpfECnpj>
+      <desejaReceberEmail>false</desejaReceberEmail>
       <id>1701835579408</id>
     </DTO.ClienteDTO>
     <DTO.ClienteDTO>
@@ -54,6 +52,7 @@
       <telefone>1</telefone>
       <email>Rua ABC</email>
       <cpfECnpj>123456789</cpfECnpj>
+      <desejaReceberEmail>false</desejaReceberEmail>
       <id>1701835596359</id>
     </DTO.ClienteDTO>
     <DTO.ClienteDTO>
@@ -61,6 +60,7 @@
       <telefone>1</telefone>
       <email>Rua ABC</email>
       <cpfECnpj>123456789</cpfECnpj>
+      <desejaReceberEmail>false</desejaReceberEmail>
       <id>1701835726753</id>
     </DTO.ClienteDTO>
     <DTO.ClienteDTO>
@@ -68,6 +68,7 @@
       <telefone>1</telefone>
       <email>Rua ABC</email>
       <cpfECnpj>123456789</cpfECnpj>
+      <desejaReceberEmail>false</desejaReceberEmail>
       <id>1701836402114</id>
     </DTO.ClienteDTO>
     <DTO.ClienteDTO>
@@ -75,6 +76,7 @@
       <telefone>1</telefone>
       <email>Rua ABC</email>
       <cpfECnpj>123456789</cpfECnpj>
+      <desejaReceberEmail>false</desejaReceberEmail>
       <id>1701836592359</id>
     </DTO.ClienteDTO>
     <DTO.ClienteDTO>
@@ -82,6 +84,7 @@
       <telefone>1</telefone>
       <email>Rua ABC</email>
       <cpfECnpj>123456789</cpfECnpj>
+      <desejaReceberEmail>false</desejaReceberEmail>
       <id>1701838783237</id>
     </DTO.ClienteDTO>
     <DTO.ClienteDTO>
@@ -89,7 +92,32 @@
       <telefone>1</telefone>
       <email>Rua ABC</email>
       <cpfECnpj>123456789</cpfECnpj>
+      <desejaReceberEmail>false</desejaReceberEmail>
       <id>1701838877291</id>
+    </DTO.ClienteDTO>
+    <DTO.ClienteDTO>
+      <nome>João</nome>
+      <telefone>1</telefone>
+      <email>Rua ABC</email>
+      <cpfECnpj>123456789</cpfECnpj>
+      <desejaReceberEmail>false</desejaReceberEmail>
+      <id>1701881942305</id>
+    </DTO.ClienteDTO>
+    <DTO.ClienteDTO>
+      <nome>jsoias</nome>
+      <telefone>11111111111</telefone>
+      <email>teste@gmail.com</email>
+      <cpfECnpj>12345678910</cpfECnpj>
+      <desejaReceberEmail>false</desejaReceberEmail>
+      <id>1701885442652</id>
+    </DTO.ClienteDTO>
+    <DTO.ClienteDTO>
+      <nome>Josias Carneiro</nome>
+      <telefone>11111111111</telefone>
+      <email>josias@gmail.com</email>
+      <cpfECnpj>11111111111</cpfECnpj>
+      <desejaReceberEmail>false</desejaReceberEmail>
+      <id>1701891204914</id>
     </DTO.ClienteDTO>
   </clientes>
   <materiais>
@@ -115,7 +143,7 @@
       <descricao>Descrição do pedido</descricao>
       <dataEntrega>2011-12-22</dataEntrega>
       <quantidade>1</quantidade>
-      <cliente reference="../../../clientes/DTO.ClienteDTO[2]"/>
+      <cliente reference="../../../clientes/DTO.ClienteDTO"/>
       <tamanho>PP</tamanho>
       <materiais>
         <DTO.MaterialDTO reference="../../../../materiais/DTO.MaterialDTO"/>
@@ -131,7 +159,14 @@
       <descricao>Descrição do pedido</descricao>
       <dataEntrega>1231-12-12</dataEntrega>
       <quantidade>1</quantidade>
-      <cliente reference="../../../clientes/DTO.ClienteDTO"/>
+      <cliente>
+        <nome>João</nome>
+        <telefone>1</telefone>
+        <email>Rua ABC</email>
+        <cpfECnpj>123456789</cpfECnpj>
+        <desejaReceberEmail>false</desejaReceberEmail>
+        <id>1701827653363</id>
+      </cliente>
       <tamanho>PP</tamanho>
       <materiais>
         <DTO.MaterialDTO reference="../../../../materiais/DTO.MaterialDTO"/>

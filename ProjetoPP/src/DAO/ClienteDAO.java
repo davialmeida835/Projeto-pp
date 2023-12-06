@@ -5,6 +5,7 @@ import javax.swing.JOptionPane;
 import Controller.Persistencia;
 import DTO.ClienteDTO;
 import Model.CentralDeInformacoes;
+import Model.Iterator;
 
 public class ClienteDAO implements ClienteDAOIf{
 
@@ -19,6 +20,16 @@ public class ClienteDAO implements ClienteDAOIf{
 
 	public boolean verificarSeTemCliente(ClienteDTO clienteDTO) {
 		CentralDeInformacoes central = CentralDeInformacoes.getInstance();
+		
+//		Iterator iterator = central.createIteratorCliente();
+//		
+//		while(iterator.hasNext()) {
+//			ClienteDTO cliente = (ClienteDTO) iterator.next();
+//			if(cliente.getCpfECnpj() == clienteDTO.getCpfECnpj()){
+//				return true;
+//			}
+//		}
+		
 		for(ClienteDTO clientes : central.getClientes()) {
 			if(clientes.getCpfECnpj() == clienteDTO.getCpfECnpj()){
 				return true;
@@ -29,6 +40,18 @@ public class ClienteDAO implements ClienteDAOIf{
 
 	public void atualizarCliente(ClienteDTO clienteDTO) {
 		CentralDeInformacoes central = CentralDeInformacoes.getInstance();
+//		Iterator iterator = central.createIteratorCliente();
+//		
+//		while(iterator.hasNext()) {
+//			ClienteDTO cliente = (ClienteDTO) iterator.next();
+//			if(cliente.getId() == clienteDTO.getId()){
+//				cliente.setCpfECnpj(clienteDTO.getCpfECnpj());
+//				cliente.setEmail(clienteDTO.getEmail());
+//				cliente.setNome(clienteDTO.getNome());
+//				cliente.setTelefone(clienteDTO.getTelefone());
+//			}
+//		}
+		
 		if(verificarSeTemCliente(clienteDTO)) {
 			for(ClienteDTO clientes : central.getClientes()) {
 				if(clientes.getId() == clienteDTO.getId()){

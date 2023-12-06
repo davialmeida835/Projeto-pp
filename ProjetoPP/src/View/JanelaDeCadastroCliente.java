@@ -34,9 +34,11 @@ public class JanelaDeCadastroCliente extends JanelaPadrao {
 	private JRadioButton caixaDePessoaFisica;
 	private JRadioButton caixaDePessoaJuridica;
 	private JLabel pessoaFisica; //vai mudar para juridica ou fisica, mudar nome dps
+	private JRadioButton caixaReceber;
 
 	public static void main(String[] args) {
-		new JanelaDeCadastroCliente(CentralDeInformacoes.getInstance().getClientes().get(0));
+//		new JanelaDeCadastroCliente(CentralDeInformacoes.getInstance().getClientes().get(0));
+		new JanelaDeCadastroCliente();
 	}
 	
 	public JanelaDeCadastroCliente() {
@@ -44,11 +46,17 @@ public class JanelaDeCadastroCliente extends JanelaPadrao {
 		addTexto(125, 205, 65, 20, "E-mail:");
 		addTexto(125, 260, 65, 20, "Nome:");
 		addTexto(125, 315, 90, 20, "Telefone:");
+		addTexto(270, 340, 135, 25, "Receber e-mail? ");
 		campoDeEmail = addCampoDeTexto(125, 230, 300, 25, new LineBorder(Color.BLACK, 1), "Digite o e-mail do cliente");
 		campoDoNome = addCampoDeTexto(125, 285, 300, 25, new LineBorder(Color.BLACK, 1), "Digite o nome completo do cliente");
 		addBotao(220, 400, 110, 30, "Cadastrar", new OuvinteCadastrarCliente(this));
 		adicionarCampoDoTipoDePessoa();
 		adicionarCampoDoTelefone();
+		caixaReceber = new JRadioButton();
+		caixaReceber.setOpaque(false);
+		caixaReceber.setForeground(Color.WHITE);
+		caixaReceber.setBounds(400, 340, 20, 25);
+		add(caixaReceber);
 		addBotoesDeTipoDePesso();
 		addBotaoDeVoltar();
 		
@@ -62,13 +70,14 @@ public class JanelaDeCadastroCliente extends JanelaPadrao {
 		addTexto(125, 315, 90, 20, "Telefone:");
 		campoDeEmail = addCampoDeTextoSemOuvinte(125, 230, 300, 25, cliente.getEmail());
 		campoDoNome = addCampoDeTextoSemOuvinte(125, 285, 300, 25, cliente.getNome());
+		
 		addBotao(220, 400, 110, 30, "Editar", new ActionListener() {
 
 			public void actionPerformed(ActionEvent e) {
 				String nome = campoDoNome.getText();
 				String telefone = campoDoTelefone.getText().replace("(", "").replace(")", "").replace("-", "").replace(" ", "");
 				String email = campoDeEmail.getText();
-
+				boolean receber = caixaReceber.isSelected();
 				String cpfOuCnpj = tipoDePessoa.getText();
 
 				boolean flag = true;
@@ -79,6 +88,7 @@ public class JanelaDeCadastroCliente extends JanelaPadrao {
 					flag = false;
 				}
 
+				
 				if (flag == false) {
 					JOptionPane.showMessageDialog(null, "Digite um E-mail válido");
 				} else if (nome.length() == 0) {
@@ -94,6 +104,7 @@ public class JanelaDeCadastroCliente extends JanelaPadrao {
 					cliente.setEmail(email);
 					cliente.setNome(nome);
 					cliente.setTelefone(Long.parseLong(telefone));
+					cliente.setDesejaReceberEmail(receber);
 					
 					JOptionPane.showMessageDialog(null, "Editado com sucesso");
 					
@@ -115,10 +126,16 @@ public class JanelaDeCadastroCliente extends JanelaPadrao {
 		}else {
 			caixaDePessoaJuridica.setSelected(true);
 		}
+		
+		addTexto(270, 340, 135, 25, "Receber e-mail? ");
 		addBotaoDeVoltar();
 		tipoDePessoa.setText(String.valueOf(cliente.getCpfECnpj()));
-		
-		
+		caixaReceber = new JRadioButton();
+		caixaReceber.setOpaque(false);
+		caixaReceber.setForeground(Color.WHITE);
+		caixaReceber.setBounds(400, 340, 20, 25);
+		add(caixaReceber);
+		caixaReceber.setSelected(cliente.getDesejaReceberEmail());
 		setVisible(true);
 	}
 	
@@ -151,6 +168,9 @@ public class JanelaDeCadastroCliente extends JanelaPadrao {
 		return caixaDePessoaFisica;
 	}
 
+	public JRadioButton getCaixaReceber() {
+		return caixaReceber;
+	}
 
 	private void addBotoesDeTipoDePesso() {
 		pessoaFisica = new JLabel("Escolha uma opção:");
@@ -202,7 +222,7 @@ public class JanelaDeCadastroCliente extends JanelaPadrao {
 			campoDoTelefone.setBorder(new LineBorder(Color.BLACK, 1));
 			campoDoTelefone.setFont(Model.Util.FONTE_PADRAO);
 			campoDoTelefone.setHorizontalAlignment(JTextField.CENTER);
-			campoDoTelefone.setBounds(125, 340, 150, 25);
+			campoDoTelefone.setBounds(125, 340, 140, 25);
 			add(campoDoTelefone);
 		} catch (ParseException e) {}
 	}

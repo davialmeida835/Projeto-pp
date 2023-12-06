@@ -27,7 +27,7 @@ public class OuvinteCadastrarCliente implements ActionListener {
 		String nome = cadastrarCliente.getCampoDoNome().getText();
 		String telefone = cadastrarCliente.getCampoDoTelefone().getText().replace("(", "").replace(")", "").replace("-", "").replace(" ", "");
 		String email = cadastrarCliente.getCampoDeEmail().getText();
-
+		boolean receber = cadastrarCliente.getCaixaReceber().isSelected();
 		String cpfOuCnpj = cadastrarCliente.getTipoDePessoa().getText();
 
 		boolean flag = true;
@@ -49,7 +49,7 @@ public class OuvinteCadastrarCliente implements ActionListener {
 			JOptionPane.showMessageDialog(cadastrarCliente, "Digite um cpf ou cnpj válido");
 		} 
 		else {
-			ClienteDTO cliente = new ClienteDTO(nome,Long.parseLong(telefone), email, Long.parseLong(cpfOuCnpj));
+			ClienteDTO cliente = new ClienteDTO(nome,Long.parseLong(telefone), email, Long.parseLong(cpfOuCnpj), receber);
 			
 			JOptionPane.showMessageDialog(cadastrarCliente, "Cadastro efetuado com sucesso!");
 			central.addCliente(cliente);

@@ -62,7 +62,7 @@ public class CentralDeInformacoes {
 	public List<ClienteDTO> getClientes() {
 		return clientes;
 	}
-
+	
 	public List<MaterialDTO> getMateriais() {
 		return materiais;
 	}

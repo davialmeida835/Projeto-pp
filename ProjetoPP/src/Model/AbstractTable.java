@@ -6,27 +6,33 @@ import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
 public abstract class AbstractTable {
-
 	
-	public abstract void addColunas(DefaultTableModel model);
-	
-	public abstract void addDados(JTable tabela, DefaultTableModel model);
-	
-	public void definirTamanhoDaTabela(JTable tabela, JScrollPane barraRolagem) {
+	public DefaultTableModel addColunas(String[] colunas) {
+		DefaultTableModel model = new DefaultTableModel();
 		
+		for(int i = 0; i < colunas.length; i++) {
+			model.addColumn(colunas[i]);
+		}
+		
+		return model;
 	}
 	
+	public abstract JTable addDados(JTable tabela, DefaultTableModel model);
 	
-	public void addTabelaAoFrame(JFrame jframe, JTable jtable) {
-		jframe.add(jtable);
+	public void gerenciarScrollPane(JTable tabela, JFrame frame) {
+		JScrollPane barraRolagem = new JScrollPane(tabela);
+		barraRolagem.setBounds(25, 150, 490, 250);
+		frame.add(barraRolagem);
 	}
 	
-	public void criarTabela(JTable tabela, DefaultTableModel model, JScrollPane barraRolagem, JFrame frame) {
-		
-		definirTamanhoDaTabela(tabela, barraRolagem);
-		addColunas(model);
-		addDados(tabela, model);
-		addTabelaAoFrame(frame, tabela);
+	public void gancho() {};
+	
+	public JTable criarTabela(String[] colunas, JTable tabela, DefaultTableModel model, JFrame frame) {
+		model = addColunas(colunas);
+		tabela = addDados(tabela, model);
+		gerenciarScrollPane(tabela, frame);
+		gancho();
+		return tabela;
 	}
 	
 }

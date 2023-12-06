@@ -73,7 +73,7 @@ public class JanelaDeCadastraPedido extends JanelaPadrao{
             }
         }
         
-		ClienteDTO c = new ClienteDTO("João", 1L, "Rua ABC", 123456789L);
+		ClienteDTO c = new ClienteDTO("João", 1L, "Rua ABC", 123456789L, true);
 		CentralDeInformacoes.getInstance().getClientes().add(c);
 		Persistencia.salvarCentral(CentralDeInformacoes.getInstance(), "central");
 		jListMateriais = new JList<>(listModel);
