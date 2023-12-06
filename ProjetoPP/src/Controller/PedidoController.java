@@ -19,6 +19,7 @@ public class PedidoController {
 				pedido.getDataEntrega(),pedido.getQuantidade(),pedido.getCliente(),
 				pedido.getTamanho(),pedido.getMateriais(),pedido.getPreco(),
 				pedido.getTipoderoupa());
+		//
 
 		PedidoDAO p = new PedidoDAO();
 		

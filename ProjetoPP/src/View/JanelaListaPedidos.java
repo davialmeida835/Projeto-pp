@@ -33,20 +33,68 @@ public class JanelaListaPedidos extends JanelaPadrao{
 		
 		
 		addTexto(50,65,350,30,"Filtrar pedido por data e por itens:");
-		
+		addTexto(50,365,255,20,"Ganhaos do Mês: $"+obterGanhos()+" Reais");
         addBotaoDeVoltar();
         adicionarBotoesAtualizarExcluir();
         configurarTabela();
         adicionarDadosATabela();
         repaint();
+        addbo();
         setVisible(true);
+	}
+	public double obterGanhos() {
+		
+		double ganho = 0;
+		LocalDate hoje = LocalDate.now();
+		for(PedidoDTO p : CentralDeInformacoes.getInstance().getPedidos()) {
+			 if (p.isPagamento()=="Pago") {
+	                LocalDate dataEntrega = p.getDataDePagamento();
+
+	                // Verifica se a data de entrega esta no mês atual
+	                if (dataEntrega != null && dataEntrega.getMonth() == hoje.getMonth()) {
+	                    ganho += p.getPreco();
+	                }
+	            }
+	        }
+
+	        return ganho;
+			
+		}
+
+	public void addbo() {
+		JButton botaoAtualizarStatus = addBotao(350, 400, 150, 30, "Atualizar Status", new ActionListener() {
+	        @Override
+	        public void actionPerformed(ActionEvent e) {
+	            int linhaSelecionada = tabelaPedidos.getSelectedRow();
+	            if (linhaSelecionada != -1) {
+	                // Usando o índice da linha selecionada para acessar o pedido correspondente na lista
+	                PedidoDTO pedidoSelecionado = listaDePedidos.get(linhaSelecionada);
+
+	                int resposta = JOptionPane.showConfirmDialog(null, "O pedido foi finalizado?", "Confirmação de Status", JOptionPane.YES_NO_OPTION);
+	                boolean foiFinalizado = (resposta == JOptionPane.YES_OPTION);
+
+	                pedidoSelecionado.setFinalizado(foiFinalizado);
+
+	                PedidoController p = new PedidoController(JanelaListaPedidos.this, pedidoSelecionado);
+	                p.atualizarPedido();
+	                atualizarTabela();
+	            } else {
+	                JOptionPane.showMessageDialog(null, "Selecione um pedido para atualizar o status.");
+	            }
+	        }
+	    });
+	    
+	}
+	public void ganhosDoMes() {
+		
 	}
 	private void configurarTabela() {
 		modeloTabela = new DefaultTableModel();
-        modeloTabela.addColumn("Número do Pedido");
+        modeloTabela.addColumn("Cliente");
         modeloTabela.addColumn("Preço");
         modeloTabela.addColumn("Data de Entrega");
         modeloTabela.addColumn("Pagamento");
+        modeloTabela.addColumn("Status");
         
         listaDePedidos= CentralDeInformacoes.getInstance().getPedidos();
 
@@ -78,27 +126,22 @@ public class JanelaListaPedidos extends JanelaPadrao{
 	
 	private void adicionarDadosATabela() {
 	    for (PedidoDTO pedido : listaDePedidos) {
-	        modeloTabela.addRow(new Object[]{pedido.getNumero(), pedido.getPreco(), pedido.getDataEntrega(),pedido.isPagamento()});
+	        modeloTabela.addRow(new Object[]{pedido.getCliente().getNome(), pedido.getPreco(), pedido.getDataEntrega(),pedido.isPagamento(),pedido.isFinalizado()});
 	    }
 	}
 	  private void adicionarBotoesAtualizarExcluir() {
-		  JButton botaoAtualizar = addBotao(150, 400, 100, 30, "Atualizar", new ActionListener() {
+		  JButton botaoAtualizar = addBotao(50, 400, 100, 30, "Atualizar", new ActionListener() {
 			    @Override
 			    public void actionPerformed(ActionEvent e) {
 			        
 			        int linhaSelecionada = tabelaPedidos.getSelectedRow(); 
 			        if (linhaSelecionada != -1) {
 			            
-			        	int numeroPedido = (int) modeloTabela.getValueAt(linhaSelecionada, 0);
+			        	
 
 		                // Encontrar o pedido correspondente na lista
-		                PedidoDTO pedidoSelecionado = null;
-		                for (PedidoDTO pedido : listaDePedidos) {
-		                    if (pedido.getNumero() == numeroPedido) {
-		                        pedidoSelecionado = pedido;
-		                        break;
-		                    }
-		                }
+			        	PedidoDTO pedidoSelecionado = listaDePedidos.get(linhaSelecionada);
+		                
 
 		                if (pedidoSelecionado != null) {
 		                    double preco = (double) modeloTabela.getValueAt(linhaSelecionada, 1);
@@ -107,32 +150,39 @@ public class JanelaListaPedidos extends JanelaPadrao{
 		                    String valorPagamento = (String) modeloTabela.getValueAt(linhaSelecionada, 3);
 		                    boolean pagamento = Boolean.parseBoolean(valorPagamento);
 
-		                    double novoPreco = Double.parseDouble(JOptionPane.showInputDialog("Digite o novo preço para o pedido " + numeroPedido, preco));
-		                    String novaDataEntrega = JOptionPane.showInputDialog("Digite a nova data de entrega para o pedido " + numeroPedido, dataEntregaPedidoString);
+		                    double novoPreco = Double.parseDouble(JOptionPane.showInputDialog("Digite o novo preço para o pedido " +  preco));
+		                    
 		                    
 
-		                    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+		                   
 		                    LocalDate novaData = null;
-		                    try {
-		                        // Tenta converter a string para LocalDate usando o formato especificado
-		                       novaData = LocalDate.parse(novaDataEntrega, formatter);
+		                    do {
+		                        String novaDataEntrega = JOptionPane.showInputDialog("Digite a nova data de entrega para o pedido " +  dataEntregaPedidoString);
 
-		                        // Agora, você pode usar a variável "novaData" conforme necessário
-		                      
-
-		                        // Restante do código...
-		                    } catch (Exception e1) {
-		                        // Trate a exceção se a entrada do usuário não estiver no formato esperado
-		                        JOptionPane.showMessageDialog(null, "Formato de data inválido. Use o formato dd/MM/yyyy.");
-		                        // Ou implemente uma lógica diferente, como solicitar novamente a data, etc.
-		                    }
+		                        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+		                        try {
+		                            // Tenta converter a string para LocalDate usando o formato especificado
+		                            novaData = LocalDate.parse(novaDataEntrega, formatter);
+		                            // Se a conversão for bem-sucedida, sai do loop
+		                            break;
+		                        } catch (Exception e1) {
+		                            // Trate a exceção se a entrada do usuário não estiver no formato esperado
+		                            JOptionPane.showMessageDialog(null, "Formato de data inválido. Use o formato dd/MM/yyyy.");
+		                        }
+		                    } while (true);
 		                    
 		                    int resposta = JOptionPane.showConfirmDialog(null, "O pedido foi pago?", "Confirmação de Pagamento", JOptionPane.YES_NO_OPTION);
 		                    boolean foiPago = (resposta == JOptionPane.YES_OPTION);
+		                    if (foiPago) {
+		                        // Se o pagamento foi confirmado, defina a dataDePagamento como a data atual
+		                        pedidoSelecionado.setDataDePagamento(LocalDate.now());
+		                    }
 		                    
 		                    pedidoSelecionado.setPreco(novoPreco);
 		                    pedidoSelecionado.setPagamento(foiPago);
 		                    pedidoSelecionado.setDataEntrega(novaData);
+		                    
+		                    System.out.println(pedidoSelecionado.getNumero());
 		                    
 		                    PedidoController p = new PedidoController(JanelaListaPedidos.this, pedidoSelecionado);
 		                    p.atualizarPedido();
@@ -146,24 +196,23 @@ public class JanelaListaPedidos extends JanelaPadrao{
 			    }
 			});
 
-			JButton botaoExcluir = addBotao(300, 400, 100, 30, "Excluir", new ActionListener() {
+			JButton botaoExcluir = addBotao(200, 400, 100, 30, "Excluir", new ActionListener() {
 			    @Override
 			    public void actionPerformed(ActionEvent e) {
 			        
 			        int linhaSelecionada = tabelaPedidos.getSelectedRow();
 			        if (linhaSelecionada != -1) {
-			        	int numeroPedido = (int) modeloTabela.getValueAt(linhaSelecionada, 0);
-			        	PedidoDTO pedidoSelecionado = null;
-		                for (PedidoDTO pedido : listaDePedidos) {
-		                    if (pedido.getNumero() == numeroPedido) {
-		                        pedidoSelecionado = pedido;
-		                        PedidoController p = new PedidoController(JanelaListaPedidos.this, pedidoSelecionado);
-			                    p.deletar();
-			                    atualizarTabela();
-			                    break;
+			        	
+			        	
+			        	PedidoDTO pedidoSelecionado = listaDePedidos.get(linhaSelecionada);
+		                
+		                PedidoController p = new PedidoController(JanelaListaPedidos.this, pedidoSelecionado);
+			            p.deletar();
+			            atualizarTabela();
+			                    
 		                        
-		                    }
-		                }
+		                    
+		                
 		                
 			            
 			        } else {
@@ -178,8 +227,8 @@ public class JanelaListaPedidos extends JanelaPadrao{
 
 		   
 		    for (PedidoDTO pedido : listaDePedidos) {
-		        if (pedido.getDescricao().contains(criterio)  ) {
-		            modeloTabela.addRow(new Object[]{pedido.getNumero(), pedido.getDescricao(), pedido.getDataEntrega()});
+		        if (pedido.getCliente().getNome().contains(criterio)  ) {
+		            modeloTabela.addRow(new Object[]{pedido.getCliente().getNome(), pedido.getPreco(), pedido.getDataEntrega(),pedido.isPagamento(),pedido.isFinalizado()});
 		        }
 		    }
 	  }

@@ -1,0 +1,146 @@
+<Model.CentralDeInformacoes>
+  <clientes>
+    <DTO.ClienteDTO>
+      <nome>João</nome>
+      <telefone>1</telefone>
+      <email>Rua ABC</email>
+      <cpfECnpj>123456789</cpfECnpj>
+      <id>1701827653363</id>
+    </DTO.ClienteDTO>
+    <DTO.ClienteDTO>
+      <nome>João</nome>
+      <telefone>1</telefone>
+      <email>Rua ABC</email>
+      <cpfECnpj>123456789</cpfECnpj>
+      <id>1701828108221</id>
+    </DTO.ClienteDTO>
+    <DTO.ClienteDTO>
+      <nome>João</nome>
+      <telefone>1</telefone>
+      <email>Rua ABC</email>
+      <cpfECnpj>123456789</cpfECnpj>
+      <id>1701828299716</id>
+    </DTO.ClienteDTO>
+    <DTO.ClienteDTO>
+      <nome>João</nome>
+      <telefone>1</telefone>
+      <email>Rua ABC</email>
+      <cpfECnpj>123456789</cpfECnpj>
+      <id>1701829387735</id>
+    </DTO.ClienteDTO>
+    <DTO.ClienteDTO>
+      <nome>João</nome>
+      <telefone>1</telefone>
+      <email>Rua ABC</email>
+      <cpfECnpj>123456789</cpfECnpj>
+      <id>1701829391800</id>
+    </DTO.ClienteDTO>
+    <DTO.ClienteDTO>
+      <nome>João</nome>
+      <telefone>1</telefone>
+      <email>Rua ABC</email>
+      <cpfECnpj>123456789</cpfECnpj>
+      <id>1701835548569</id>
+    </DTO.ClienteDTO>
+    <DTO.ClienteDTO>
+      <nome>João</nome>
+      <telefone>1</telefone>
+      <email>Rua ABC</email>
+      <cpfECnpj>123456789</cpfECnpj>
+      <id>1701835579408</id>
+    </DTO.ClienteDTO>
+    <DTO.ClienteDTO>
+      <nome>João</nome>
+      <telefone>1</telefone>
+      <email>Rua ABC</email>
+      <cpfECnpj>123456789</cpfECnpj>
+      <id>1701835596359</id>
+    </DTO.ClienteDTO>
+    <DTO.ClienteDTO>
+      <nome>João</nome>
+      <telefone>1</telefone>
+      <email>Rua ABC</email>
+      <cpfECnpj>123456789</cpfECnpj>
+      <id>1701835726753</id>
+    </DTO.ClienteDTO>
+    <DTO.ClienteDTO>
+      <nome>João</nome>
+      <telefone>1</telefone>
+      <email>Rua ABC</email>
+      <cpfECnpj>123456789</cpfECnpj>
+      <id>1701836402114</id>
+    </DTO.ClienteDTO>
+    <DTO.ClienteDTO>
+      <nome>João</nome>
+      <telefone>1</telefone>
+      <email>Rua ABC</email>
+      <cpfECnpj>123456789</cpfECnpj>
+      <id>1701836592359</id>
+    </DTO.ClienteDTO>
+    <DTO.ClienteDTO>
+      <nome>João</nome>
+      <telefone>1</telefone>
+      <email>Rua ABC</email>
+      <cpfECnpj>123456789</cpfECnpj>
+      <id>1701838783237</id>
+    </DTO.ClienteDTO>
+    <DTO.ClienteDTO>
+      <nome>João</nome>
+      <telefone>1</telefone>
+      <email>Rua ABC</email>
+      <cpfECnpj>123456789</cpfECnpj>
+      <id>1701838877291</id>
+    </DTO.ClienteDTO>
+  </clientes>
+  <materiais>
+    <DTO.MaterialDTO>
+      <nome>dasd</nome>
+      <disponivel>false</disponivel>
+      <tipoDeMaterial>LINHA</tipoDeMaterial>
+      <id>1701827632689</id>
+    </DTO.MaterialDTO>
+  </materiais>
+  <fornecedores>
+    <DTO.FornecedorDTO>
+      <nome>sdadasd</nome>
+      <telefone>(34) 23423-4234</telefone>
+      <materiaisFornecidos>dasdasd</materiaisFornecidos>
+    </DTO.FornecedorDTO>
+  </fornecedores>
+  <gastos/>
+  <pedidos>
+    <DTO.PedidoDTO>
+      <tipoderoupa class="string">Terno</tipoderoupa>
+      <numero>4</numero>
+      <descricao>Descrição do pedido</descricao>
+      <dataEntrega>2011-12-22</dataEntrega>
+      <quantidade>1</quantidade>
+      <cliente reference="../../../clientes/DTO.ClienteDTO[2]"/>
+      <tamanho>PP</tamanho>
+      <materiais>
+        <DTO.MaterialDTO reference="../../../../materiais/DTO.MaterialDTO"/>
+      </materiais>
+      <preco>55.0</preco>
+      <pagamento>true</pagamento>
+      <finalizado>true</finalizado>
+      <dataDePagamento>2023-12-06</dataDePagamento>
+    </DTO.PedidoDTO>
+    <DTO.PedidoDTO>
+      <tipoderoupa class="string">Shorts</tipoderoupa>
+      <numero>6</numero>
+      <descricao>Descrição do pedido</descricao>
+      <dataEntrega>1231-12-12</dataEntrega>
+      <quantidade>1</quantidade>
+      <cliente reference="../../../clientes/DTO.ClienteDTO"/>
+      <tamanho>PP</tamanho>
+      <materiais>
+        <DTO.MaterialDTO reference="../../../../materiais/DTO.MaterialDTO"/>
+      </materiais>
+      <preco>44.0</preco>
+      <pagamento>true</pagamento>
+      <finalizado>true</finalizado>
+      <dataDePagamento>2023-12-06</dataDePagamento>
+    </DTO.PedidoDTO>
+  </pedidos>
+  <historico/>
+</Model.CentralDeInformacoes>

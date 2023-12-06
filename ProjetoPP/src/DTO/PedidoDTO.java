@@ -6,24 +6,19 @@ import java.util.List;
 import Model.CentralDeInformacoes;
 import Model.Cliente;
 import Model.Material;
+import Model.PedidoBuilder;
+import Model.PedidoBuilderImpl;
 import Model.TamanhoRoupa;
 import Model.TipoRoupa;
 
 public class PedidoDTO {
 
-    public PedidoDTO( String descricao, LocalDate dataEntrega, int quantidade, ClienteDTO cliente,
-			TamanhoRoupa tamanho, List<MaterialDTO> materiais,double preco,Object tipoRoupaSelecionado) {
 	
-		numero=++proximoId;
-		this.descricao = descricao;
-		this.dataEntrega = dataEntrega;
-		this.quantidade = quantidade;
-		this.cliente = cliente;
-		this.tamanho = tamanho;
-		this.materiais = materiais;
-		this.setPreco(preco);
-		this.tipoderoupa= tipoRoupaSelecionado;
-	}
+
+    public static PedidoBuilder builder() {
+    	  int proximoNumero = obterUltimoNumeroPedido();
+          return new PedidoBuilderImpl().numero(proximoNumero);
+    }
 
     public static int obterUltimoNumeroPedido() {
         List<PedidoDTO> pedidos = CentralDeInformacoes.getInstance().getPedidos();
@@ -37,7 +32,7 @@ public class PedidoDTO {
             }
         }
 
-        return ultimoNumero;
+        return ultimoNumero +1;
     }
     
     private static int proximoId = obterUltimoNumeroPedido();
@@ -55,8 +50,8 @@ public class PedidoDTO {
     private List<MaterialDTO> materiais;
     private double preco;
     private boolean pagamento;
-
- 
+    private boolean finalizado = false;
+    private LocalDate dataDePagamento;
 
 
 
@@ -147,6 +142,47 @@ public class PedidoDTO {
 
 	public void setPagamento(boolean pagamento) {
 		this.pagamento = pagamento;
+	}
+
+	public String isFinalizado() {
+		if(finalizado==false) {
+			return "Em Andamento";
+		}
+		return "Finalizado";
+		
+	}
+
+	public void setFinalizado(boolean finalizado) {
+		this.finalizado = finalizado;
+	}
+
+	public void setDescricao(String descricao) {
+		this.descricao = descricao;
+	}
+
+	public void setTipoderoupa(Object tipoderoupa) {
+		this.tipoderoupa = tipoderoupa;
+	}
+
+	public void setNumero(int numero) {
+		this.numero = numero;
+	}
+
+	public static int getProximoId() {
+		return proximoId;
+	}
+
+	public static int setProximoId(int proximoId) {
+		PedidoDTO.proximoId = proximoId;
+		return proximoId;
+	}
+
+	public LocalDate getDataDePagamento() {
+		return dataDePagamento;
+	}
+
+	public void setDataDePagamento(LocalDate dataDePagamento) {
+		this.dataDePagamento = dataDePagamento;
 	}
 	
 
