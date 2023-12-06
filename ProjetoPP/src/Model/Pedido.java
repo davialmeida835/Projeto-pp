@@ -18,6 +18,8 @@ public class Pedido {
 	    private List<MaterialDTO> materiais;
 	    private double preco;
 	    private Object tipoDeRoupa;
+	    private boolean pagamento;
+	    private boolean finalizado = false;
 	   
 	
 
@@ -122,6 +124,30 @@ public class Pedido {
 
 		public void setTipoDeRoupa(Object tipoDeRoupa) {
 			this.tipoDeRoupa = tipoDeRoupa;
+		}
+
+
+
+		public boolean isPagamento() {
+			return pagamento;
+		}
+
+
+
+		public void setPagamento(boolean pagamento) {
+			this.pagamento = pagamento;
+		}
+
+
+
+		public boolean isFinalizado() {
+			return finalizado;
+		}
+
+
+
+		public void setFinalizado(boolean finalizado) {
+			this.finalizado = finalizado;
 		}
 
 

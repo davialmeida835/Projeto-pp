@@ -68,7 +68,9 @@ public class JanelaDeCadastraPedido extends JanelaPadrao{
         List<MaterialDTO> materiais = CentralDeInformacoes.getInstance().getMateriais();
         listModel = new DefaultListModel<>();
         for (MaterialDTO material : materiais) {
-            listModel.addElement(material);
+            if(material.isDisponivel()) {
+            	listModel.addElement(material);
+            }
         }
         
 		ClienteDTO c = new ClienteDTO("João", 1L, "Rua ABC", 123456789L);
@@ -188,9 +190,20 @@ public class JanelaDeCadastraPedido extends JanelaPadrao{
 
 	    ClienteDTO clienteSelecionado = clientes.get(selectedRow);
         
-        PedidoDTO pedido = new PedidoDTO("Descricçao",data,quantidade,
-        		clienteSelecionado,tamanhoRoupaSelecionado,materiaisSelecionados,
-        		preco,tipoRoupaSelecionado );
+	    //Builder
+	    PedidoDTO pedido = PedidoDTO.builder()
+	            .descricao("Descrição do pedido")  
+	            .dataEntrega(data)
+	            .quantidade(quantidade)
+	            .cliente(clienteSelecionado)
+	            .tamanho(tamanhoRoupaSelecionado)
+	            .materiais(materiaisSelecionados)
+	            .tipoRoupa(tipoRoupaSelecionado)
+	            .preco(preco)
+	            .build();
+	    
+	    
+       
         
         PedidoController pedidos = new PedidoController(this, pedido);
         pedidos.add();
