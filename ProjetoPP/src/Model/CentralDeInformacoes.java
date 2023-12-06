@@ -90,5 +90,4 @@ public class CentralDeInformacoes {
 		this.gastos = gastos;
 	}
     
-    
 }

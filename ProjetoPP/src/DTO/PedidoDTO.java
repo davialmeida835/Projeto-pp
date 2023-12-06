@@ -4,12 +4,10 @@ import java.time.LocalDate;
 import java.util.List;
 
 import Model.CentralDeInformacoes;
-import Model.Cliente;
-import Model.Material;
 import Model.TamanhoRoupa;
 import Model.TipoRoupa;
 
-public class PedidoDTO {
+public class PedidoDTO{
 
     public PedidoDTO( String descricao, LocalDate dataEntrega, int quantidade, ClienteDTO cliente,
 			TamanhoRoupa tamanho, List<MaterialDTO> materiais,double preco,Object tipoRoupaSelecionado) {

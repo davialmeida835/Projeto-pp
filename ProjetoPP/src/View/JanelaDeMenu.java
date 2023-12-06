@@ -29,7 +29,7 @@ public class JanelaDeMenu extends JanelaPadrao {
 		addBotoesMenu(275, 165, 200, 40, "LISTA DE FORNECEDORES", getClass().getResource("/resources/Orcamento.png"));
 		addBotoesMenu(65, 220, 200, 40, "LISTA DE MATERIAIS", getClass().getResource("/resources/Lista.png"));
 		addBotoesMenu(275, 220, 200, 40, "LISTA DE CLIENTES", getClass().getResource("/resources/Lista.png"));
-		addBotoesMenu(65, 275, 200, 40, "", getClass().getResource("/resources/Lista.png"));
+		addBotoesMenu(65, 275, 200, 40, "AGENDA", getClass().getResource("/resources/Lista.png"));
 		addBotoesMenu(275, 275, 200, 40, "", getClass().getResource("/resources/Lista.png"));
 		addBotoesMenu(65, 330, 200, 40, "", getClass().getResource("/resources/Lista.png"));
 		addBotoesMenu(275, 330, 200, 40, "", getClass().getResource("/resources/Lista.png"));
