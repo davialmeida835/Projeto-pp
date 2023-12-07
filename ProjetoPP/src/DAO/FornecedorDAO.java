@@ -42,7 +42,7 @@ public class FornecedorDAO implements FornecedorDAOIf{
 		CentralDeInformacoes central = CentralDeInformacoes.getInstance();
 		    if (JaCadastradoFornecedor(fornecedorDTO)) {
 		        for (FornecedorDTO fornecedor : central.getFornecedores()) {
-		            if (fornecedor.getNome().equals(fornecedorDTO.getNome()) && fornecedor.getTelefone().equals(fornecedorDTO.getTelefone())) {
+		            if (fornecedor.getNome().equals(fornecedorDTO.getNome()) || fornecedor.getTelefone().equals(fornecedorDTO.getTelefone())) {
 		                fornecedor.setNome(fornecedorDTO.getNome());
 		                fornecedor.setTelefone(fornecedorDTO.getTelefone());
 		                fornecedor.setMateriaisFornecidos(fornecedorDTO.getMateriaisFornecidos());

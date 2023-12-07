@@ -7,9 +7,11 @@ import View.JanelaDeCadastraPedido;
 import View.JanelaDeCadastroCliente;
 import View.JanelaDeCadastroFornecedor;
 import View.JanelaListaClientes;
+import View.JanelaListaDeDatas;
 import View.JanelaListaFornecedores;
 import View.JanelaListaMateriais;
 import View.JanelaListaPedidos;
+import View.janelaDatasEmail;
 
 public class CriaJanela {
 	
@@ -31,8 +33,10 @@ public class CriaJanela {
                 return new JanelaListaFornecedores();
             case "LISTA DE MATERIAIS":
                 return new JanelaListaMateriais();
-            case "Lista de Orçamentos":
-                //return new JanelaListaDeOrcamentos();
+            case "CADASTRAR DATA":
+                return new janelaDatasEmail();
+            case "LISTA DE DATAS":
+            	return new JanelaListaDeDatas();
             	
             default:
                throw null;

@@ -1,30 +1,65 @@
 package Model;
 
+import java.time.LocalDate;
+import java.util.List;
+
 import org.apache.commons.mail.EmailException;
 import org.apache.commons.mail.SimpleEmail;
 
 import DTO.ClienteDTO;
+import DTO.DatasDeNotificacaoDTO;
 
 public class EmailClienteObserver implements ClienteObserver {
 
 	
-	public  void clienteOptInParaEmail(ClienteDTO cliente) {
-		SimpleEmail email = new SimpleEmail();
-		try {
+	public void clienteOptInParaEmail(ClienteDTO cliente) {
+	    CentralDeInformacoes central = CentralDeInformacoes.getInstance();
+	    List<DatasDeNotificacaoDTO> datas = central.getDatas();
 
-		// email.setDebug(true);
+	    for (DatasDeNotificacaoDTO data : datas) {
+	        LocalDate dataAtual = LocalDate.now();
 
-		email.setHostName("smtp.gmail.com");
-		email.setAuthentication("mensageiroct@gmail.com", "ocmghxpsdmtryxkn");
-		email.setSSL(true);
-		email.addTo(cliente.getEmail());
-		email.setFrom(cliente.getEmail());
-		email.setSubject("Contrato");
-		email.setMsg(null);
-		email.send();
-		} catch (EmailException e) {
-		System.out.println("Falha ao enviar o email!");
-		}
-		}
+	      
+	        if (data.getDataDeEntrega().isEqual(dataAtual)) {
+	            enviarEmailParaCliente(cliente, data);
+	        }
+	    }
+	}
+
+	private void enviarEmailParaCliente(ClienteDTO cliente, DatasDeNotificacaoDTO data) {
+
+	    if (cliente.getDesejaReceberEmail()) {
+	       
+	        String descricao = data.getDescricao();
+	        enviarEmail(cliente, descricao);
+	    }
+	}
+
+	private void enviarEmail(ClienteDTO cliente, String descricao) {
+	    SimpleEmail email = new SimpleEmail();
+	    try {
+	        // Configuração do e-mail
+	        email.setHostName("smtp.gmail.com");
+	        email.setAuthentication("mensageiroct@gmail.com", "ocmghxpsdmtryxkn");
+	        email.setSSL(true);
+
+	        // Construção do e-mail
+	        email.addTo(cliente.getEmail());
+	        email.setFrom(CentralDeInformacoes.getInstance().getUsuario().getEmail());
+	        email.setSubject("Atenção!!");
+	        email.setMsg("Novo Evento na nossa Loja!!! Venha Conferir as Novidades. " + descricao);
+	        // Envio do e-mail
+	        email.send();
+	    } catch (EmailException e) {
+	        System.out.println("Falha ao enviar o email!");
+	    }
+	}
+
+	
+	
+
+	
+	
+
 
 }

@@ -5,6 +5,7 @@ import java.util.List;
 
 import Controller.Persistencia;
 import DTO.ClienteDTO;
+import DTO.DatasDeNotificacaoDTO;
 import DTO.FornecedorDTO;
 import DTO.HistoricoDeCompraDTO;
 import DTO.MaterialDTO;
@@ -26,6 +27,8 @@ public class CentralDeInformacoes {
 	private List<PedidoDTO> pedidos = new ArrayList<>();
 
 	private List<HistoricoDeCompraDTO> historico = new ArrayList<>();
+	
+	private List<DatasDeNotificacaoDTO> datas = new ArrayList<>();
 
 	
 	
@@ -88,6 +91,17 @@ public class CentralDeInformacoes {
 
 	public void setGastos(List<Gasto> gastos) {
 		this.gastos = gastos;
+	}
+
+	public List<DatasDeNotificacaoDTO> getDatas() {
+		return datas;
+	}
+
+	public void setDatas(List<DatasDeNotificacaoDTO> datas) {
+		this.datas = datas;
+	}
+	public void addData(DatasDeNotificacaoDTO data) {
+		datas.add(data);
 	}
     
 }

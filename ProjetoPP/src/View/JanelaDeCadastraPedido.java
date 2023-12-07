@@ -50,7 +50,7 @@ public class JanelaDeCadastraPedido extends JanelaPadrao{
     private JSpinner spinnerQuantidade;
     private JTable tabelaClientes;
     private List<ClienteDTO> clientes;
-    private JFormattedTextField campoDoNatalicio;
+    private JFormattedTextField campoDaData;
     private double preco;
 	public JanelaDeCadastraPedido() {
 		addTexto(0, 10, 550, 30, "Fazer Pedido", new Font("Arial", Font.BOLD, 17), JLabel.CENTER, Color.BLACK);
@@ -116,23 +116,23 @@ public class JanelaDeCadastraPedido extends JanelaPadrao{
 		addTexto(300,70,150,20,"Data de Entrega:");
 		addBotaoDeVoltar();
 		addWallpaper();
-		adicionarCampoDaDataDeNascimento();
+		adicionarCampoDaDataDeEntrega();
 		setVisible(true);
 		
 		}
 
 	
-	private void adicionarCampoDaDataDeNascimento() {
+	private void adicionarCampoDaDataDeEntrega() {
 		
 		
 		try {
 			MaskFormatter mf = new MaskFormatter("##/##/####");
-			campoDoNatalicio = new JFormattedTextField(mf);
-			campoDoNatalicio.setBorder(new LineBorder(Color.BLACK, 1));
-			campoDoNatalicio.setFont(Util.FONTE_PADRAO);
-			campoDoNatalicio.setHorizontalAlignment(JTextField.CENTER);
-			campoDoNatalicio.setBounds(300, 100, 170, 25);
-			add(campoDoNatalicio);
+			campoDaData = new JFormattedTextField(mf);
+			campoDaData.setBorder(new LineBorder(Color.BLACK, 1));
+			campoDaData.setFont(Util.FONTE_PADRAO);
+			campoDaData.setHorizontalAlignment(JTextField.CENTER);
+			campoDaData.setBounds(300, 100, 170, 25);
+			add(campoDaData);
 		} catch (ParseException e) {}
 
 	}
@@ -164,7 +164,7 @@ public class JanelaDeCadastraPedido extends JanelaPadrao{
 	    int quantidade = (int) spinnerQuantidade.getValue();
 
 	    // Verificar se a data foi preenchida
-	    String datat = campoDoNatalicio.getText();
+	    String datat = campoDaData.getText();
 	    if (datat == null || datat.trim().isEmpty()) {
 	        JOptionPane.showMessageDialog(null, "Digite a data de entrega.", "Erro", JOptionPane.ERROR_MESSAGE);
 	        return;

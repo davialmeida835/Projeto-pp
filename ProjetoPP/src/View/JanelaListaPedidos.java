@@ -125,13 +125,15 @@ public class JanelaListaPedidos extends JanelaPadrao{
 	
 	
 	private void adicionarDadosATabela() {
-	    for (PedidoDTO pedido : listaDePedidos) {
+	    if(listaDePedidos!=null) {
+		for (PedidoDTO pedido : listaDePedidos) {
 	        modeloTabela.addRow(new Object[]{pedido.getCliente().getNome(), pedido.getPreco(), pedido.getDataEntrega(),pedido.isPagamento(),pedido.isFinalizado()});
+	    }
 	    }
 	}
 	  private void adicionarBotoesAtualizarExcluir() {
 		  JButton botaoAtualizar = addBotao(50, 400, 100, 30, "Atualizar", new ActionListener() {
-			    @Override
+			 
 			    public void actionPerformed(ActionEvent e) {
 			        
 			        int linhaSelecionada = tabelaPedidos.getSelectedRow(); 
@@ -197,7 +199,7 @@ public class JanelaListaPedidos extends JanelaPadrao{
 			});
 
 			JButton botaoExcluir = addBotao(200, 400, 100, 30, "Excluir", new ActionListener() {
-			    @Override
+			 
 			    public void actionPerformed(ActionEvent e) {
 			        
 			        int linhaSelecionada = tabelaPedidos.getSelectedRow();

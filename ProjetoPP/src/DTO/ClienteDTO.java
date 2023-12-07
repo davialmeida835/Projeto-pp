@@ -23,9 +23,8 @@ public class ClienteDTO {
 		this.cpfECnpj = cpfECnpj;
 		this.desejaReceberEmail = receberEmail;
 		id = System.currentTimeMillis();
-		if(desejaReceberEmail) {
-			notifyObservers();
-		}
+		
+		
 	}
 
 	public long getId() {
@@ -77,8 +76,13 @@ public class ClienteDTO {
 	public void removerObserver(ClienteObserver observer) {
 		observers.remove(observer);
 	}
+	public void atializar(){
+		if(desejaReceberEmail) {
+			notifyObservers();
+		}
+	}
 
-    private void notifyObservers() {
+    public void notifyObservers() {
         for (ClienteObserver observer : observers) {
             observer.clienteOptInParaEmail(this);
         }
