@@ -91,6 +91,8 @@ public class janelaDatasEmail extends JanelaPadrao {
         DatasDeNotificacaoDTO dados = new DatasDeNotificacaoDTO(data, descricao);
         DatasDeNotificacaoController d = new DatasDeNotificacaoController(dados);
         d.add();
+        dispose();
+        new janelaDatasEmail();
         
 	}
 

@@ -211,7 +211,8 @@ public class JanelaDeCadastraPedido extends JanelaPadrao{
         PedidoController pedidos = new PedidoController(this, pedido);
         pedidos.add();
         
-        
+        dispose();
+        new JanelaDeCadastraPedido();
     
 
         

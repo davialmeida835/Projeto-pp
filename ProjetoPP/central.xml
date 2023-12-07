@@ -646,6 +646,51 @@
       <id>1701979128776</id>
       <observers/>
     </DTO.ClienteDTO>
+    <DTO.ClienteDTO>
+      <nome>João</nome>
+      <telefone>1</telefone>
+      <email>Rua ABC</email>
+      <cpfECnpj>123456789</cpfECnpj>
+      <desejaReceberEmail>true</desejaReceberEmail>
+      <id>1701979634027</id>
+      <observers/>
+    </DTO.ClienteDTO>
+    <DTO.ClienteDTO>
+      <nome>João</nome>
+      <telefone>1</telefone>
+      <email>Rua ABC</email>
+      <cpfECnpj>123456789</cpfECnpj>
+      <desejaReceberEmail>true</desejaReceberEmail>
+      <id>1701979644524</id>
+      <observers/>
+    </DTO.ClienteDTO>
+    <DTO.ClienteDTO>
+      <nome>João</nome>
+      <telefone>1</telefone>
+      <email>Rua ABC</email>
+      <cpfECnpj>123456789</cpfECnpj>
+      <desejaReceberEmail>true</desejaReceberEmail>
+      <id>1701979656236</id>
+      <observers/>
+    </DTO.ClienteDTO>
+    <DTO.ClienteDTO>
+      <nome>João</nome>
+      <telefone>1</telefone>
+      <email>Rua ABC</email>
+      <cpfECnpj>123456789</cpfECnpj>
+      <desejaReceberEmail>true</desejaReceberEmail>
+      <id>1701979667118</id>
+      <observers/>
+    </DTO.ClienteDTO>
+    <DTO.ClienteDTO>
+      <nome>João</nome>
+      <telefone>1</telefone>
+      <email>Rua ABC</email>
+      <cpfECnpj>123456789</cpfECnpj>
+      <desejaReceberEmail>true</desejaReceberEmail>
+      <id>1701979830043</id>
+      <observers/>
+    </DTO.ClienteDTO>
   </clientes>
   <materiais>
     <DTO.MaterialDTO>
@@ -655,7 +700,13 @@
       <id>1701974586744</id>
     </DTO.MaterialDTO>
   </materiais>
-  <fornecedores/>
+  <fornecedores>
+    <DTO.FornecedorDTO>
+      <nome>davi</nome>
+      <telefone>(32) 42342-3423</telefone>
+      <materiaisFornecidos>dsadasd</materiaisFornecidos>
+    </DTO.FornecedorDTO>
+  </fornecedores>
   <gastos/>
   <pedidos>
     <DTO.PedidoDTO>
@@ -705,6 +756,36 @@
       <finalizado>true</finalizado>
       <dataDePagamento>2023-12-07</dataDePagamento>
     </DTO.PedidoDTO>
+    <DTO.PedidoDTO>
+      <tipoderoupa class="string">Vestido</tipoderoupa>
+      <numero>4</numero>
+      <descricao>Descrição do pedido</descricao>
+      <dataEntrega>1111-11-11</dataEntrega>
+      <quantidade>1</quantidade>
+      <cliente reference="../../../clientes/DTO.ClienteDTO"/>
+      <tamanho>PP</tamanho>
+      <materiais>
+        <DTO.MaterialDTO reference="../../../../materiais/DTO.MaterialDTO"/>
+      </materiais>
+      <preco>555.0</preco>
+      <pagamento>false</pagamento>
+      <finalizado>false</finalizado>
+    </DTO.PedidoDTO>
+    <DTO.PedidoDTO>
+      <tipoderoupa class="string">Vestido</tipoderoupa>
+      <numero>5</numero>
+      <descricao>Descrição do pedido</descricao>
+      <dataEntrega>1111-12-22</dataEntrega>
+      <quantidade>1</quantidade>
+      <cliente reference="../../../clientes/DTO.ClienteDTO"/>
+      <tamanho>PP</tamanho>
+      <materiais>
+        <DTO.MaterialDTO reference="../../../../materiais/DTO.MaterialDTO"/>
+      </materiais>
+      <preco>55.0</preco>
+      <pagamento>false</pagamento>
+      <finalizado>false</finalizado>
+    </DTO.PedidoDTO>
   </pedidos>
   <historico/>
   <datas>
@@ -717,6 +798,11 @@
       <dataDeEntrega>2023-12-07</dataDeEntrega>
       <descricao>davidavi</descricao>
       <id>1701978252632</id>
+    </DTO.DatasDeNotificacaoDTO>
+    <DTO.DatasDeNotificacaoDTO>
+      <dataDeEntrega>2023-12-08</dataDeEntrega>
+      <descricao>fififififif</descricao>
+      <id>1701979776354</id>
     </DTO.DatasDeNotificacaoDTO>
   </datas>
 </Model.CentralDeInformacoes>
