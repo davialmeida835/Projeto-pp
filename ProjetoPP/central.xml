@@ -8,7 +8,7 @@
   </usuario>
   <clientes>
     <DTO.ClienteDTO>
-      <nome>João</nome>
+      <nome>Davison</nome>
       <telefone>11111111111</telefone>
       <email>davisonalmeida54@gmail.com</email>
       <cpfECnpj>10781051460</cpfECnpj>
@@ -768,8 +768,9 @@
         <DTO.MaterialDTO reference="../../../../materiais/DTO.MaterialDTO"/>
       </materiais>
       <preco>555.0</preco>
-      <pagamento>false</pagamento>
-      <finalizado>false</finalizado>
+      <pagamento>true</pagamento>
+      <finalizado>true</finalizado>
+      <dataDePagamento>2023-12-07</dataDePagamento>
     </DTO.PedidoDTO>
     <DTO.PedidoDTO>
       <tipoderoupa class="string">Vestido</tipoderoupa>
@@ -803,6 +804,11 @@
       <dataDeEntrega>2023-12-08</dataDeEntrega>
       <descricao>fififififif</descricao>
       <id>1701979776354</id>
+    </DTO.DatasDeNotificacaoDTO>
+    <DTO.DatasDeNotificacaoDTO>
+      <dataDeEntrega>2023-12-07</dataDeEntrega>
+      <descricao>Novo Evento na loja</descricao>
+      <id>1701980573754</id>
     </DTO.DatasDeNotificacaoDTO>
   </datas>
 </Model.CentralDeInformacoes>
