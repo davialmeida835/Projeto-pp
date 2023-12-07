@@ -55,15 +55,18 @@ public class JanelaDeCadastraPedido extends JanelaPadrao{
 	public JanelaDeCadastraPedido() {
 		addTexto(0, 10, 550, 30, "Fazer Pedido", new Font("Arial", Font.BOLD, 17), JLabel.CENTER, Color.BLACK);
 		addTexto(0, 30, 550, 30,  "Monte seu Pedido",new Font("Arial", Font.BOLD, 17), JLabel.CENTER, Color.BLACK);
-		addTexto(70,140,100,30,"Materiais:");
-		addTexto(70,70,200,20,"Tipo de Roupa:");
-		addTexto(300,140,150,30,"Tamanho:");
-
+		addTexto(70,140,100,20,"Materiais:");
+		addTexto(355,140,200,20,"Tipo de Roupa:");
+		addTexto(250,70,150,20,"Tamanho:");
+		addTexto(70,70,150,20,"Data de Entrega:");
+		addTexto(70, 218, 408, 100,"Clientes:");
+		 adicionarCampoDaDataDeEntrega();
+		
 		//combo tamanho
 		comboBoxTamanhoRoupa = new JComboBox<>(TamanhoRoupa.values());
-        comboBoxTamanhoRoupa.setBounds(380, 140, 90, 25);
+        comboBoxTamanhoRoupa.setBounds(250, 100, 90, 25);
         add(comboBoxTamanhoRoupa);
-        
+       
         //lista de materiais
         List<MaterialDTO> materiais = CentralDeInformacoes.getInstance().getMateriais();
         listModel = new DefaultListModel<>();
@@ -80,7 +83,7 @@ public class JanelaDeCadastraPedido extends JanelaPadrao{
 	    jListMateriais.setSelectionMode(ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
 
 	    JScrollPane scrollPaneMateriais = new JScrollPane(jListMateriais);
-	    scrollPaneMateriais.setBounds(70, 170, 120, 100);
+	    scrollPaneMateriais.setBounds(70, 170, 250, 80);
 	    add(scrollPaneMateriais);
 
 	    adicionarComponentesQuantidade();
@@ -104,7 +107,7 @@ public class JanelaDeCadastraPedido extends JanelaPadrao{
 
 	    // JComboBox de tipos de roupas
 	    comboBoxTipoRoupa = new JComboBox<>(tiposRoupaStrings.toArray(new String[0]));
-	    comboBoxTipoRoupa.setBounds(70, 100, 120, 25);
+	    comboBoxTipoRoupa.setBounds(354, 170, 120, 30);
 	    add(comboBoxTipoRoupa);
 	    
 
@@ -113,10 +116,10 @@ public class JanelaDeCadastraPedido extends JanelaPadrao{
 	  
 		criarTabelaClientes();
 		addB();
-		addTexto(300,70,150,20,"Data de Entrega:");
+		
 		addBotaoDeVoltar();
-		addWallpaper();
-		adicionarCampoDaDataDeEntrega();
+//		addWallpaper();
+//		
 		setVisible(true);
 		
 		}
@@ -131,7 +134,7 @@ public class JanelaDeCadastraPedido extends JanelaPadrao{
 			campoDaData.setBorder(new LineBorder(Color.BLACK, 1));
 			campoDaData.setFont(Util.FONTE_PADRAO);
 			campoDaData.setHorizontalAlignment(JTextField.CENTER);
-			campoDaData.setBounds(300, 100, 170, 25);
+			campoDaData.setBounds(70, 100, 125, 25);
 			add(campoDaData);
 		} catch (ParseException e) {}
 
@@ -262,7 +265,7 @@ public class JanelaDeCadastraPedido extends JanelaPadrao{
         tabelaClientes = new JTable(model);
 
         JScrollPane scrollPane = new JScrollPane(tabelaClientes);
-        scrollPane.setBounds(70, 300, 400, 80);
+        scrollPane.setBounds(70, 280, 408, 100);
 
         
         add(scrollPane);
@@ -288,11 +291,11 @@ public class JanelaDeCadastraPedido extends JanelaPadrao{
 
 
     private void adicionarComponentesQuantidade() {
-        addTexto(300, 210, 150, 20, "Quantidade:");
+        addTexto(380, 70, 150, 20, "Quantidade:");
 
         SpinnerNumberModel spinnerModel = new SpinnerNumberModel(1, 1, 400, 1); 
         spinnerQuantidade = new JSpinner(spinnerModel);
-        spinnerQuantidade.setBounds(400, 210, 70, 25);
+        spinnerQuantidade.setBounds(422, 100, 50, 25);
         add(spinnerQuantidade);
     }
     public static void main(String[]args) {

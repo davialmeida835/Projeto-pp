@@ -18,7 +18,11 @@ import javax.swing.JTextField;
 import javax.swing.border.LineBorder;
 import javax.swing.table.DefaultTableModel;
 
+import org.apache.commons.mail.EmailException;
+import org.apache.commons.mail.SimpleEmail;
+
 import Controller.PedidoController;
+import DTO.ClienteDTO;
 import DTO.PedidoDTO;
 import Model.CentralDeInformacoes;
 import Model.Pedido;
@@ -74,7 +78,10 @@ public class JanelaListaPedidos extends JanelaPadrao{
 	                boolean foiFinalizado = (resposta == JOptionPane.YES_OPTION);
 
 	                pedidoSelecionado.setFinalizado(foiFinalizado);
-
+	                
+	                if( foiFinalizado) {
+	                	 enviarEmail(pedidoSelecionado.getCliente(),pedidoSelecionado);
+	                }
 	                PedidoController p = new PedidoController(JanelaListaPedidos.this, pedidoSelecionado);
 	                p.atualizarPedido();
 	                atualizarTabela();
@@ -85,9 +92,34 @@ public class JanelaListaPedidos extends JanelaPadrao{
 	    });
 	    
 	}
-	public void ganhosDoMes() {
-		
+	private void enviarEmail(ClienteDTO cliente,PedidoDTO pedido) {
+	    SimpleEmail email = new SimpleEmail();
+	    try {
+	        // Configuração do e-mail
+	        email.setHostName("smtp.gmail.com");
+	        email.setAuthentication("mensageiroct@gmail.com", "ocmghxpsdmtryxkn");
+	        email.setSSL(true);
+
+	        // Construção do e-mail
+	        email.addTo(cliente.getEmail());
+	        email.setFrom(CentralDeInformacoes.getInstance().getUsuario().getEmail());
+	        email.setSubject("Pedido Finalizado!!");
+	        String mensagem = "Prezado(a) " + cliente.getNome() + ",\n\n"
+	                + "Agradecemos por escolher nossa loja! Seu pedido foi finalizado com sucesso.\n"
+	                + "Agora, estamos aguardando ansiosamente sua retirada na loja.\n"
+	                + "Detalhes do Pedido:\n"
+	                + "Total do Pedido: R$ " + pedido.getPreco() + "\n\n"
+	                + "Caso tenha alguma dúvida ou problema, entre em contato conosco.\n\n"
+	                + "Atenciosamente,\n"
+	                + "Equipe da Loja";
+	        email.setMsg(mensagem);
+	        // Envio do e-mail
+	        email.send();
+	    } catch (EmailException e) {
+	        System.out.println("Falha ao enviar o email!");
+	    }
 	}
+
 	private void configurarTabela() {
 		modeloTabela = new DefaultTableModel();
         modeloTabela.addColumn("Cliente");

@@ -1,25 +1,722 @@
 <Model.CentralDeInformacoes>
+  <usuario>
+    <email>davirodriques853@gmail.com</email>
+    <senha>davi2001</senha>
+    <nome>davi rodrigues</nome>
+    <telefone>12121212121</telefone>
+    <dataDeNascimento>21/11/2001</dataDeNascimento>
+  </usuario>
   <clientes>
+    <DTO.ClienteDTO>
+      <nome>João</nome>
+      <telefone>11111111111</telefone>
+      <email>davisonalmeida54@gmail.com</email>
+      <cpfECnpj>10781051460</cpfECnpj>
+      <desejaReceberEmail>true</desejaReceberEmail>
+      <id>1701923142854</id>
+      <observers/>
+    </DTO.ClienteDTO>
     <DTO.ClienteDTO>
       <nome>João</nome>
       <telefone>1</telefone>
       <email>Rua ABC</email>
       <cpfECnpj>123456789</cpfECnpj>
       <desejaReceberEmail>true</desejaReceberEmail>
-      <id>1701923142854</id>
+      <id>1701974522195</id>
+      <observers/>
+    </DTO.ClienteDTO>
+    <DTO.ClienteDTO>
+      <nome>João</nome>
+      <telefone>1</telefone>
+      <email>Rua ABC</email>
+      <cpfECnpj>123456789</cpfECnpj>
+      <desejaReceberEmail>true</desejaReceberEmail>
+      <id>1701974525814</id>
+      <observers/>
+    </DTO.ClienteDTO>
+    <DTO.ClienteDTO>
+      <nome>João</nome>
+      <telefone>1</telefone>
+      <email>Rua ABC</email>
+      <cpfECnpj>123456789</cpfECnpj>
+      <desejaReceberEmail>true</desejaReceberEmail>
+      <id>1701974593132</id>
+      <observers/>
+    </DTO.ClienteDTO>
+    <DTO.ClienteDTO>
+      <nome>João</nome>
+      <telefone>1</telefone>
+      <email>Rua ABC</email>
+      <cpfECnpj>123456789</cpfECnpj>
+      <desejaReceberEmail>true</desejaReceberEmail>
+      <id>1701975361931</id>
+      <observers/>
+    </DTO.ClienteDTO>
+    <DTO.ClienteDTO>
+      <nome>João</nome>
+      <telefone>1</telefone>
+      <email>Rua ABC</email>
+      <cpfECnpj>123456789</cpfECnpj>
+      <desejaReceberEmail>true</desejaReceberEmail>
+      <id>1701975397678</id>
+      <observers/>
+    </DTO.ClienteDTO>
+    <DTO.ClienteDTO>
+      <nome>João</nome>
+      <telefone>1</telefone>
+      <email>Rua ABC</email>
+      <cpfECnpj>123456789</cpfECnpj>
+      <desejaReceberEmail>true</desejaReceberEmail>
+      <id>1701975440641</id>
+      <observers/>
+    </DTO.ClienteDTO>
+    <DTO.ClienteDTO>
+      <nome>João</nome>
+      <telefone>1</telefone>
+      <email>Rua ABC</email>
+      <cpfECnpj>123456789</cpfECnpj>
+      <desejaReceberEmail>true</desejaReceberEmail>
+      <id>1701975973879</id>
+      <observers/>
+    </DTO.ClienteDTO>
+    <DTO.ClienteDTO>
+      <nome>João</nome>
+      <telefone>1</telefone>
+      <email>Rua ABC</email>
+      <cpfECnpj>123456789</cpfECnpj>
+      <desejaReceberEmail>true</desejaReceberEmail>
+      <id>1701975984756</id>
+      <observers/>
+    </DTO.ClienteDTO>
+    <DTO.ClienteDTO>
+      <nome>João</nome>
+      <telefone>1</telefone>
+      <email>Rua ABC</email>
+      <cpfECnpj>123456789</cpfECnpj>
+      <desejaReceberEmail>true</desejaReceberEmail>
+      <id>1701976282757</id>
+      <observers/>
+    </DTO.ClienteDTO>
+    <DTO.ClienteDTO>
+      <nome>João</nome>
+      <telefone>1</telefone>
+      <email>Rua ABC</email>
+      <cpfECnpj>123456789</cpfECnpj>
+      <desejaReceberEmail>true</desejaReceberEmail>
+      <id>1701976337467</id>
+      <observers/>
+    </DTO.ClienteDTO>
+    <DTO.ClienteDTO>
+      <nome>João</nome>
+      <telefone>1</telefone>
+      <email>Rua ABC</email>
+      <cpfECnpj>123456789</cpfECnpj>
+      <desejaReceberEmail>true</desejaReceberEmail>
+      <id>1701976353732</id>
+      <observers/>
+    </DTO.ClienteDTO>
+    <DTO.ClienteDTO>
+      <nome>João</nome>
+      <telefone>1</telefone>
+      <email>Rua ABC</email>
+      <cpfECnpj>123456789</cpfECnpj>
+      <desejaReceberEmail>true</desejaReceberEmail>
+      <id>1701976361506</id>
+      <observers/>
+    </DTO.ClienteDTO>
+    <DTO.ClienteDTO>
+      <nome>João</nome>
+      <telefone>1</telefone>
+      <email>Rua ABC</email>
+      <cpfECnpj>123456789</cpfECnpj>
+      <desejaReceberEmail>true</desejaReceberEmail>
+      <id>1701976371731</id>
+      <observers/>
+    </DTO.ClienteDTO>
+    <DTO.ClienteDTO>
+      <nome>João</nome>
+      <telefone>1</telefone>
+      <email>Rua ABC</email>
+      <cpfECnpj>123456789</cpfECnpj>
+      <desejaReceberEmail>true</desejaReceberEmail>
+      <id>1701976483259</id>
+      <observers/>
+    </DTO.ClienteDTO>
+    <DTO.ClienteDTO>
+      <nome>João</nome>
+      <telefone>1</telefone>
+      <email>Rua ABC</email>
+      <cpfECnpj>123456789</cpfECnpj>
+      <desejaReceberEmail>true</desejaReceberEmail>
+      <id>1701976563235</id>
+      <observers/>
+    </DTO.ClienteDTO>
+    <DTO.ClienteDTO>
+      <nome>João</nome>
+      <telefone>1</telefone>
+      <email>Rua ABC</email>
+      <cpfECnpj>123456789</cpfECnpj>
+      <desejaReceberEmail>true</desejaReceberEmail>
+      <id>1701976581499</id>
+      <observers/>
+    </DTO.ClienteDTO>
+    <DTO.ClienteDTO>
+      <nome>João</nome>
+      <telefone>1</telefone>
+      <email>Rua ABC</email>
+      <cpfECnpj>123456789</cpfECnpj>
+      <desejaReceberEmail>true</desejaReceberEmail>
+      <id>1701976598652</id>
+      <observers/>
+    </DTO.ClienteDTO>
+    <DTO.ClienteDTO>
+      <nome>João</nome>
+      <telefone>1</telefone>
+      <email>Rua ABC</email>
+      <cpfECnpj>123456789</cpfECnpj>
+      <desejaReceberEmail>true</desejaReceberEmail>
+      <id>1701976650840</id>
+      <observers/>
+    </DTO.ClienteDTO>
+    <DTO.ClienteDTO>
+      <nome>João</nome>
+      <telefone>1</telefone>
+      <email>Rua ABC</email>
+      <cpfECnpj>123456789</cpfECnpj>
+      <desejaReceberEmail>true</desejaReceberEmail>
+      <id>1701976714556</id>
+      <observers/>
+    </DTO.ClienteDTO>
+    <DTO.ClienteDTO>
+      <nome>João</nome>
+      <telefone>1</telefone>
+      <email>Rua ABC</email>
+      <cpfECnpj>123456789</cpfECnpj>
+      <desejaReceberEmail>true</desejaReceberEmail>
+      <id>1701976792184</id>
+      <observers/>
+    </DTO.ClienteDTO>
+    <DTO.ClienteDTO>
+      <nome>João</nome>
+      <telefone>1</telefone>
+      <email>Rua ABC</email>
+      <cpfECnpj>123456789</cpfECnpj>
+      <desejaReceberEmail>true</desejaReceberEmail>
+      <id>1701976814372</id>
+      <observers/>
+    </DTO.ClienteDTO>
+    <DTO.ClienteDTO>
+      <nome>João</nome>
+      <telefone>1</telefone>
+      <email>Rua ABC</email>
+      <cpfECnpj>123456789</cpfECnpj>
+      <desejaReceberEmail>true</desejaReceberEmail>
+      <id>1701976912293</id>
+      <observers/>
+    </DTO.ClienteDTO>
+    <DTO.ClienteDTO>
+      <nome>João</nome>
+      <telefone>1</telefone>
+      <email>Rua ABC</email>
+      <cpfECnpj>123456789</cpfECnpj>
+      <desejaReceberEmail>true</desejaReceberEmail>
+      <id>1701976933163</id>
+      <observers/>
+    </DTO.ClienteDTO>
+    <DTO.ClienteDTO>
+      <nome>João</nome>
+      <telefone>1</telefone>
+      <email>Rua ABC</email>
+      <cpfECnpj>123456789</cpfECnpj>
+      <desejaReceberEmail>true</desejaReceberEmail>
+      <id>1701976960116</id>
+      <observers/>
+    </DTO.ClienteDTO>
+    <DTO.ClienteDTO>
+      <nome>João</nome>
+      <telefone>1</telefone>
+      <email>Rua ABC</email>
+      <cpfECnpj>123456789</cpfECnpj>
+      <desejaReceberEmail>true</desejaReceberEmail>
+      <id>1701976969063</id>
+      <observers/>
+    </DTO.ClienteDTO>
+    <DTO.ClienteDTO>
+      <nome>João</nome>
+      <telefone>1</telefone>
+      <email>Rua ABC</email>
+      <cpfECnpj>123456789</cpfECnpj>
+      <desejaReceberEmail>true</desejaReceberEmail>
+      <id>1701976984256</id>
+      <observers/>
+    </DTO.ClienteDTO>
+    <DTO.ClienteDTO>
+      <nome>João</nome>
+      <telefone>1</telefone>
+      <email>Rua ABC</email>
+      <cpfECnpj>123456789</cpfECnpj>
+      <desejaReceberEmail>true</desejaReceberEmail>
+      <id>1701976992813</id>
+      <observers/>
+    </DTO.ClienteDTO>
+    <DTO.ClienteDTO>
+      <nome>João</nome>
+      <telefone>1</telefone>
+      <email>Rua ABC</email>
+      <cpfECnpj>123456789</cpfECnpj>
+      <desejaReceberEmail>true</desejaReceberEmail>
+      <id>1701977026647</id>
+      <observers/>
+    </DTO.ClienteDTO>
+    <DTO.ClienteDTO>
+      <nome>João</nome>
+      <telefone>1</telefone>
+      <email>Rua ABC</email>
+      <cpfECnpj>123456789</cpfECnpj>
+      <desejaReceberEmail>true</desejaReceberEmail>
+      <id>1701977039025</id>
+      <observers/>
+    </DTO.ClienteDTO>
+    <DTO.ClienteDTO>
+      <nome>João</nome>
+      <telefone>1</telefone>
+      <email>Rua ABC</email>
+      <cpfECnpj>123456789</cpfECnpj>
+      <desejaReceberEmail>true</desejaReceberEmail>
+      <id>1701977046616</id>
+      <observers/>
+    </DTO.ClienteDTO>
+    <DTO.ClienteDTO>
+      <nome>João</nome>
+      <telefone>1</telefone>
+      <email>Rua ABC</email>
+      <cpfECnpj>123456789</cpfECnpj>
+      <desejaReceberEmail>true</desejaReceberEmail>
+      <id>1701977104553</id>
+      <observers/>
+    </DTO.ClienteDTO>
+    <DTO.ClienteDTO>
+      <nome>João</nome>
+      <telefone>1</telefone>
+      <email>Rua ABC</email>
+      <cpfECnpj>123456789</cpfECnpj>
+      <desejaReceberEmail>true</desejaReceberEmail>
+      <id>1701977145209</id>
+      <observers/>
+    </DTO.ClienteDTO>
+    <DTO.ClienteDTO>
+      <nome>João</nome>
+      <telefone>1</telefone>
+      <email>Rua ABC</email>
+      <cpfECnpj>123456789</cpfECnpj>
+      <desejaReceberEmail>true</desejaReceberEmail>
+      <id>1701977180698</id>
+      <observers/>
+    </DTO.ClienteDTO>
+    <DTO.ClienteDTO>
+      <nome>João</nome>
+      <telefone>1</telefone>
+      <email>Rua ABC</email>
+      <cpfECnpj>123456789</cpfECnpj>
+      <desejaReceberEmail>true</desejaReceberEmail>
+      <id>1701977192442</id>
+      <observers/>
+    </DTO.ClienteDTO>
+    <DTO.ClienteDTO>
+      <nome>João</nome>
+      <telefone>1</telefone>
+      <email>Rua ABC</email>
+      <cpfECnpj>123456789</cpfECnpj>
+      <desejaReceberEmail>true</desejaReceberEmail>
+      <id>1701977204670</id>
+      <observers/>
+    </DTO.ClienteDTO>
+    <DTO.ClienteDTO>
+      <nome>João</nome>
+      <telefone>1</telefone>
+      <email>Rua ABC</email>
+      <cpfECnpj>123456789</cpfECnpj>
+      <desejaReceberEmail>true</desejaReceberEmail>
+      <id>1701977239872</id>
+      <observers/>
+    </DTO.ClienteDTO>
+    <DTO.ClienteDTO>
+      <nome>João</nome>
+      <telefone>1</telefone>
+      <email>Rua ABC</email>
+      <cpfECnpj>123456789</cpfECnpj>
+      <desejaReceberEmail>true</desejaReceberEmail>
+      <id>1701977252684</id>
+      <observers/>
+    </DTO.ClienteDTO>
+    <DTO.ClienteDTO>
+      <nome>João</nome>
+      <telefone>1</telefone>
+      <email>Rua ABC</email>
+      <cpfECnpj>123456789</cpfECnpj>
+      <desejaReceberEmail>true</desejaReceberEmail>
+      <id>1701977286823</id>
+      <observers/>
+    </DTO.ClienteDTO>
+    <DTO.ClienteDTO>
+      <nome>João</nome>
+      <telefone>1</telefone>
+      <email>Rua ABC</email>
+      <cpfECnpj>123456789</cpfECnpj>
+      <desejaReceberEmail>true</desejaReceberEmail>
+      <id>1701977326189</id>
+      <observers/>
+    </DTO.ClienteDTO>
+    <DTO.ClienteDTO>
+      <nome>João</nome>
+      <telefone>1</telefone>
+      <email>Rua ABC</email>
+      <cpfECnpj>123456789</cpfECnpj>
+      <desejaReceberEmail>true</desejaReceberEmail>
+      <id>1701977334422</id>
+      <observers/>
+    </DTO.ClienteDTO>
+    <DTO.ClienteDTO>
+      <nome>João</nome>
+      <telefone>1</telefone>
+      <email>Rua ABC</email>
+      <cpfECnpj>123456789</cpfECnpj>
+      <desejaReceberEmail>true</desejaReceberEmail>
+      <id>1701977346108</id>
+      <observers/>
+    </DTO.ClienteDTO>
+    <DTO.ClienteDTO>
+      <nome>João</nome>
+      <telefone>1</telefone>
+      <email>Rua ABC</email>
+      <cpfECnpj>123456789</cpfECnpj>
+      <desejaReceberEmail>true</desejaReceberEmail>
+      <id>1701977364869</id>
+      <observers/>
+    </DTO.ClienteDTO>
+    <DTO.ClienteDTO>
+      <nome>João</nome>
+      <telefone>1</telefone>
+      <email>Rua ABC</email>
+      <cpfECnpj>123456789</cpfECnpj>
+      <desejaReceberEmail>true</desejaReceberEmail>
+      <id>1701977374531</id>
+      <observers/>
+    </DTO.ClienteDTO>
+    <DTO.ClienteDTO>
+      <nome>João</nome>
+      <telefone>1</telefone>
+      <email>Rua ABC</email>
+      <cpfECnpj>123456789</cpfECnpj>
+      <desejaReceberEmail>true</desejaReceberEmail>
+      <id>1701977427346</id>
+      <observers/>
+    </DTO.ClienteDTO>
+    <DTO.ClienteDTO>
+      <nome>João</nome>
+      <telefone>1</telefone>
+      <email>Rua ABC</email>
+      <cpfECnpj>123456789</cpfECnpj>
+      <desejaReceberEmail>true</desejaReceberEmail>
+      <id>1701977446606</id>
+      <observers/>
+    </DTO.ClienteDTO>
+    <DTO.ClienteDTO>
+      <nome>João</nome>
+      <telefone>1</telefone>
+      <email>Rua ABC</email>
+      <cpfECnpj>123456789</cpfECnpj>
+      <desejaReceberEmail>true</desejaReceberEmail>
+      <id>1701977473094</id>
+      <observers/>
+    </DTO.ClienteDTO>
+    <DTO.ClienteDTO>
+      <nome>João</nome>
+      <telefone>1</telefone>
+      <email>Rua ABC</email>
+      <cpfECnpj>123456789</cpfECnpj>
+      <desejaReceberEmail>true</desejaReceberEmail>
+      <id>1701977536379</id>
+      <observers/>
+    </DTO.ClienteDTO>
+    <DTO.ClienteDTO>
+      <nome>João</nome>
+      <telefone>1</telefone>
+      <email>Rua ABC</email>
+      <cpfECnpj>123456789</cpfECnpj>
+      <desejaReceberEmail>true</desejaReceberEmail>
+      <id>1701977577215</id>
+      <observers/>
+    </DTO.ClienteDTO>
+    <DTO.ClienteDTO>
+      <nome>João</nome>
+      <telefone>1</telefone>
+      <email>Rua ABC</email>
+      <cpfECnpj>123456789</cpfECnpj>
+      <desejaReceberEmail>true</desejaReceberEmail>
+      <id>1701977625479</id>
+      <observers/>
+    </DTO.ClienteDTO>
+    <DTO.ClienteDTO>
+      <nome>João</nome>
+      <telefone>1</telefone>
+      <email>Rua ABC</email>
+      <cpfECnpj>123456789</cpfECnpj>
+      <desejaReceberEmail>true</desejaReceberEmail>
+      <id>1701977682886</id>
+      <observers/>
+    </DTO.ClienteDTO>
+    <DTO.ClienteDTO>
+      <nome>João</nome>
+      <telefone>1</telefone>
+      <email>Rua ABC</email>
+      <cpfECnpj>123456789</cpfECnpj>
+      <desejaReceberEmail>true</desejaReceberEmail>
+      <id>1701977698702</id>
+      <observers/>
+    </DTO.ClienteDTO>
+    <DTO.ClienteDTO>
+      <nome>João</nome>
+      <telefone>1</telefone>
+      <email>Rua ABC</email>
+      <cpfECnpj>123456789</cpfECnpj>
+      <desejaReceberEmail>true</desejaReceberEmail>
+      <id>1701977725068</id>
+      <observers/>
+    </DTO.ClienteDTO>
+    <DTO.ClienteDTO>
+      <nome>João</nome>
+      <telefone>1</telefone>
+      <email>Rua ABC</email>
+      <cpfECnpj>123456789</cpfECnpj>
+      <desejaReceberEmail>true</desejaReceberEmail>
+      <id>1701977737177</id>
+      <observers/>
+    </DTO.ClienteDTO>
+    <DTO.ClienteDTO>
+      <nome>João</nome>
+      <telefone>1</telefone>
+      <email>Rua ABC</email>
+      <cpfECnpj>123456789</cpfECnpj>
+      <desejaReceberEmail>true</desejaReceberEmail>
+      <id>1701977778638</id>
+      <observers/>
+    </DTO.ClienteDTO>
+    <DTO.ClienteDTO>
+      <nome>João</nome>
+      <telefone>1</telefone>
+      <email>Rua ABC</email>
+      <cpfECnpj>123456789</cpfECnpj>
+      <desejaReceberEmail>true</desejaReceberEmail>
+      <id>1701977786543</id>
+      <observers/>
+    </DTO.ClienteDTO>
+    <DTO.ClienteDTO>
+      <nome>João</nome>
+      <telefone>1</telefone>
+      <email>Rua ABC</email>
+      <cpfECnpj>123456789</cpfECnpj>
+      <desejaReceberEmail>true</desejaReceberEmail>
+      <id>1701977802062</id>
+      <observers/>
+    </DTO.ClienteDTO>
+    <DTO.ClienteDTO>
+      <nome>João</nome>
+      <telefone>1</telefone>
+      <email>Rua ABC</email>
+      <cpfECnpj>123456789</cpfECnpj>
+      <desejaReceberEmail>true</desejaReceberEmail>
+      <id>1701977815019</id>
+      <observers/>
+    </DTO.ClienteDTO>
+    <DTO.ClienteDTO>
+      <nome>João</nome>
+      <telefone>1</telefone>
+      <email>Rua ABC</email>
+      <cpfECnpj>123456789</cpfECnpj>
+      <desejaReceberEmail>true</desejaReceberEmail>
+      <id>1701977828425</id>
+      <observers/>
+    </DTO.ClienteDTO>
+    <DTO.ClienteDTO>
+      <nome>João</nome>
+      <telefone>1</telefone>
+      <email>Rua ABC</email>
+      <cpfECnpj>123456789</cpfECnpj>
+      <desejaReceberEmail>true</desejaReceberEmail>
+      <id>1701977869746</id>
+      <observers/>
+    </DTO.ClienteDTO>
+    <DTO.ClienteDTO>
+      <nome>João</nome>
+      <telefone>1</telefone>
+      <email>Rua ABC</email>
+      <cpfECnpj>123456789</cpfECnpj>
+      <desejaReceberEmail>true</desejaReceberEmail>
+      <id>1701977887886</id>
+      <observers/>
+    </DTO.ClienteDTO>
+    <DTO.ClienteDTO>
+      <nome>João</nome>
+      <telefone>1</telefone>
+      <email>Rua ABC</email>
+      <cpfECnpj>123456789</cpfECnpj>
+      <desejaReceberEmail>true</desejaReceberEmail>
+      <id>1701977897569</id>
+      <observers/>
+    </DTO.ClienteDTO>
+    <DTO.ClienteDTO>
+      <nome>João</nome>
+      <telefone>1</telefone>
+      <email>Rua ABC</email>
+      <cpfECnpj>123456789</cpfECnpj>
+      <desejaReceberEmail>true</desejaReceberEmail>
+      <id>1701977908452</id>
+      <observers/>
+    </DTO.ClienteDTO>
+    <DTO.ClienteDTO>
+      <nome>João</nome>
+      <telefone>1</telefone>
+      <email>Rua ABC</email>
+      <cpfECnpj>123456789</cpfECnpj>
+      <desejaReceberEmail>true</desejaReceberEmail>
+      <id>1701977917034</id>
+      <observers/>
+    </DTO.ClienteDTO>
+    <DTO.ClienteDTO>
+      <nome>João</nome>
+      <telefone>1</telefone>
+      <email>Rua ABC</email>
+      <cpfECnpj>123456789</cpfECnpj>
+      <desejaReceberEmail>true</desejaReceberEmail>
+      <id>1701977945454</id>
+      <observers/>
+    </DTO.ClienteDTO>
+    <DTO.ClienteDTO>
+      <nome>João</nome>
+      <telefone>1</telefone>
+      <email>Rua ABC</email>
+      <cpfECnpj>123456789</cpfECnpj>
+      <desejaReceberEmail>true</desejaReceberEmail>
+      <id>1701977990324</id>
+      <observers/>
+    </DTO.ClienteDTO>
+    <DTO.ClienteDTO>
+      <nome>João</nome>
+      <telefone>1</telefone>
+      <email>Rua ABC</email>
+      <cpfECnpj>123456789</cpfECnpj>
+      <desejaReceberEmail>true</desejaReceberEmail>
+      <id>1701978019028</id>
+      <observers/>
+    </DTO.ClienteDTO>
+    <DTO.ClienteDTO>
+      <nome>João</nome>
+      <telefone>1</telefone>
+      <email>Rua ABC</email>
+      <cpfECnpj>123456789</cpfECnpj>
+      <desejaReceberEmail>true</desejaReceberEmail>
+      <id>1701978148771</id>
+      <observers/>
+    </DTO.ClienteDTO>
+    <DTO.ClienteDTO>
+      <nome>João</nome>
+      <telefone>1</telefone>
+      <email>Rua ABC</email>
+      <cpfECnpj>123456789</cpfECnpj>
+      <desejaReceberEmail>true</desejaReceberEmail>
+      <id>1701978267331</id>
+      <observers/>
+    </DTO.ClienteDTO>
+    <DTO.ClienteDTO>
+      <nome>João</nome>
+      <telefone>1</telefone>
+      <email>Rua ABC</email>
+      <cpfECnpj>123456789</cpfECnpj>
+      <desejaReceberEmail>true</desejaReceberEmail>
+      <id>1701978364459</id>
+      <observers/>
+    </DTO.ClienteDTO>
+    <DTO.ClienteDTO>
+      <nome>João</nome>
+      <telefone>1</telefone>
+      <email>Rua ABC</email>
+      <cpfECnpj>123456789</cpfECnpj>
+      <desejaReceberEmail>true</desejaReceberEmail>
+      <id>1701979128776</id>
       <observers/>
     </DTO.ClienteDTO>
   </clientes>
-  <materiais/>
+  <materiais>
+    <DTO.MaterialDTO>
+      <nome>dasd</nome>
+      <disponivel>true</disponivel>
+      <tipoDeMaterial>FERRAMENTA</tipoDeMaterial>
+      <id>1701974586744</id>
+    </DTO.MaterialDTO>
+  </materiais>
   <fornecedores/>
   <gastos/>
-  <pedidos/>
+  <pedidos>
+    <DTO.PedidoDTO>
+      <tipoderoupa class="string">Vestido</tipoderoupa>
+      <numero>1</numero>
+      <descricao>Descrição do pedido</descricao>
+      <dataEntrega>2021-12-22</dataEntrega>
+      <quantidade>1</quantidade>
+      <cliente reference="../../../clientes/DTO.ClienteDTO"/>
+      <tamanho>PP</tamanho>
+      <materiais>
+        <DTO.MaterialDTO reference="../../../../materiais/DTO.MaterialDTO"/>
+      </materiais>
+      <preco>44.0</preco>
+      <pagamento>true</pagamento>
+      <finalizado>true</finalizado>
+      <dataDePagamento>2023-12-07</dataDePagamento>
+    </DTO.PedidoDTO>
+    <DTO.PedidoDTO>
+      <tipoderoupa class="string">Vestido</tipoderoupa>
+      <numero>2</numero>
+      <descricao>Descrição do pedido</descricao>
+      <dataEntrega>1212-12-22</dataEntrega>
+      <quantidade>1</quantidade>
+      <cliente reference="../../../clientes/DTO.ClienteDTO"/>
+      <tamanho>PP</tamanho>
+      <materiais>
+        <DTO.MaterialDTO reference="../../../../materiais/DTO.MaterialDTO"/>
+      </materiais>
+      <preco>55.0</preco>
+      <pagamento>false</pagamento>
+      <finalizado>true</finalizado>
+    </DTO.PedidoDTO>
+    <DTO.PedidoDTO>
+      <tipoderoupa class="string">Vestido</tipoderoupa>
+      <numero>3</numero>
+      <descricao>Descrição do pedido</descricao>
+      <dataEntrega>1111-11-11</dataEntrega>
+      <quantidade>1</quantidade>
+      <cliente reference="../../../clientes/DTO.ClienteDTO"/>
+      <tamanho>PP</tamanho>
+      <materiais>
+        <DTO.MaterialDTO reference="../../../../materiais/DTO.MaterialDTO"/>
+      </materiais>
+      <preco>55.0</preco>
+      <pagamento>true</pagamento>
+      <finalizado>true</finalizado>
+      <dataDePagamento>2023-12-07</dataDePagamento>
+    </DTO.PedidoDTO>
+  </pedidos>
   <historico/>
   <datas>
     <DTO.DatasDeNotificacaoDTO>
       <dataDeEntrega>1222-12-12</dataDeEntrega>
       <descricao>234234234234</descricao>
       <id>1701918370024</id>
+    </DTO.DatasDeNotificacaoDTO>
+    <DTO.DatasDeNotificacaoDTO>
+      <dataDeEntrega>2023-12-07</dataDeEntrega>
+      <descricao>davidavi</descricao>
+      <id>1701978252632</id>
     </DTO.DatasDeNotificacaoDTO>
   </datas>
 </Model.CentralDeInformacoes>
