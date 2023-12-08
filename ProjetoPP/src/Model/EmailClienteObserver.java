@@ -9,10 +9,10 @@ import org.apache.commons.mail.SimpleEmail;
 import DTO.ClienteDTO;
 import DTO.DatasDeNotificacaoDTO;
 
-public class EmailClienteObserver implements ClienteObserver {
+public class EmailClienteObserver implements Observerint {
 
 	
-	public void clienteOptInParaEmail(ClienteDTO cliente) {
+	public void clienteOptInParaEmail(SujeitoObservable cliente) {
 	    CentralDeInformacoes central = CentralDeInformacoes.getInstance();
 	    List<DatasDeNotificacaoDTO> datas = central.getDatas();
 
@@ -26,12 +26,12 @@ public class EmailClienteObserver implements ClienteObserver {
 	    }
 	}
 
-	private void enviarEmailParaCliente(ClienteDTO cliente, DatasDeNotificacaoDTO data) {
+	private void enviarEmailParaCliente(SujeitoObservable cliente, DatasDeNotificacaoDTO data) {
 
-	    if (cliente.getDesejaReceberEmail()) {
+	    if (((ClienteDTO) cliente).getDesejaReceberEmail()) {
 	       
 	        String descricao = data.getDescricao();
-	        enviarEmail(cliente, descricao);
+	        enviarEmail((ClienteDTO) cliente, descricao);
 	    }
 	}
 

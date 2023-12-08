@@ -1,0 +1,20 @@
+<Model.CentralDeInformacoes>
+  <clientes>
+    <DTO.ClienteDTO>
+      <nome>João</nome>
+      <telefone>1</telefone>
+      <email>Rua ABC</email>
+      <cpfECnpj>123456789</cpfECnpj>
+      <desejaReceberEmail>true</desejaReceberEmail>
+      <id>1702051896863</id>
+      <dataDeCadastramento>2023-12-08</dataDeCadastramento>
+      <observers/>
+    </DTO.ClienteDTO>
+  </clientes>
+  <materiais/>
+  <fornecedores/>
+  <gastos/>
+  <pedidos/>
+  <historico/>
+  <datas/>
+</Model.CentralDeInformacoes>

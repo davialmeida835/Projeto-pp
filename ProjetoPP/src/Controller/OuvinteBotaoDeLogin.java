@@ -29,7 +29,7 @@ public class OuvinteBotaoDeLogin implements ActionListener {
 			JOptionPane.showMessageDialog(janelaDeLogin, "Digite email e senha válidos!");
 		} else {
 			for(ClienteDTO cliente:c.getClientes()) {
-				cliente.atializar();
+				cliente.atualizar();
 			}
 			new JanelaDeMenu();
 			janelaDeLogin.dispose();
