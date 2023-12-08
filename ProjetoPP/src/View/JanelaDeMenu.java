@@ -34,7 +34,7 @@ public class JanelaDeMenu extends JanelaPadrao {
 		addBotoesMenu(65, 330, 200, 40, "LISTA DE DATAS", getClass().getResource("/resources/Lista.png"));
 		addBotoesMenu(275, 330, 200, 40, "CADASTRAR DATA", getClass().getResource("/resources/Lista.png"));
 		addBotoesMenu(65, 385, 200, 40, "", getClass().getResource("/resources/Lista.png"));
-		addBotoesMenu(275, 385, 200, 40, "", getClass().getResource("/resources/Lista.png"));
+		addBotoesMenu(275, 385, 200, 40, "PERFIL DO USUÁRIO", getClass().getResource("/resources/Lista.png"));
 
 
 		addBotaoDeVoltar(new ActionListener() {

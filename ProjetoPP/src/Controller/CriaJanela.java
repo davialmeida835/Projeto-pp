@@ -13,6 +13,7 @@ import View.JanelaListaDeDatas;
 import View.JanelaListaFornecedores;
 import View.JanelaListaMateriais;
 import View.JanelaListaPedidos;
+import View.JanelaVerPerfil;
 import View.janelaDatasEmail;
 
 public class CriaJanela {
@@ -43,6 +44,8 @@ public class CriaJanela {
             	return new janelaDatasEmail();
             case "LISTA DE DATAS":
             	return new JanelaListaDeDatas();
+            case "PERFIL DO USUÁRIO":
+            	return new JanelaVerPerfil();
             default:
                throw null;
                     

@@ -1,4 +1,11 @@
 <Model.CentralDeInformacoes>
+  <usuario>
+    <email>davirodriques853@gmail.com</email>
+    <senha>davi2001</senha>
+    <nome>Davi</nome>
+    <telefone>34343434343</telefone>
+    <dataDeNascimento>12/12/2001</dataDeNascimento>
+  </usuario>
   <clientes>
     <DTO.ClienteDTO>
       <nome>João</nome>
