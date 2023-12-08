@@ -31,7 +31,6 @@ import javax.swing.text.MaskFormatter;
 
 import Controller.PedidoController;
 import Controller.Persistencia;
-import Controller.TipoRoupaFactory;
 import DTO.ClienteDTO;
 import DTO.MaterialDTO;
 import DTO.PedidoDTO;
@@ -39,6 +38,8 @@ import Model.CentralDeInformacoes;
 import Model.Cliente;
 import Model.Material;
 import Model.TamanhoRoupa;
+import Model.TipoRoupa;
+import Model.TipoRoupaFactory;
 import Model.Util;
 
 public class JanelaDeCadastraPedido extends JanelaPadrao{
@@ -76,9 +77,7 @@ public class JanelaDeCadastraPedido extends JanelaPadrao{
             }
         }
         
-		ClienteDTO c = new ClienteDTO("João", 1L, "Rua ABC", 123456789L, true);
-		CentralDeInformacoes.getInstance().getClientes().add(c);
-		Persistencia.salvarCentral(CentralDeInformacoes.getInstance(), "central");
+		
 		jListMateriais = new JList<>(listModel);
 	    jListMateriais.setSelectionMode(ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
 
@@ -155,6 +154,8 @@ public class JanelaDeCadastraPedido extends JanelaPadrao{
 	        JOptionPane.showMessageDialog(null, "Selecione o tipo de roupa.", "Erro", JOptionPane.ERROR_MESSAGE);
 	        return;
 	    }
+	    
+	    TipoRoupa t =  TipoRoupaFactory.criarTipoRoupa(comboBoxTipoRoupa.getSelectedItem().toString());
 
 	    // Verificar se o tamanho de roupa foi selecionado
 	    TamanhoRoupa tamanhoRoupaSelecionado = (TamanhoRoupa) comboBoxTamanhoRoupa.getSelectedItem();
@@ -201,7 +202,7 @@ public class JanelaDeCadastraPedido extends JanelaPadrao{
 	            .cliente(clienteSelecionado)
 	            .tamanho(tamanhoRoupaSelecionado)
 	            .materiais(materiaisSelecionados)
-	            .tipoRoupa(tipoRoupaSelecionado)
+	            .tipoRoupa(t)
 	            .preco(preco)
 	            .build();
 	    

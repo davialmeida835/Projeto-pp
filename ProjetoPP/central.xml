@@ -10,11 +10,109 @@
       <dataDeCadastramento>2023-12-08</dataDeCadastramento>
       <observers/>
     </DTO.ClienteDTO>
+    <DTO.ClienteDTO>
+      <nome>João</nome>
+      <telefone>1</telefone>
+      <email>Rua ABC</email>
+      <cpfECnpj>123456789</cpfECnpj>
+      <desejaReceberEmail>true</desejaReceberEmail>
+      <id>1702061280383</id>
+      <dataDeCadastramento>2023-12-08</dataDeCadastramento>
+      <observers/>
+    </DTO.ClienteDTO>
+    <DTO.ClienteDTO>
+      <nome>João</nome>
+      <telefone>1</telefone>
+      <email>Rua ABC</email>
+      <cpfECnpj>123456789</cpfECnpj>
+      <desejaReceberEmail>true</desejaReceberEmail>
+      <id>1702061300463</id>
+      <dataDeCadastramento>2023-12-08</dataDeCadastramento>
+      <observers/>
+    </DTO.ClienteDTO>
+    <DTO.ClienteDTO>
+      <nome>João</nome>
+      <telefone>1</telefone>
+      <email>Rua ABC</email>
+      <cpfECnpj>123456789</cpfECnpj>
+      <desejaReceberEmail>true</desejaReceberEmail>
+      <id>1702061408016</id>
+      <dataDeCadastramento>2023-12-08</dataDeCadastramento>
+      <observers/>
+    </DTO.ClienteDTO>
+    <DTO.ClienteDTO>
+      <nome>João</nome>
+      <telefone>1</telefone>
+      <email>Rua ABC</email>
+      <cpfECnpj>123456789</cpfECnpj>
+      <desejaReceberEmail>true</desejaReceberEmail>
+      <id>1702061595092</id>
+      <dataDeCadastramento>2023-12-08</dataDeCadastramento>
+      <observers/>
+    </DTO.ClienteDTO>
+    <DTO.ClienteDTO>
+      <nome>João</nome>
+      <telefone>1</telefone>
+      <email>Rua ABC</email>
+      <cpfECnpj>123456789</cpfECnpj>
+      <desejaReceberEmail>true</desejaReceberEmail>
+      <id>1702061603804</id>
+      <dataDeCadastramento>2023-12-08</dataDeCadastramento>
+      <observers/>
+    </DTO.ClienteDTO>
+    <DTO.ClienteDTO>
+      <nome>João</nome>
+      <telefone>1</telefone>
+      <email>Rua ABC</email>
+      <cpfECnpj>123456789</cpfECnpj>
+      <desejaReceberEmail>true</desejaReceberEmail>
+      <id>1702061614708</id>
+      <dataDeCadastramento>2023-12-08</dataDeCadastramento>
+      <observers/>
+    </DTO.ClienteDTO>
   </clientes>
-  <materiais/>
+  <materiais>
+    <DTO.MaterialDTO>
+      <nome>da</nome>
+      <disponivel>true</disponivel>
+      <tipoDeMaterial>TECIDO</tipoDeMaterial>
+      <id>1702061296430</id>
+    </DTO.MaterialDTO>
+  </materiais>
   <fornecedores/>
   <gastos/>
-  <pedidos/>
+  <pedidos>
+    <DTO.PedidoDTO>
+      <tipoderoupa class="Model.Vestido"/>
+      <numero>1</numero>
+      <descricao>Descrição do pedido</descricao>
+      <dataEntrega>1111-11-11</dataEntrega>
+      <quantidade>1</quantidade>
+      <cliente reference="../../../clientes/DTO.ClienteDTO"/>
+      <tamanho>PP</tamanho>
+      <materiais>
+        <DTO.MaterialDTO reference="../../../../materiais/DTO.MaterialDTO"/>
+      </materiais>
+      <preco>55.0</preco>
+      <pagamento>false</pagamento>
+      <finalizado>false</finalizado>
+    </DTO.PedidoDTO>
+    <DTO.PedidoDTO>
+      <tipoderoupa class="Model.Shorts"/>
+      <numero>2</numero>
+      <descricao>Descrição do pedido</descricao>
+      <dataEntrega>1111-11-11</dataEntrega>
+      <quantidade>1</quantidade>
+      <cliente reference="../../../clientes/DTO.ClienteDTO[3]"/>
+      <tamanho>PP</tamanho>
+      <materiais>
+        <DTO.MaterialDTO reference="../../../../materiais/DTO.MaterialDTO"/>
+      </materiais>
+      <preco>44.0</preco>
+      <pagamento>false</pagamento>
+      <finalizado>false</finalizado>
+    </DTO.PedidoDTO>
+  </pedidos>
   <historico/>
   <datas/>
 </Model.CentralDeInformacoes>

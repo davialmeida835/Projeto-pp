@@ -36,7 +36,7 @@ public class PedidoDTO {
     }
     
     private static int proximoId = obterUltimoNumeroPedido();
-    private Object tipoderoupa;
+    private TipoRoupa tipoderoupa;
 	private int numero;
     private String descricao;
     private LocalDate dataEntrega;
@@ -160,7 +160,7 @@ public class PedidoDTO {
 		this.descricao = descricao;
 	}
 
-	public void setTipoderoupa(Object tipoderoupa) {
+	public void setTipoderoupa1(TipoRoupa tipoderoupa) {
 		this.tipoderoupa = tipoderoupa;
 	}
 

@@ -15,7 +15,7 @@ public class PedidoBuilderImpl implements PedidoBuilder{
     private TamanhoRoupa tamanho;
     private List<MaterialDTO> materiais;
     private double preco;
-    private Object tipoRoupa;
+    private TipoRoupa tipoRoupa;
     private boolean pagamento;
     private boolean finalizado = false;
     private int numero;
@@ -62,8 +62,7 @@ public class PedidoBuilderImpl implements PedidoBuilder{
         return this;
     }
 
-    @Override
-    public PedidoBuilder tipoRoupa(Object tipoRoupa) {
+    public PedidoBuilder tipoRoupa(TipoRoupa tipoRoupa) {
         this.tipoRoupa = tipoRoupa;
         return this;
     }

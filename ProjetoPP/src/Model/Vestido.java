@@ -9,6 +9,12 @@ public class Vestido implements TipoRoupa {
 		return "Vestido";
 	}
 
+	@Override
+	public String descrição() {
+		
+		return null;
+	}
+
 	
 
 }

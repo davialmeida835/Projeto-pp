@@ -4,7 +4,13 @@ public class Blusa implements TipoRoupa {
 
 	@Override
 	public String getnome() {
-		// TODO Auto-generated method stub
+		
+		return "Blusa";
+	}
+
+	@Override
+	public String descrição() {
+		
 		return null;
 	}
 
