@@ -10,6 +10,7 @@ import javax.swing.JOptionPane;
 import DTO.ClienteDTO;
 import Model.CentralDeInformacoes;
 import Model.Cliente;
+import Model.EmailClienteObserver;
 import Model.Validar;
 import View.JanelaDeCadastroCliente;
 
@@ -50,7 +51,8 @@ public class OuvinteCadastrarCliente implements ActionListener {
 		} 
 		else {
 			ClienteDTO cliente = new ClienteDTO(nome,Long.parseLong(telefone), email, Long.parseLong(cpfOuCnpj), receber);
-			
+			EmailClienteObserver ob = new  EmailClienteObserver();
+			cliente.addObserver(ob);
 			JOptionPane.showMessageDialog(cadastrarCliente, "Cadastro efetuado com sucesso!");
 			central.addCliente(cliente);
 			Persistencia.salvarCentral(central, "central");
