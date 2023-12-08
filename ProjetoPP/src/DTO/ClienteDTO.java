@@ -1,5 +1,7 @@
 package DTO;
 
+import java.time.LocalDate;
+
 public class ClienteDTO {
 
 	private String nome;
@@ -8,6 +10,7 @@ public class ClienteDTO {
 	private long cpfECnpj;
 	private boolean desejaReceberEmail;
 	private long id;
+	private LocalDate dataDeCadastramento;
 	
 	public ClienteDTO(String nome, long telefone, String email, long cpfECnpj, boolean receberEmail) {
 		this.nome = nome;
@@ -16,12 +19,17 @@ public class ClienteDTO {
 		this.cpfECnpj = cpfECnpj;
 		this.desejaReceberEmail = receberEmail;
 		id = System.currentTimeMillis();
+		dataDeCadastramento = LocalDate.now();
 	}
 
 	public long getId() {
 		return id;
 	}
 	
+	public LocalDate getDataDeCadastramento() {
+		return dataDeCadastramento;
+	}
+
 	public long getCpfECnpj() {
 		return cpfECnpj;
 	}

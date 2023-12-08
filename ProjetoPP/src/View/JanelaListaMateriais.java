@@ -4,6 +4,8 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
@@ -43,11 +45,26 @@ public class JanelaListaMateriais extends JanelaPadrao{
 			
 			public void actionPerformed(ActionEvent e) {
 				int i = tabela.getSelectedRow();
+				int modeloIndex = tabela.convertRowIndexToModel(i);
 				
 				if(i != -1) {
 					MaterialDAO gerenciar = new MaterialDAO();
-					gerenciar.deletarMaterial(CentralDeInformacoes.getInstance().getMateriais().get(i));	
+					gerenciar.deletarMaterial(CentralDeInformacoes.getInstance().getMateriais().get(modeloIndex));
+					JOptionPane.showMessageDialog(null, "Material apagado com sucesso!");
+					model.setRowCount(0);
+					for(MaterialDTO m : CentralDeInformacoes.getInstance().getMateriais()) {
+						Object[] itens = new Object[3];
+						itens[0] = m.getNome();
+						itens[1] = m.getTipoDeMaterial();
+						itens[2] = (m.isDisponivel()) ? "Disponível" : "Indisponível"; 
+						
+						model.addRow(itens);
+					}
+				}else {
+					JOptionPane.showMessageDialog(null, "Escolha um material antes!");
 				}
+				
+				
 			}
 		});
 		addBotao(80, 420, 110, 30, "Comprar", new ActionListener() {
@@ -79,9 +96,14 @@ public class JanelaListaMateriais extends JanelaPadrao{
 		addBotao(360, 420, 110, 30, "Editar", new ActionListener() {
 
 			public void actionPerformed(ActionEvent e) {
+				
+				if(tabela.getSelectedRow() != -1) {
 				int i = tabela.getSelectedRow();
 				new JanelaAdicionarMateriais(CentralDeInformacoes.getInstance().getMateriais().get(i));
 				dispose();
+				}else {
+					JOptionPane.showMessageDialog(null, "Escolha um material antes!");
+				}
 			}
 			
 		});
@@ -110,6 +132,9 @@ public class JanelaListaMateriais extends JanelaPadrao{
 
    	    RowFilter<DefaultTableModel, Object> rowFilter = RowFilter.regexFilter("(?i)" + nomeFiltro, 0); // O índice 0 refere-se à coluna do nome
    	    sorter.setRowFilter(rowFilter);
+   	    
+   	    
+   	  
    	
    	    
    }

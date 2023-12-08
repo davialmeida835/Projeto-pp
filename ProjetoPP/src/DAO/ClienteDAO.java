@@ -5,7 +5,6 @@ import javax.swing.JOptionPane;
 import Controller.Persistencia;
 import DTO.ClienteDTO;
 import Model.CentralDeInformacoes;
-import Model.Iterator;
 
 public class ClienteDAO implements ClienteDAOIf{
 

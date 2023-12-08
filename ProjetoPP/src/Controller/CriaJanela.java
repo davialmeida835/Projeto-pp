@@ -3,9 +3,11 @@ package Controller;
 import javax.swing.JFrame;
 
 import View.JanelaAdicionarMateriais;
+import View.JanelaAgenda;
 import View.JanelaDeCadastraPedido;
 import View.JanelaDeCadastroCliente;
 import View.JanelaDeCadastroFornecedor;
+import View.JanelaGerarRelatorio;
 import View.JanelaListaClientes;
 import View.JanelaListaFornecedores;
 import View.JanelaListaMateriais;
@@ -31,9 +33,10 @@ public class CriaJanela {
                 return new JanelaListaFornecedores();
             case "LISTA DE MATERIAIS":
                 return new JanelaListaMateriais();
-            case "Lista de Orçamentos":
-                //return new JanelaListaDeOrcamentos();
-            	
+            case "AGENDA":
+                return new JanelaAgenda();
+            case "GERAR RELATÓRIO":
+            	return new JanelaGerarRelatorio();
             default:
                throw null;
                     

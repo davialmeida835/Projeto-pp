@@ -2,84 +2,133 @@ package View;
 
 import java.awt.Color;
 import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.List;
+import java.time.temporal.WeekFields;
+import java.util.Locale;
 
+import javax.swing.JComboBox;
+import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
-import javax.swing.table.AbstractTableModel;
+import javax.swing.table.DefaultTableModel;
 
-public class JanelaAgenda extends JanelaPadrao{
+import DTO.PedidoDTO;
+import Model.AbstractTable;
+import Model.CentralDeInformacoes;
+
+public class JanelaAgenda extends JanelaPadrao {
+
+	private JTable tabelaPedidos;
+	private JComboBox comboEscolha;
+	private DefaultTableModel tableModel;
+
+	public JComboBox getComboEscolha() {
+		return comboEscolha;
+	}
+
+	public JTable getTabelaPedidos() {
+		return tabelaPedidos;
+	}
+
+	public JanelaAgenda() {
+		addTexto(0, 25, 550, 30, "Verificar Agenda", new Font("Arial", Font.BOLD, 17), JLabel.CENTER, Color.BLACK);
+//	        addTexto(0, 30, 550, 30, "Verificar Agenda", new Font("Arial", Font.BOLD, 17), JLabel.CENTER, Color.BLACK);
+
+		String[] opcoes = { "Dia", "Semana", "Mês" };
+		comboEscolha = new JComboBox<>(opcoes);
+		comboEscolha.setBounds(200, 90, 150, 30);
+		add(comboEscolha);
+		
+
+		String[] colunas = { "Número do Pedido", "Cliente", "Produto", "Quantidade", "Data" };
+		
+		tableModel = new DefaultTableModel();
+		
+		for(int i = 0; i < colunas.length; i++) {
+			tableModel.addColumn(colunas[i]);
+		}
+		
+		for (PedidoDTO m : CentralDeInformacoes.getInstance().getPedidos()) {
+			if (m.getDataEntrega().equals(LocalDate.now())) {
+				Object[] itens = new Object[5];
+				itens[0] = m.getNumero();
+				itens[1] = m.getCliente().getNome();
+				itens[2] = m.getTipoderoupa();
+				itens[3] = m.getQuantidade();
+				itens[4] = m.getDataEntrega();
+				tableModel.addRow(itens);
+			}
+		}
+		
+		tabelaPedidos = new JTable(tableModel);
+		
+		JScrollPane barraRolagem = new JScrollPane(tabelaPedidos);
+		barraRolagem.setBounds(25, 150, 490, 250);
+		add(barraRolagem);
+		
+		comboEscolha.addActionListener(new ActionListener() {
+
+			public void actionPerformed(ActionEvent e) {
+				tableModel.setRowCount(0);
+
+				CentralDeInformacoes central = CentralDeInformacoes.getInstance();
+				if (getComboEscolha().getSelectedItem().equals("Dia")) {
+					for (PedidoDTO m : central.getPedidos()) {
+						if (m.getDataEntrega().equals(LocalDate.now())) {
+							Object[] itens = new Object[5];
+							itens[0] = m.getNumero();
+							itens[1] = m.getCliente().getNome();
+							itens[2] = m.getTipoderoupa();
+							itens[3] = m.getQuantidade();
+							itens[4] = m.getDataEntrega();
+							tableModel.addRow(itens);
+						}
+					}
+				} else if (getComboEscolha().getSelectedItem().equals("Semana")) {
+					int semanaAtual = LocalDate.now().get(WeekFields.of(Locale.getDefault()).weekOfWeekBasedYear());
+					for (PedidoDTO m : central.getPedidos()) {
+						if (semanaAtual == m.getDataEntrega()
+								.get(WeekFields.of(Locale.getDefault()).weekOfWeekBasedYear())) {
+							Object[] itens = new Object[5];
+							itens[0] = m.getNumero();
+							itens[1] = m.getCliente().getNome();
+							itens[2] = m.getTipoderoupa();
+							itens[3] = m.getQuantidade();
+							itens[4] = m.getDataEntrega();
+							tableModel.addRow(itens);
+						}
+					}
+				} else {
+					for (PedidoDTO m : central.getPedidos()) {
+						if (LocalDate.now().getMonth() == m.getDataEntrega().getMonth()
+								&& LocalDate.now().getYear() == m.getDataEntrega().getYear()) {
+							Object[] itens = new Object[5];
+							itens[0] = m.getNumero();
+							itens[1] = m.getCliente().getNome();
+							itens[2] = m.getTipoderoupa();
+							itens[3] = m.getQuantidade();
+							itens[4] = m.getDataEntrega();
+							tableModel.addRow(itens);
+						}
+					}
+				}
+				
+			}
+
+		});
+
+		
+
+		addBotaoDeVoltar();
+		setVisible(true);
+	}
 	
-	   private JTable tabelaPedidos;
-	    private PedidoTableModel tableModel;
-
-	    public JanelaAgenda() {
-	        addTexto(0, 10, 550, 30, "Agenda Do Dia", new Font("Arial", Font.BOLD, 17), JLabel.CENTER, Color.BLACK);
-	        addTexto(0, 30, 550, 30, "Verificar Agenda", new Font("Arial", Font.BOLD, 17), JLabel.CENTER, Color.BLACK);
-
-	    
-	        tableModel = new PedidoTableModel();
-	        tabelaPedidos = new JTable(tableModel);
-	        JScrollPane scrollPane = new JScrollPane(tabelaPedidos);
-	        scrollPane.setBounds(50, 70, 450, 350);
-	        add(scrollPane);
-
-	        addBotaoDeVoltar();
-	        setVisible(true);
-	    }
-
-	    
-	    private class PedidoTableModel extends AbstractTableModel {
-	        private String[] colunas = {"Número do Pedido", "Cliente", "Produto", "Quantidade", "Data"};
-	        private List<Object[]> data;
-
-	        public PedidoTableModel() {
-	          
-	            data = new ArrayList<>();
-	            
-	            data.add(new Object[]{"1", "Cliente 1", "Produto A", 5, LocalDate.now()});
-	            data.add(new Object[]{"2", "Cliente 2", "Produto B", 3, LocalDate.now()});
-	           
-	            data.add(new Object[]{"3", "Cliente 3", "Produto C", 2, LocalDate.now().plusDays(1)});
-	            data.add(new Object[]{"4", "Cliente 4", "Produto D", 1, LocalDate.now().minusDays(1)});
-
-	            
-	            LocalDate today = LocalDate.now();
-	            List<Object[]> newData = new ArrayList<>();
-	            for (Object[] pedido : data) {
-	                LocalDate dataPedido = (LocalDate) pedido[4];
-	                if (dataPedido.equals(today)) {
-	                    newData.add(pedido);
-	                }
-	            }
-	            data = newData;
-	        }
-
-	        @Override
-	        public int getRowCount() {
-	            return data.size();
-	        }
-
-	        @Override
-	        public int getColumnCount() {
-	            return colunas.length;
-	        }
-
-	        @Override
-	        public Object getValueAt(int rowIndex, int columnIndex) {
-	            return data.get(rowIndex)[columnIndex];
-	        }
-
-	        @Override
-	        public String getColumnName(int column) {
-	            return colunas[column];
-	        }
-	    }
+	
 
 	public static void main(String[] args) {
-		JanelaAgenda j =  new JanelaAgenda();
+		JanelaAgenda j = new JanelaAgenda();
 	}
 }

@@ -76,6 +76,8 @@ public class JanelaListaCompraDeMateriais extends JanelaPadrao {
 		model.addColumn("Preço");
 		model.addColumn("Data");
 
+		
+		
 		for (HistoricoDeCompraDTO m : central.getHistorico()) {
 			Object[] itens = new Object[3];
 			itens[0] = m.getMaterial().getNome();

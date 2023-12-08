@@ -258,7 +258,7 @@ public class JanelaDeCadastraPedido extends JanelaPadrao{
       
         DefaultTableModel model = new DefaultTableModel(dados, colunas);
 
-   
+        
         tabelaClientes = new JTable(model);
 
         JScrollPane scrollPane = new JScrollPane(tabelaClientes);
