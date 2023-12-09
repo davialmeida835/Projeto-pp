@@ -25,17 +25,16 @@ public class JanelaDeMenu extends JanelaPadrao {
 		addBotoesMenu(275, 55, 200, 40, "CADASTRAR MATERIAIS", getClass().getResource("/resources/material.png"));
 		addBotoesMenu(65, 110, 200, 40, "CADASTRAR FORNECEDORES", getClass().getResource("/resources/Servicos.png"));
 		addBotoesMenu(275, 110, 200, 40, "CADASTRAR PEDIDOS", getClass().getResource("/resources/pedido.png"));
-		addBotoesMenu(65, 165, 200, 40, "LISTA DE PEDIDOS", getClass().getResource("/resources/Pacote.png"));
-		addBotoesMenu(275, 165, 200, 40, "LISTA DE FORNECEDORES", getClass().getResource("/resources/Orcamento.png"));
-		addBotoesMenu(65, 220, 200, 40, "LISTA DE MATERIAIS", getClass().getResource("/resources/Lista.png"));
-		addBotoesMenu(275, 220, 200, 40, "LISTA DE CLIENTES", getClass().getResource("/resources/Lista.png"));
+		addBotoesMenu(65, 165, 200, 40, "LISTA DE PEDIDOS", getClass().getResource("/resources/lista23.png"));
+		addBotoesMenu(275, 165, 200, 40, "LISTA DE FORNECEDORES", getClass().getResource("/resources/lista23.png"));
+		addBotoesMenu(65, 220, 200, 40, "LISTA DE MATERIAIS", getClass().getResource("/resources/lista23.png"));
+		addBotoesMenu(275, 220, 200, 40, "LISTA DE CLIENTES", getClass().getResource("/resources/lista23.png"));
 		addBotoesMenu(65, 275, 200, 40, "VERIFICAR AGENDA", getClass().getResource("/resources/Lista.png"));
 		addBotoesMenu(275, 275, 200, 40, "GERAR RELATÓRIO", getClass().getResource("/resources/relatorio.png"));
 
 		addBotoesMenu(65, 330, 200, 40, "CADASTRAR DATA", getClass().getResource("/resources/Lista.png"));
-		addBotoesMenu(275, 330, 200, 40, "LISTA DE DATAS", getClass().getResource("/resources/Lista.png"));
+		addBotoesMenu(275, 330, 200, 40, "LISTA DE DATAS", getClass().getResource("/resources/lista23.png"));
 
-		addBotoesMenu(65, 330, 200, 40, "LISTA DE DATAS", getClass().getResource("/resources/Lista.png"));
 		addBotoesMenu(275, 330, 200, 40, "CADASTRAR DATA", getClass().getResource("/resources/Lista.png"));
 
 		addBotoesMenu(65, 385, 200, 40, "HISTÓRICO DE COMPRAS", getClass().getResource("/resources/Lista.png"));
