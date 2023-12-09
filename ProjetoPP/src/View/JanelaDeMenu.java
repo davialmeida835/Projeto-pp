@@ -21,15 +21,15 @@ public class JanelaDeMenu extends JanelaPadrao {
 	
 	public JanelaDeMenu() {
 		addTexto(0, 20, 550, 30, "Menu", new Font("Arial", Font.BOLD, 18), JLabel.CENTER, Color.BLACK);
-		addBotoesMenu(65, 55, 200, 40, "CADASTRAR CLIENTES", (getClass().getResource("/resources/Cliente.png")));
+		addBotoesMenu(65, 55, 200, 40, "CADASTRAR CLIENTES", (getClass().getResource("/resources/clientenovo.png")));
 		addBotoesMenu(275, 55, 200, 40, "CADASTRAR MATERIAIS", getClass().getResource("/resources/material.png"));
-		addBotoesMenu(65, 110, 200, 40, "CADASTRAR FORNECEDORES", getClass().getResource("/resources/Servicos.png"));
+		addBotoesMenu(65, 110, 200, 40, "CADASTRAR FORNECEDORES", getClass().getResource("/resources/fornecedor23.png"));
 		addBotoesMenu(275, 110, 200, 40, "CADASTRAR PEDIDOS", getClass().getResource("/resources/pedido.png"));
 		addBotoesMenu(65, 165, 200, 40, "LISTA DE PEDIDOS", getClass().getResource("/resources/Pacote.png"));
 		addBotoesMenu(275, 165, 200, 40, "LISTA DE FORNECEDORES", getClass().getResource("/resources/Orcamento.png"));
 		addBotoesMenu(65, 220, 200, 40, "LISTA DE MATERIAIS", getClass().getResource("/resources/Lista.png"));
 		addBotoesMenu(275, 220, 200, 40, "LISTA DE CLIENTES", getClass().getResource("/resources/Lista.png"));
-		addBotoesMenu(65, 275, 200, 40, "VERIFICAR AGENDA", getClass().getResource("/resources/Lista.png"));
+		addBotoesMenu(65, 275, 200, 40, "VERIFICAR AGENDA", getClass().getResource("/resources/agenda23.png"));
 		addBotoesMenu(275, 275, 200, 40, "GERAR RELATÓRIO", getClass().getResource("/resources/relatorio.png"));
 
 		addBotoesMenu(65, 330, 200, 40, "CADASTRAR DATA", getClass().getResource("/resources/Lista.png"));
