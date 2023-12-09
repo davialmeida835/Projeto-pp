@@ -9,6 +9,7 @@ import View.JanelaDeCadastroCliente;
 import View.JanelaDeCadastroFornecedor;
 import View.JanelaGerarRelatorio;
 import View.JanelaListaClientes;
+import View.JanelaListaCompraDeMateriais;
 import View.JanelaListaDeDatas;
 import View.JanelaListaFornecedores;
 import View.JanelaListaMateriais;
@@ -39,7 +40,7 @@ public class CriaJanela {
                 return new JanelaListaFornecedores();
             case "LISTA DE MATERIAIS":
                 return new JanelaListaMateriais();
-            case "AGENDA":
+            case "CRIAR AGENDA":
                 return new JanelaAgenda();
             case "GERAR RELATÓRIO":
             	return new JanelaGerarRelatorio();
@@ -50,7 +51,8 @@ public class CriaJanela {
 
             case "PERFIL DO USUÁRIO":
             	return new JanelaVerPerfil();
-
+            case "HISTÓRICO DE COMPRAS":
+            	return new JanelaListaCompraDeMateriais();
             default:
                throw null;
                     

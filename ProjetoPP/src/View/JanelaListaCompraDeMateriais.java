@@ -32,14 +32,7 @@ public class JanelaListaCompraDeMateriais extends JanelaPadrao {
 		addTexto(0, 30, 550, 30, "Histórico de compras de Materiais", new Font("Arial", Font.BOLD, 17), JLabel.CENTER, Color.BLACK);		
 
 		adicionarTabela();
-		addBotaoDeVoltar(new ActionListener() {
-
-			public void actionPerformed(ActionEvent e) {
-				new JanelaListaMateriais();
-				dispose();
-			}
-			
-		});
+		addBotaoDeVoltar();
 		addBotao(220, 420, 110, 30, "Excluir", new ActionListener() {
 			
 			public void actionPerformed(ActionEvent e) {

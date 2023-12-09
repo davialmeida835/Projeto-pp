@@ -4,12 +4,9 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.ArrayList;
-import java.util.List;
 
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
-import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.JTextField;
 import javax.swing.RowFilter;
@@ -114,13 +111,7 @@ public class JanelaListaMateriais extends JanelaPadrao{
 				filtrarMateriais();
 			}
 		});
-		addBotao(400, 45, 100, 30, "Histórico", new ActionListener() {
-			
-			public void actionPerformed(ActionEvent e) {
-				new JanelaListaCompraDeMateriais();
-				dispose();
-			}
-		});
+		
 		campoFiltro = addCampoDeTexto(50, 95, 325, 30);
 		setVisible(true);
 	}
@@ -141,29 +132,32 @@ public class JanelaListaMateriais extends JanelaPadrao{
    }
 	//comitt
 	private void adicionarTabela() {
-//		MaterialTabela tabelaFeita = new MaterialTabela();
+		MaterialTabela tabelaFeita = new MaterialTabela();
 		
 		CentralDeInformacoes central = CentralDeInformacoes.getInstance();
+		String[] dados = {"Nome do material", "Tipo do material", "Disponibilidade do material"};
+//		
+//		model = new DefaultTableModel();
+//		model.addColumn("Nome do material");
+//		model.addColumn("Tipo do material");
+//		model.addColumn("Disponibilidade do material");
+//		
+//		for(MaterialDTO m : central.getMateriais()) {
+//			Object[] itens = new Object[3];
+//			itens[0] = m.getNome();
+//			itens[1] = m.getTipoDeMaterial();
+//			itens[2] = (m.isDisponivel()) ? "Disponível" : "Indisponível"; 
+//			
+//			model.addRow(itens);
+//		}
+//		
+//		tabela = new JTable(model);
+		tabela = tabelaFeita.criarTabela(dados, tabela, model, this);
+		model = (DefaultTableModel) tabela.getModel();
 		
-		model = new DefaultTableModel();
-		model.addColumn("Nome do material");
-		model.addColumn("Tipo do material");
-		model.addColumn("Disponibilidade do material");
-		
-		for(MaterialDTO m : central.getMateriais()) {
-			Object[] itens = new Object[3];
-			itens[0] = m.getNome();
-			itens[1] = m.getTipoDeMaterial();
-			itens[2] = (m.isDisponivel()) ? "Disponível" : "Indisponível"; 
-			
-			model.addRow(itens);
-		}
-		
-		tabela = new JTable(model);
 //		return tabela;		
-//		tabela = tabelaFeita.criarTabela(dados, tabela, model, this);
-		JScrollPane barraRolagem = new JScrollPane(tabela);
-		barraRolagem.setBounds(25, 150, 490, 250);
-		add(barraRolagem);
+//		JScrollPane barraRolagem = new JScrollPane(tabela);
+//		barraRolagem.setBounds(25, 150, 490, 250);
+//		add(barraRolagem);
 	}
 }
