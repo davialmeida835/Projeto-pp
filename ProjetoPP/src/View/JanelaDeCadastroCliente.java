@@ -42,7 +42,7 @@ public class JanelaDeCadastroCliente extends JanelaPadrao {
 	}
 	
 	public JanelaDeCadastroCliente() {
-		addTexto(0, 30, 550, 30, "Cadastro do Cliente", new Font("Arial", Font.BOLD, 17), JLabel.CENTER, Color.WHITE);
+		addTexto(0, 30, 550, 30, "Cadastro do Cliente", new Font("Arial", Font.BOLD, 17), JLabel.CENTER, Color.BLACK);
 		addTexto(125, 205, 65, 20, "E-mail:");
 		addTexto(125, 260, 65, 20, "Nome:");
 		addTexto(125, 315, 90, 20, "Telefone:");
@@ -176,21 +176,21 @@ public class JanelaDeCadastroCliente extends JanelaPadrao {
 		pessoaFisica = new JLabel("Escolha uma opção:");
 		pessoaFisica.setBounds(125, 150, 190, 20);
 		pessoaFisica.setFont(Model.Util.FONTE_PADRAO);
-		pessoaFisica.setForeground(Color.WHITE);
+		pessoaFisica.setForeground(Color.BLACK);
 
 		add(pessoaFisica);
 
 		OuvinteTipoDePessoaCadastroCliente o = new OuvinteTipoDePessoaCadastroCliente(this);
 		caixaDePessoaFisica = new JRadioButton("Pessoa Física");
 		caixaDePessoaFisica.setOpaque(false);
-		caixaDePessoaFisica.setForeground(Color.WHITE);
+		caixaDePessoaFisica.setForeground(Color.BLACK);
 		caixaDePessoaFisica.setFont(Model.Util.FONTE_PADRAO);
 		
 		caixaDePessoaFisica.setBounds(120, 125, 160, 20);
 		caixaDePessoaFisica.addActionListener(o);
 		add(caixaDePessoaFisica);
 		caixaDePessoaJuridica = new JRadioButton("Pessoa Jurídica");
-		caixaDePessoaJuridica.setForeground(Color.WHITE);
+		caixaDePessoaJuridica.setForeground(Color.BLACK);
 		caixaDePessoaJuridica.setFont(Model.Util.FONTE_PADRAO);
 		caixaDePessoaJuridica.setOpaque(false);
 		caixaDePessoaJuridica.setBounds(280, 125, 165, 20);

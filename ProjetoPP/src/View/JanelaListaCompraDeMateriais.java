@@ -16,6 +16,7 @@ import javax.swing.table.DefaultTableModel;
 import DAO.HistoricoDeCompraDAO;
 import DTO.HistoricoDeCompraDTO;
 import Model.CentralDeInformacoes;
+import Model.TabelaCompraDeMaterial;
 
 public class JanelaListaCompraDeMateriais extends JanelaPadrao {
 
@@ -69,31 +70,11 @@ public class JanelaListaCompraDeMateriais extends JanelaPadrao {
 	}
 	
 	private void adicionarTabela() {
-		CentralDeInformacoes central = CentralDeInformacoes.getInstance();
-
-		model = new DefaultTableModel();
-		model.addColumn("Nome do material");
-		model.addColumn("Preço");
-		model.addColumn("Data");
-
+		TabelaCompraDeMaterial tabelaFeita = new TabelaCompraDeMaterial();
 		
-		
-		for (HistoricoDeCompraDTO m : central.getHistorico()) {
-			Object[] itens = new Object[3];
-			itens[0] = m.getMaterial().getNome();
-			itens[1] = m.getPreco();
-			itens[2] = (m.getDataDaCompra());
+		String[] dados = {"Nome do material", "Preço", "Data"};
 
-			model.addRow(itens);
-		}
-		
-		tabela = new JTable(model);
-
-		JScrollPane barraRolagem = new JScrollPane(tabela);
-
-		barraRolagem.setBounds(25, 150, 490, 250);
-
-		add(barraRolagem);
+		tabela = tabelaFeita.criarTabela(dados, tabela, model, this);
 
 	}
 	

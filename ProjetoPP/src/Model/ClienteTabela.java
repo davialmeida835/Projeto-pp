@@ -10,6 +10,13 @@ public class ClienteTabela extends AbstractTable{
 	public JTable addDados(JTable tabela, DefaultTableModel model) {
 		CentralDeInformacoes central = CentralDeInformacoes.getInstance();
 		
+		model = new DefaultTableModel();
+		
+		model.addColumn("Nome");
+		model.addColumn("Telefone");
+		model.addColumn("E-mail");
+		model.addColumn("Identificador");
+		
 		for(ClienteDTO m : central.getClientes()) {
 			Object[] itens = new Object[4];
 			itens[0] = m.getNome();
