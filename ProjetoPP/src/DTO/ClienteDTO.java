@@ -1,6 +1,10 @@
 package DTO;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
+
+import Model.ClienteObserver;
 
 public class ClienteDTO {
 
@@ -11,6 +15,7 @@ public class ClienteDTO {
 	private boolean desejaReceberEmail;
 	private long id;
 	private LocalDate dataDeCadastramento;
+	private List<ClienteObserver> observers = new ArrayList<>();
 	
 	public ClienteDTO(String nome, long telefone, String email, long cpfECnpj, boolean receberEmail) {
 		this.nome = nome;
@@ -69,5 +74,23 @@ public class ClienteDTO {
 	public void setDesejaReceberEmail(boolean desejaReceberEmail) {
 		this.desejaReceberEmail = desejaReceberEmail;
 	}
+	
+	public void addObserver(ClienteObserver observer) {
+        observers.add(observer);
+    }
+	public void removerObserver(ClienteObserver observer) {
+		observers.remove(observer);
+	}
+	public void atializar(){
+		if(desejaReceberEmail) {
+			notifyObservers();
+		}
+	}
+
+    public void notifyObservers() {
+        for (ClienteObserver observer : observers) {
+            observer.clienteOptInParaEmail(this);
+        }
+    }
 	
 }

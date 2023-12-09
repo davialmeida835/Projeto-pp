@@ -21,6 +21,7 @@ import DAO.MaterialDAO;
 import DTO.HistoricoDeCompraDTO;
 import DTO.MaterialDTO;
 import Model.CentralDeInformacoes;
+import Model.MaterialTabela;
 
 public class JanelaListaMateriais extends JanelaPadrao{
 
@@ -140,6 +141,8 @@ public class JanelaListaMateriais extends JanelaPadrao{
    }
 	
 	private void adicionarTabela() {
+//		MaterialTabela tabelaFeita = new MaterialTabela();
+		
 		CentralDeInformacoes central = CentralDeInformacoes.getInstance();
 		
 		model = new DefaultTableModel();
@@ -157,12 +160,10 @@ public class JanelaListaMateriais extends JanelaPadrao{
 		}
 		
 		tabela = new JTable(model);
-
+//		return tabela;		
+//		tabela = tabelaFeita.criarTabela(dados, tabela, model, this);
 		JScrollPane barraRolagem = new JScrollPane(tabela);
-
 		barraRolagem.setBounds(25, 150, 490, 250);
-
 		add(barraRolagem);
-
 	}
 }

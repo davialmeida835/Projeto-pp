@@ -7,6 +7,7 @@ import javax.mail.internet.AddressException;
 import javax.mail.internet.InternetAddress;
 import javax.swing.JOptionPane;
 
+import DAO.ClienteDAO;
 import DTO.ClienteDTO;
 import Model.CentralDeInformacoes;
 import Model.Cliente;
@@ -24,7 +25,7 @@ public class OuvinteCadastrarCliente implements ActionListener {
 
 	//cadastra os clientes se todas as informações estiverem corretas
 	public void actionPerformed(ActionEvent e) {
-		CentralDeInformacoes central = Persistencia.recuperarCentral("central");
+		CentralDeInformacoes central = CentralDeInformacoes.getInstance();
 		String nome = cadastrarCliente.getCampoDoNome().getText();
 		String telefone = cadastrarCliente.getCampoDoTelefone().getText().replace("(", "").replace(")", "").replace("-", "").replace(" ", "");
 		String email = cadastrarCliente.getCampoDeEmail().getText();
@@ -51,10 +52,11 @@ public class OuvinteCadastrarCliente implements ActionListener {
 		} 
 		else {
 			ClienteDTO cliente = new ClienteDTO(nome,Long.parseLong(telefone), email, Long.parseLong(cpfOuCnpj), receber);
+			ClienteDAO clienteDAO = new ClienteDAO();
 			EmailClienteObserver ob = new  EmailClienteObserver();
 			cliente.addObserver(ob);
 			JOptionPane.showMessageDialog(cadastrarCliente, "Cadastro efetuado com sucesso!");
-			central.addCliente(cliente);
+			clienteDAO.cadastrarCliente(cliente);
 			Persistencia.salvarCentral(central, "central");
 			cadastrarCliente.dispose();
 			new JanelaDeCadastroCliente();

@@ -29,7 +29,6 @@ public class JanelaListaClientes extends JanelaPadrao {
 	public JanelaListaClientes() {
 		addTexto(0, 30, 550, 30, "Lista de Clientes", new Font("Arial", Font.BOLD, 17), JLabel.CENTER, Color.BLACK);
 
-		adicionarTabela();
 		addBotaoDeVoltar();
 		addBotao(80, 420, 110, 30, "Excluir", new ActionListener() {
 
@@ -62,6 +61,7 @@ public class JanelaListaClientes extends JanelaPadrao {
 			}
 		});
 
+		adicionarTabela();
 		campoFiltro = addCampoDeTexto(50, 95, 325, 30);
 		setVisible(true);
 	}
