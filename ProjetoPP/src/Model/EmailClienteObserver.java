@@ -6,6 +6,7 @@ import java.util.List;
 import org.apache.commons.mail.EmailException;
 import org.apache.commons.mail.SimpleEmail;
 
+import Controller.Persistencia;
 import DTO.ClienteDTO;
 import DTO.DatasDeNotificacaoDTO;
 
@@ -19,11 +20,12 @@ public class EmailClienteObserver implements Observerint {
 	    for (DatasDeNotificacaoDTO data : datas) {
 	        LocalDate dataAtual = LocalDate.now();
 
-	      
 	        if (data.getDataDeEntrega().isEqual(dataAtual)) {
 	            enviarEmailParaCliente(cliente, data);
+	            data.getDataDeEntrega().plusYears(1);
 	        }
 	    }
+	    Persistencia.salvarCentral(central, "central");
 	}
 
 	private void enviarEmailParaCliente(SujeitoObservable cliente, DatasDeNotificacaoDTO data) {
