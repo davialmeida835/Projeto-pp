@@ -7,6 +7,7 @@ import org.apache.commons.mail.EmailException;
 import org.apache.commons.mail.SimpleEmail;
 
 import Controller.Persistencia;
+import DAO.DatasDeNotificacaoDAO;
 import DTO.ClienteDTO;
 import DTO.DatasDeNotificacaoDTO;
 
@@ -22,7 +23,15 @@ public class EmailClienteObserver implements Observerint {
 
 	        if (data.getDataDeEntrega().isEqual(dataAtual)) {
 	            enviarEmailParaCliente(cliente, data);
-	            data.getDataDeEntrega().plusYears(1);
+	            int ano = data.getDataDeEntrega().getYear() + 1;
+	            int mes = data.getDataDeEntrega().getMonthValue();
+	            int dia = data.getDataDeEntrega().getDayOfMonth();
+	            
+	            data.setDataDeEntrega(LocalDate.of(ano, mes, dia));
+	            
+	            DatasDeNotificacaoDAO dao = new DatasDeNotificacaoDAO();
+	            
+	            dao.atualizarData(data);
 	        }
 	    }
 	    Persistencia.salvarCentral(central, "central");
