@@ -77,6 +77,18 @@
       <dataDeCadastramento>2023-12-08</dataDeCadastramento>
       <observers/>
     </DTO.ClienteDTO>
+    <DTO.ClienteDTO>
+      <nome>davi</nome>
+      <telefone>23232323232</telefone>
+      <email>davi234@gmail.com</email>
+      <cpfECnpj>20112212121</cpfECnpj>
+      <desejaReceberEmail>true</desejaReceberEmail>
+      <id>1702081248819</id>
+      <dataDeCadastramento>2023-12-08</dataDeCadastramento>
+      <observers>
+        <Model.EmailClienteObserver/>
+      </observers>
+    </DTO.ClienteDTO>
   </clientes>
   <materiais>
     <DTO.MaterialDTO>
