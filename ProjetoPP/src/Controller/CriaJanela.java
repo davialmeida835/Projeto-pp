@@ -40,7 +40,7 @@ public class CriaJanela {
                 return new JanelaListaFornecedores();
             case "LISTA DE MATERIAIS":
                 return new JanelaListaMateriais();
-            case "CRIAR AGENDA":
+            case "VERIFICAR AGENDA":
                 return new JanelaAgenda();
             case "GERAR RELATÓRIO":
             	return new JanelaGerarRelatorio();
