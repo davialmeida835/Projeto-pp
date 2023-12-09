@@ -1,0 +1,45 @@
+<Model.CentralDeInformacoes>
+  <clientes>
+    <DTO.ClienteDTO>
+      <nome>davi</nome>
+      <telefone>23423423423</telefone>
+      <email>davi@gmail.com</email>
+      <cpfECnpj>12345678901</cpfECnpj>
+      <desejaReceberEmail>true</desejaReceberEmail>
+      <id>1702089542585</id>
+      <dataDeCadastramento>2023-12-08</dataDeCadastramento>
+      <observers>
+        <Model.EmailClienteObserver/>
+      </observers>
+    </DTO.ClienteDTO>
+  </clientes>
+  <materiais>
+    <DTO.MaterialDTO>
+      <nome>dasd</nome>
+      <disponivel>true</disponivel>
+      <tipoDeMaterial>LINHA</tipoDeMaterial>
+      <id>1702089505519</id>
+    </DTO.MaterialDTO>
+  </materiais>
+  <fornecedores/>
+  <gastos/>
+  <pedidos>
+    <DTO.PedidoDTO>
+      <tipoderoupa class="Model.Outros"/>
+      <numero>1</numero>
+      <descricao>Descrição do pedido</descricao>
+      <dataEntrega>1111-11-11</dataEntrega>
+      <quantidade>1</quantidade>
+      <cliente reference="../../../clientes/DTO.ClienteDTO"/>
+      <tamanho>PP</tamanho>
+      <materiais>
+        <DTO.MaterialDTO reference="../../../../materiais/DTO.MaterialDTO"/>
+      </materiais>
+      <preco>55.0</preco>
+      <pagamento>false</pagamento>
+      <finalizado>false</finalizado>
+    </DTO.PedidoDTO>
+  </pedidos>
+  <historico/>
+  <datas/>
+</Model.CentralDeInformacoes>
