@@ -60,7 +60,7 @@ public class JanelaDeCadastroFornecedor extends JanelaPadrao{
      
        
         addBotaoDeVoltar();
-        addWallpaper();
+//        addWallpaper();
         setVisible(true);
     }
     private void cadastrarFornecedor() {
