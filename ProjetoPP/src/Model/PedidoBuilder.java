@@ -19,7 +19,7 @@ public interface PedidoBuilder {
     PedidoBuilder tamanho(TamanhoRoupa tamanho);
     PedidoBuilder materiais(List<MaterialDTO> materiais);
     PedidoBuilder preco(double preco);
-    PedidoBuilder tipoRoupa(Object tipoRoupa);
+    PedidoBuilder tipoRoupa(TipoRoupa tipoRoupa);
     PedidoBuilder pagamento(boolean pagamento);
     PedidoBuilder finalizado(boolean finalizado);
 

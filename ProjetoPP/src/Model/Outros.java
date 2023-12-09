@@ -8,5 +8,11 @@ public class Outros implements TipoRoupa {
 		return null;
 	}
 
+	@Override
+	public String descrição() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 
 }

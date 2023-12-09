@@ -8,6 +8,12 @@ public class Jaqueta implements TipoRoupa {
 		return null;
 	}
 
+	@Override
+	public String descrição() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 	
 
 }
